@@ -2,71 +2,965 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect x='1' y='1' width='6' height='6' rx='1' fill='%232B88D8'/><rect x='9' y='1' width='6' height='6' rx='1' fill='%230078D4'/><rect x='1' y='9' width='6' height='6' rx='1' fill='%230078D4'/><rect x='9' y='9' width='6' height='6' rx='1' fill='%232B88D8'/></svg>">
-<title>Windows 版本参考手册 — Win10 / Win11 全版本对比</title>
-<meta name="description" content="Windows 10 与 Windows 11 全部正式版的交互式对比手册。8 大版本详情、功能对比表、版本推荐向导、5 代更新时间线。">
-<meta name="keywords" content="Windows 10,Windows 11,Win10,Win11,版本对比,版本区别,LTSC,Enterprise,Pro,Home">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="JL9n4ojndPgfdlzYaz5OI2s_wAAxaLb_AGE3ctuzWvU">
-<meta name="msvalidate.01" content="ED6D21E4A9AD8B088191AB660268C2E3">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Windows 版本参考手册 — Win10 / Win11 全版本对比">
-<meta property="og:description" content="Windows 10 与 Windows 11 全部正式版的交互式对比手册">
-<meta property="og:locale" content="zh_CN">
+<title>Windows OS 资料库</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* ==========================================================================
+     Light Theme (浅色极简毛玻璃)
+     ========================================================================== */
+  :root {
+    --bg-base: #f1f5f9;       
+    --text-main: #0f172a;     
+    --text-muted: #475569;    
+    --text-faint: #94a3b8;    
+    
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.9);
+    --glass-shadow: 0 4px 24px rgba(15, 23, 42, 0.03);
+    
+    --accent-blue: #0ea5e9;
+    --diff-red: #ef4444;      
+    --neon-green: #10b981;    
+    
+    --hover-bg: rgba(255, 255, 255, 0.95);
+    --switch-bg: rgba(255, 255, 255, 0.4);
+    --switch-active: rgba(255, 255, 255, 0.9);
+    
+    --c-home: #3b82f6; --c-home-bg: rgba(59, 130, 246, 0.08);
+    --c-pro:  #8b5cf6; --c-pro-bg:  rgba(139, 92, 246, 0.08);
+    --c-ws:   #f59e0b; --c-ws-bg:   rgba(245, 158, 11, 0.08);
+    --c-ent:  #10b981; --c-ent-bg:  rgba(16, 185, 129, 0.08);
+    --c-edu:  #06b6d4; --c-edu-bg:  rgba(6, 182, 212, 0.08);
+    --c-pedu: #d946ef; --c-pedu-bg: rgba(217, 70, 239, 0.08);
+    --c-ltsc: #65a30d; --c-ltsc-bg: rgba(101, 163, 13, 0.08);
+    --c-iot:  #f97316; --c-iot-bg:  rgba(249, 115, 22, 0.08);
+  }
+
+  /* ==========================================================================
+     Dark Theme (深色毛玻璃映射)
+     ========================================================================== */
+  [data-theme="dark"] {
+    --bg-base: #0b0f19;       
+    --text-main: #f8fafc;     
+    --text-muted: #cbd5e1;    
+    --text-faint: #64748b;    
+    
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    
+    --accent-blue: #38bdf8;
+    --diff-red: #f87171;
+    --neon-green: #34d399;
+
+    --hover-bg: rgba(30, 41, 59, 0.95);
+    --switch-bg: rgba(0, 0, 0, 0.4);
+    --switch-active: rgba(255, 255, 255, 0.12);
+
+    --c-home-bg: rgba(59, 130, 246, 0.15);
+    --c-pro-bg:  rgba(139, 92, 246, 0.15);
+    --c-ws-bg:   rgba(245, 158, 11, 0.15);
+    --c-ent-bg:  rgba(16, 185, 129, 0.15);
+    --c-edu-bg:  rgba(6, 182, 212, 0.15);
+    --c-pedu-bg: rgba(217, 70, 239, 0.15);
+    --c-ltsc-bg: rgba(101, 163, 13, 0.15);
+    --c-iot-bg:  rgba(249, 115, 22, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
-    background: #0f0f17;
-    color: #d0d0d0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: -apple-system, "SF Pro Display", BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden; 
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
-  .container { max-width: 720px; width: 90%; text-align: center; }
-  h1 { font-size: 2.2rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #2B88D8, #0078D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .subtitle { color: #777; margin-bottom: 3rem; font-size: 1rem; }
-  .cards { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
-  .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: #1a1a2e;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    width: 300px;
-    transition: all 0.3s ease;
+
+  /* 动态光晕 */
+  .ambient-orb {
+    position: fixed; border-radius: 50%; z-index: -1; pointer-events: none;
+    transform: translateZ(0); animation: floatOrb 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.5s ease;
   }
-  .card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-4px); background: #20203a; }
-  .card-icon { font-size: 3rem; margin-bottom: 1rem; }
-  .card h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-  .card p { color: #777; font-size: 0.9rem; line-height: 1.6; }
-  .card.win11 h2 { color: #2B88D8; }
-  .card.win10 h2 { color: #0078D4; }
-  footer { margin-top: 3rem; color: #555; font-size: 0.8rem; }
-  @media (max-width: 768px) { .cards { flex-direction: column; } .card { width: 100%; } }
+  .orb-1 { top: -20%; left: -10%; width: 70vw; height: 70vw; background: radial-gradient(circle closest-side, rgba(14, 165, 233, 0.12), transparent); }
+  .orb-2 { bottom: -30%; right: -10%; width: 80vw; height: 80vw; background: radial-gradient(circle closest-side, rgba(167, 139, 250, 0.12), transparent); animation-delay: -5s; animation-direction: alternate-reverse; }
+  [data-theme="dark"] .ambient-orb { opacity: 0.6; }
+  @keyframes floatOrb { 0% { transform: translate3d(0, 0, 0) scale(1); } 100% { transform: translate3d(5%, 5%, 0) scale(1.05); } }
+
+  .glass { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+  
+  .gpu-card { position: relative; border-radius: 20px; transform: translate3d(0, 0, 0); will-change: transform; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease; z-index: 1; }
+  .gpu-card::after { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--hover-bg); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15); opacity: 0; will-change: opacity; transition: opacity 0.3s ease; }
+  .gpu-card:hover { transform: translate3d(0, -4px, 0); border-color: var(--accent-blue); }
+  .gpu-card:hover::after { opacity: 1; }
+
+  .view-fade { animation: fadeSlideIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; will-change: opacity, transform; }
+  @keyframes fadeSlideIn { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+
+  .svg-icon { stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ==========================================================================
+     悬浮工具栏 (包含绿点特效)
+     ========================================================================== */
+  .tools-bar { position: fixed; top: 24px; right: 32px; z-index: 100; display: flex; align-items: center; gap: 8px; flex-direction: row; transition: all 0.4s ease; }
+  
+  .tool-group {
+    display: flex; align-items: center; gap: 4px; flex-direction: row;
+    background: var(--switch-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border); border-radius: 99px;
+    padding: 6px; box-shadow: var(--glass-shadow); transition: opacity 0.3s ease, flex-direction 0.3s ease;
+  }
+  .ts-btn, .lang-btn {
+    position: relative; width: 36px; height: 36px; border-radius: 50%;
+    border: none; background: transparent; color: var(--text-muted); font-size: 13px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; cursor: pointer; 
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .ts-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  
+  .ts-btn:hover, .lang-btn:hover { color: var(--text-main); }
+  .ts-btn.active, .lang-btn.active { background: var(--switch-active); color: var(--text-main); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  
+  /* 绿点上浮特效 */
+  .ts-btn.active svg { transform: translateY(-3px); }
+  .ts-btn::after {
+    content: ''; position: absolute; bottom: 5px; left: 50%; width: 4px; height: 4px; border-radius: 50%;
+    background-color: var(--neon-green); box-shadow: 0 0 6px var(--neon-green), 0 0 3px var(--neon-green);
+    transform: translateX(-50%) scale(0); opacity: 0; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  }
+  .ts-btn.active::after { transform: translateX(-50%) scale(1); opacity: 1; }
+
+  /* ==========================================================================
+     门户视图 (Portal - 修正重心偏上)
+     ========================================================================== */
+  #portal-view { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 12vh 24px 24px; z-index: 10; position: relative; overflow-y: auto;}
+  .portal-header { text-align: center; margin-bottom: 40px; }
+  .portal-header h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; }
+  .portal-header p { color: var(--text-muted); font-size: 1.1rem; font-weight: 600; max-width: 500px; line-height: 1.6; margin: 0 auto; padding: 0 12px;}
+
+  .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 380px)); justify-content: center; gap: 20px; width: 100%; max-width: 800px; }
+  .bento-card { display: flex; flex-direction: row; align-items: center; gap: 20px; padding: 24px; cursor: pointer; text-align: left; }
+  .bento-card-info h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.5px;}
+  .bento-card-info p { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; line-height: 1.4; margin: 0;}
+  .card-icon { width: 44px; height: 44px; flex-shrink: 0; color: var(--accent-blue); display: flex; align-items: center; justify-content: center; background: var(--switch-bg); border-radius: 12px; border: 1px solid var(--glass-border);}
+
+  /* ==========================================================================
+     应用主视图 (App Dashboard)
+     ========================================================================== */
+  #app-view { display: none; height: 100vh; width: 100%; max-width: 1600px; margin: 0 auto; z-index: 10; position: relative; }
+  
+  .desktop-sidebar {
+    width: 260px; height: 100%; padding: 32px 24px; display: flex; flex-direction: column; gap: 32px;
+    border-right: 1px solid var(--glass-border); background: var(--switch-bg); backdrop-filter: blur(12px);
+  }
+  .sidebar-logo { cursor: pointer; transition: opacity 0.2s; }
+  .sidebar-logo:hover { opacity: 0.7; }
+  .sidebar-logo h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+  .sidebar-logo span { color: var(--text-faint); font-size: 12px; font-weight: 600; }
+  
+  .nav-menu { display: flex; flex-direction: column; gap: 8px; }
+  .nav-btn { text-align: left; padding: 12px 18px; border-radius: 12px; border: none; background: transparent; color: var(--text-muted); font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+  .nav-btn:hover { background: var(--switch-active); color: var(--text-main); }
+  .nav-btn.active { background: var(--switch-active); color: var(--accent-blue); box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid var(--glass-border);}
+
+  .main-content { flex: 1; display: flex; flex-direction: column; height: 100%; overflow: hidden; transform: translateZ(0); }
+  
+  .top-chips-area { padding: 24px 32px 12px; display: flex; gap: 10px; align-items: center; overflow-x: auto; scrollbar-width: none; flex-shrink: 0; }
+  .top-chips-area::-webkit-scrollbar { display: none; }
+  .chip {
+    display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 99px;
+    font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
+    border: 1px solid var(--glass-border); background: var(--switch-bg); color: var(--text-muted);
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .chip:hover { background: var(--switch-active); color: var(--text-main);}
+  .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  
+  .chip.home.active { border-color: var(--c-home); color: var(--c-home); background: var(--c-home-bg); } .chip.home .dot { background: var(--c-home); }
+  .chip.pro.active  { border-color: var(--c-pro);  color: var(--c-pro);  background: var(--c-pro-bg);  } .chip.pro .dot  { background: var(--c-pro); }
+  .chip.ws.active   { border-color: var(--c-ws);   color: var(--c-ws);   background: var(--c-ws-bg);   } .chip.ws .dot   { background: var(--c-ws); }
+  .chip.ent.active  { border-color: var(--c-ent);  color: var(--c-ent);  background: var(--c-ent-bg);  } .chip.ent .dot  { background: var(--c-ent); }
+  .chip.edu.active  { border-color: var(--c-edu);  color: var(--c-edu);  background: var(--c-edu-bg);  } .chip.edu .dot  { background: var(--c-edu); }
+  .chip.pedu.active { border-color: var(--c-pedu); color: var(--c-pedu); background: var(--c-pedu-bg); } .chip.pedu .dot { background: var(--c-pedu); }
+  .chip.ltsc.active { border-color: var(--c-ltsc); color: var(--c-ltsc); background: var(--c-ltsc-bg); } .chip.ltsc .dot { background: var(--c-ltsc); }
+  .chip.iot.active  { border-color: var(--c-iot);  color: var(--c-iot);  background: var(--c-iot-bg);  } .chip.iot .dot  { background: var(--c-iot); }
+  .chip.inactive { opacity: 0.35; border-color: transparent; }
+
+  .view-container { flex: 1; overflow-y: auto; padding: 16px 40px 40px; -webkit-overflow-scrolling: touch; }
+  .view-container::-webkit-scrollbar { width: 6px; }
+  .view-container::-webkit-scrollbar-thumb { background: rgba(150,150,150,0.2); border-radius: 3px; }
+
+  .m-text-tabs { display: none; }
+
+  /* ==========================================================================
+     模块样式 (详情 / 卡片 / 表格 / 时间线 / 向导)
+     ========================================================================== */
+  .detail-card { max-width: 800px; margin: 0 auto; overflow: hidden; padding: 40px; text-align: left; border-radius: 20px; }
+  .detail-header-flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .detail-name { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 2px; }
+  .detail-sub { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+  
+  .detail-nav-pill { display: inline-flex; align-items: center; background: var(--switch-bg); border: 1px solid var(--glass-border); border-radius: 99px; padding: 3px; }
+  .d-nav-btn { width: 32px; height: 32px; border-radius: 50%; border: none; background: var(--hover-bg); color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid var(--glass-border); transition: all 0.2s; }
+  .d-nav-btn:hover { color: var(--accent-blue); transform: scale(1.05); }
+  .d-nav-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none; }
+  .d-nav-count { font-size: 12px; font-weight: 800; color: var(--text-muted); padding: 0 12px; font-variant-numeric: tabular-nums;}
+
+  .specs-row { display: flex; flex-direction: row; background: var(--switch-bg); border-radius: 12px; border: 1px solid var(--glass-border); margin-bottom: 20px; }
+  .spec-item { flex: 1; padding: 10px 8px; text-align: center; border-right: 1px solid rgba(150,150,150,0.1); }
+  .spec-item:last-child { border-right: none; }
+  .spec-v { font-size: 16px; font-weight: 800; color: var(--text-main); }
+  .spec-l { font-size: 9px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-top: 2px; }
+
+  .cards-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: stretch; }
+  .ed-card { flex: 1 1 300px; max-width: 400px; padding: 24px; display: flex; flex-direction: column; text-align: left; }
+  .ed-name { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+  
+  .feat-title { font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: var(--text-main); padding-bottom: 4px; border-bottom: 1px solid rgba(150,150,150,0.1); display: flex; justify-content: space-between; align-items: center;}
+  .feat-title .diff-badge { font-size: 9px; background: rgba(239, 68, 68, 0.1); color: var(--diff-red); padding: 1px 6px; border-radius: 99px; }
+  
+  .feat-item { font-size: 12.5px; font-weight: 600; color: var(--text-muted); padding: 3px 0 3px 12px; position: relative; transition: color 0.2s; }
+  .feat-item::before { content: ""; position: absolute; left: 0; top: 10px; width: 3px; height: 3px; border-radius: 50%; background: var(--text-faint); }
+  .feat-item.is-diff { color: var(--text-main); font-weight: 700; }
+  .feat-item.is-diff::before { display: none; }
+  .diff-dot { position: absolute; left: -2px; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--diff-red); box-shadow: 0 0 4px rgba(239, 68, 68, 0.5); }
+
+  .table-wrap { width: 100%; overflow: auto; border-radius: 20px; padding: 0; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+  th { position: sticky; top: 0; background: var(--hover-bg); backdrop-filter: blur(8px); padding: 12px 14px; font-weight: 800; z-index: 10; border-bottom: 2px solid rgba(150,150,150,0.1); color: var(--text-main); }
+  .th-first { left: 0; z-index: 11; text-align: left; width: 120px; min-width: 120px; border-right: 1px solid rgba(150,150,150,0.1); border-top-left-radius: 20px;}
+  th:last-child { border-top-right-radius: 20px; }
+  td { padding: 8px 12px; text-align: center; color: var(--text-muted); border-bottom: 1px solid rgba(150,150,150,0.05); background: var(--switch-bg); }
+  .td-first { position: sticky; left: 0; z-index: 5; text-align: left; font-weight: 700; color: var(--text-main); background: var(--glass-bg); backdrop-filter: blur(8px); border-right: 1px solid rgba(150,150,150,0.1); }
+  .ic-y { color: #10b981; font-weight: 900; } .ic-n { color: #94a3b8; font-weight: 700;}
+  .row-cat td { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); padding: 12px 12px 6px; background: rgba(150,150,150,0.05) !important; border-bottom: none; }
+
+  .timeline-container { max-width: 760px; margin: 0 auto; padding-top: 16px; }
+  .timeline-item { display: flex; gap: 20px; position: relative; padding-bottom: 32px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-line { position: absolute; left: 7px; top: 28px; bottom: -8px; width: 2px; background: rgba(150,150,150,0.15); }
+  .timeline-dot { width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--accent-blue); background: var(--hover-bg); z-index: 2; position: relative; margin-top: 4px; flex-shrink: 0;}
+  .ver-tl-inline { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; border-bottom: 2px solid rgba(150,150,150,0.08); padding-bottom: 10px; }
+  .ver-tl-label { font-size: 18px; font-weight: 800; }
+  .ver-tl-date { font-size: 12px; color: var(--text-faint); font-weight: 700; }
+  .ver-name { font-size: 15px; font-weight: 800; margin-bottom: 8px; }
+  .ver-badge { font-size: 10px; padding: 2px 10px; border-radius: 6px; font-weight: 700; background: var(--switch-bg); color: var(--text-main); border: 1px solid var(--glass-border); display: inline-block; margin-bottom: 16px;}
+  .ver-note, .detail-note { margin-top: 16px; font-size: 12.5px; color: var(--text-muted); padding: 12px 16px; background: var(--switch-bg); border-radius: 10px; border: 1px solid var(--glass-border); line-height: 1.5; font-weight: 500; }
+
+  .wizard-card { max-width: 600px; width: 100%; padding: 32px; text-align: center; border-radius: 20px;}
+  .wiz-progress { height: 6px; background: rgba(150,150,150,0.1); border-radius: 3px; margin-bottom: 32px; overflow: hidden; }
+  .wiz-progress-bar { height: 100%; background: var(--accent-blue); border-radius: 3px; transition: width 0.4s ease; }
+  .wiz-q { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 24px; line-height: 1.4; }
+  .wiz-opts { display: flex; flex-direction: column; gap: 12px; }
+  .wiz-opt { padding: 14px 20px; background: var(--switch-bg); border: 1px solid var(--glass-border); border-radius: 14px; color: var(--text-main); font-size: 14px; font-weight: 700; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 12px; transition: transform 0.2s, background 0.2s;}
+
+  /* ==========================================================================
+     移动端排版优化 (极客谷歌风：悬浮工具沉底，文字导航栏)
+     ========================================================================== */
+  @media (max-width: 768px) {
+    /* 核心逻辑：工具栏位移 */
+    /* 默认在首页：顶部横排 */
+    .tools-bar { top: 16px; right: 16px; bottom: auto; flex-direction: row; gap: 6px; z-index: 1000; }
+    .tool-group { flex-direction: row; padding: 4px 6px; }
+    
+    /* 核心逻辑：进入详情后：底部竖排 */
+    body.in-app .tools-bar { top: auto; bottom: 24px; right: 16px; flex-direction: column; gap: 12px; }
+    body.in-app .tool-group { flex-direction: column; padding: 6px 4px; }
+    
+    .ts-btn, .lang-btn { width: 32px; height: 32px; font-size: 11.5px;}
+    .ts-btn svg { width: 14px; height: 14px; }
+    .ts-btn::after { bottom: 3px; width: 3px; height: 3px; }
+
+    #portal-view { padding-top: 12vh; justify-content: flex-start; }
+    .portal-header h1 { font-size: 2.6rem; letter-spacing: -1px;}
+    .portal-header p { font-size: 0.95rem; margin-bottom: 12px;}
+    .bento-grid { grid-template-columns: 1fr; gap: 16px; padding: 0 16px; }
+    .bento-card { min-height: auto; padding: 20px 16px; border-radius: 16px;}
+    .bento-card svg { width: 32px; height: 32px; margin-bottom: 0; }
+    .bento-card-info h2 { font-size: 1.4rem; }
+    
+    #app-view { display: none; flex-direction: column; }
+    .desktop-sidebar { display: none; } 
+    
+    /* 完美的内置返回键文字 Tabs */
+    .m-text-tabs {
+      display: flex; align-items: center; padding: 6px 8px; gap: 0;
+      position: sticky; top: 0; z-index: 50; 
+      background: rgba(241, 245, 249, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(150,150,150,0.1);
+    }
+    [data-theme="dark"] .m-text-tabs { background: rgba(11, 15, 25, 0.85); }
+    
+    .m-inline-back {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border: none; background: transparent;
+      color: var(--text-main); cursor: pointer; flex-shrink: 0;
+      border-right: 1px solid rgba(150,150,150,0.15); margin-right: 4px; padding-right: 6px;
+    }
+    .m-inline-back svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round;}
+    
+    .m-tabs-scroll { display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .m-tabs-scroll::-webkit-scrollbar { display: none; }
+    .m-tab-btn { background: transparent; border: none; padding: 8px 10px; margin-right: 0; font-size: 14px; font-weight: 800; color: var(--text-faint); border-bottom: 3px solid transparent; white-space: nowrap; cursor: pointer; }
+    .m-tab-btn.active { color: var(--text-main); border-bottom-color: var(--accent-blue); }
+    
+    .top-chips-area { padding: 12px 16px 8px; }
+    .chip { font-size: 12px; padding: 6px 12px; }
+    
+    .view-container { padding: 12px 16px 120px; }
+    
+    .detail-card { padding: 20px; }
+    .specs-row { flex-direction: row; margin-bottom: 20px;}
+    .spec-item { padding: 10px 4px; }
+    .spec-v { font-size: 15px; }
+    .spec-l { font-size: 9px; }
+    
+    .cards-grid { grid-template-columns: 1fr; }
+    
+    .th-first { width: 100px !important; min-width: 100px !important; font-size: 12px; padding: 12px 10px;}
+    .td-first { font-size: 12px; padding: 10px;}
+    th, td { padding: 10px; font-size: 12px;}
+    
+    .timeline-item { gap: 14px; }
+    .wizard-card { padding: 24px; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>Windows 版本参考手册</h1>
-  <p class="subtitle">Win10 / Win11 全版本交互式对比 — 选对版本不踩坑</p>
-  <div class="cards">
-    <a class="card win11" href="windows-11-editions.html">
-      <div class="card-icon">🪟</div>
-      <h2>Windows 11</h2>
-      <p>8 大正式版 · 5 代更新 (21H2–25H2)<br>Home / Pro / Enterprise / LTSC 2024 / IoT</p>
-    </a>
-    <a class="card win10" href="windows-10-editions.html">
-      <div class="card-icon">🖥️</div>
-      <h2>Windows 10</h2>
-      <p>8 大正式版 · 5 代更新 (1507–22H2)<br>Home / Pro / Enterprise / LTSC 2021 / IoT</p>
-    </a>
+
+<!-- 智能自适应悬浮工具栏 -->
+<div class="tools-bar">
+  <div class="tool-group" id="lang-switcher">
+    <button class="lang-btn active" data-lang="zh">中</button>
+    <button class="lang-btn" data-lang="en">EN</button>
   </div>
-  <footer>Microsoft Windows 10 / 11 · 全版本参考手册</footer>
+  <div class="tool-group" id="theme-switcher">
+    <button class="ts-btn" data-theme-val="dark" title="深色模式"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+    <button class="ts-btn active" data-theme-val="system" title="跟随系统"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></button>
+    <button class="ts-btn" data-theme-val="light" title="浅色模式"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+  </div>
 </div>
+
+<div class="ambient-orb orb-1"></div>
+<div class="ambient-orb orb-2"></div>
+
+<!-- 首页门户 -->
+<div id="portal-view" class="view-fade">
+  <div class="portal-header">
+    <h1>Windows <span style="color: var(--accent-blue);">OS</span></h1>
+    <p id="t-portal-desc">全版本参考手册，一站式对比各版本核心差异与适用场景。</p>
+  </div>
+  <div class="bento-grid">
+    <div class="bento-card glass gpu-card" onclick="openApp('win11')">
+      <!-- 官方比例 Win11 Logo -->
+      <div class="card-icon"><svg viewBox="0 0 24 24" class="svg-icon" style="fill:#0078D4; stroke:none;"><rect x="2" y="2" width="9.5" height="9.5"/><rect x="12.5" y="2" width="9.5" height="9.5"/><rect x="2" y="12.5" width="9.5" height="9.5"/><rect x="12.5" y="12.5" width="9.5" height="9.5"/></svg></div>
+      <div class="bento-card-info"><h2>Windows 11</h2><p id="t-win11-desc">8 大正式版与 6 代更新时间线 (21H2–26H2)。</p></div>
+    </div>
+    <div class="bento-card glass gpu-card" onclick="openApp('win10')">
+      <!-- 官方比例透视 Win10 Logo -->
+      <div class="card-icon"><svg viewBox="0 0 24 24" class="svg-icon" style="fill:#0078D4; stroke:none;"><path d="M0,3.4L10,2v7.6H0V3.4z M11,1.8l13-1.8v9.5H11V1.8z M11,10.6h13v9.5l-13-1.8V10.6z M0,10.6h10v7.6l-10-1.4V10.6z"/></svg></div>
+      <div class="bento-card-info"><h2>Windows 10</h2><p id="t-win10-desc">1507 至 22H2 演进历程与多维度特性对比。</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 应用视图 -->
+<div id="app-view">
+  <!-- 移动端内联返回键与文字导航 Tabs -->
+  <div class="m-text-tabs" id="m-text-tabs">
+    <button class="m-inline-back" onclick="goHome()" title="返回主页">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="m-tabs-scroll">
+      <button class="m-tab-btn active" id="m-btn-detail" onclick="switchView('detail')">概览</button>
+      <button class="m-tab-btn" id="m-btn-cards" onclick="switchView('cards')">卡片</button>
+      <button class="m-tab-btn" id="m-btn-table" onclick="switchView('table')">表格</button>
+      <button class="m-tab-btn" id="m-btn-version" onclick="switchView('version')">历史</button>
+      <button class="m-tab-btn" id="m-btn-wizard" onclick="switchView('wizard')">推荐</button>
+    </div>
+  </div>
+
+  <div style="display: flex; height: 100%; overflow: hidden; flex: 1;">
+    <!-- 桌面端侧边栏 -->
+    <div class="desktop-sidebar">
+      <div class="sidebar-logo" onclick="goHome()">
+        <h2 id="d-topbar-title">Windows</h2>
+        <span id="t-sidebar-meta">版本指南</span>
+      </div>
+      <div class="nav-menu">
+        <button class="nav-btn active" id="d-btn-detail" onclick="switchView('detail')">详情概览</button>
+        <button class="nav-btn" id="d-btn-cards" onclick="switchView('cards')">并排卡片</button>
+        <button class="nav-btn" id="d-btn-table" onclick="switchView('table')">交叉表格</button>
+        <button class="nav-btn" id="d-btn-version" onclick="switchView('version')">更新历史</button>
+        <button class="nav-btn" id="d-btn-wizard" onclick="switchView('wizard')">智能推荐</button>
+      </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="main-content">
+      <div class="top-chips-area" id="chip-container"></div>
+      <div class="view-container" id="view-container"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ==========================================================================
+   多语言词典 (Dictionary)
+   ========================================================================== */
+const dict = {
+  zh: {
+    portalDesc: '全版本参考手册，一站式对比各版本核心差异与适用场景。',
+    win11Desc: '8 大正式版与 6 代更新时间线 (21H2–26H2)。',
+    win10Desc: '1507 至 22H2 演进历程与多维度特性对比。',
+    sidebarMeta: '版本指南',
+    nav: { detail: '详情概览', cards: '并排卡片', table: '交叉表格', version: '更新历史', wizard: '智能推荐' },
+    ui: {
+      goodFor: '✓ 适合', badFor: '✗ 不适合', notInc: '不包含', note: '注记',
+      diffAnalysis: '差异分析', exclusive: '仅', allCommon: '全部共有',
+      diffBadge: '独占差异项', none: '无', noExclusive: '无独占',
+      tableHeader: '特性比对', authInfo: '授权与定位', authType: '授权方式',
+      targetAudience: '适合人群', channel: '获取渠道',
+      timelineCore: '主要新特性',
+      wizRestart: '重新测试', wizQHeader: '问题', wizBack: '← 上一题'
+    }
+  },
+  en: {
+    portalDesc: 'The ultimate reference guide. Compare features, security, and use cases.',
+    win11Desc: '8 official editions and 6 generations of updates (21H2–26H2).',
+    win10Desc: 'Evolution from 1507 to 22H2. One-click security and deployment comparison.',
+    sidebarMeta: 'Edition Guide',
+    nav: { detail: 'Overview', cards: 'Compare', table: 'Feature Matrix', version: 'History', wizard: 'Advisor' },
+    ui: {
+      goodFor: '✓ Good for', badFor: '✗ Not for', notInc: 'Not included', note: 'Note',
+      diffAnalysis: 'Difference Analysis', exclusive: 'Only in', allCommon: 'Common in all',
+      diffBadge: 'Exclusive diff', none: 'None', noExclusive: 'No exclusives',
+      tableHeader: 'Feature Matrix', authInfo: 'Licensing & Audience', authType: 'Licensing',
+      targetAudience: 'Target Audience', channel: 'Availability',
+      timelineCore: 'Key Features',
+      wizRestart: 'Start Over', wizQHeader: 'Question', wizBack: '← Back'
+    }
+  }
+};
+let lang = 'zh';
+
+/* ==========================================================================
+   全量数据结构 (Full Data Store) 
+   ========================================================================== */
+const db = {
+  zh: {
+    win10: {
+      title: "Windows 10", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2021', iot:'IoT' },
+      editions: {
+        home: { name: 'Windows 10 Home', cn: '家庭版', sub: '个人与家庭用户', stats: [{ label: 'CPU', value: '1 路' }, { label: '内存', value: '128 GB' }, { label: '核心', value: '64' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '个人 / 家庭' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '核心功能', items: ['Windows Hello（人脸 / 指纹 / PIN）','Cortana 语音助手','Xbox Game Bar / Game Mode','WSL Linux 子系统','Snap Assist 窗口辅助','Microsoft Store 应用商店','Live Tiles 动态磁贴','Task View 虚拟桌面'] }, { label: '安全特性', items: ['Windows Defender 防病毒','安全启动 (Secure Boot)','Windows 防火墙','SmartScreen 筛选'] }], notIncluded: ['BitLocker 全盘加密','远程桌面（作为主机）','Hyper-V 虚拟机','域加入 / Azure AD','组策略编辑器','Windows Sandbox'], goodFor: '日常办公、网页浏览、游戏娱乐、影音媒体', badFor: '企业域环境、虚拟化需求、高级安全管控', note: 'Windows 10 Home 不强制 TPM 2.0，安装门槛低于 Windows 11。' },
+        pro: { name: 'Windows 10 Pro', cn: '专业版', sub: '高级用户与小型企业', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '零售 / OEM / VL' }, { label: '适合人群', value: '高级用户 / 小企业' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '加密与安全', items: ['BitLocker 全盘加密','BitLocker To Go（U盘加密）','Windows Sandbox 沙盒','SmartScreen 智能筛选'] }, { label: '虚拟化与远程', items: ['Hyper-V 虚拟机','WSL2 Linux 子系统（增强）','远程桌面（作为主机）','Assigned Access 指定访问'] }, { label: '管理与部署', items: ['域加入 / Azure AD (Entra ID)','组策略编辑器 (gpedit.msc)','Windows Update for Business','Kiosk Mode 展台模式'] }], notIncluded: ['DirectAccess（无 VPN 内网）','AppLocker 应用管控','Credential Guard 凭据保护','Device Guard 内核防护','App-V / UE-V 部署工具','LTSC 长期支持版本'], goodFor: '开发人员、小型企业、需加密和虚拟化的用户', badFor: '中大型企业部署、工控 / 医疗等长期稳定场景', note: 'Windows 10 Pro 是最常用的升级目标版本。' },
+        ws: { name: 'Pro for Workstations', cn: '工作站版', sub: '高性能计算与专业工作站', stats: [{ label: 'CPU', value: '4 路' }, { label: '内存', value: '6 TB' }, { label: '核心', value: '256' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '数据 / 渲染 / 科研' }, { label: '获取渠道', value: 'OEM / 零售' }], sections: [{ label: '包含 Pro 全部 +', items: ['ReFS 弹性文件系统','持久内存 NVDIMM-N','SMB Direct（RDMA 直传）','4 路 CPU 插槽支持','6 TB 最大内存支持','256 核心支持'] }, { label: '适用硬件', items: ['Xeon W / EPYC / Threadripper PRO','ECC 内存支持','企业级 NVMe / SAS 存储阵列'] }], notIncluded: ['DirectAccess','AppLocker 应用管控','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: '数据分析、3D 渲染、科学计算、工程仿真', badFor: '普通消费级电脑（硬件支持无法发挥）', note: '需工作站级硬件才能发挥价值。' },
+        ent: { name: 'Windows 10 Enterprise', cn: '企业版', sub: '中大型组织与 IT 管理员', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '适合人群', value: '中大型企业' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '包含 Pro 全部 +', items: ['DirectAccess（无 VPN 内网接入）','AppLocker（应用白名单管控）','Credential Guard（凭据保护）','Device Guard（内核级防护）','Windows 信息保护 (WIP)','App-V 应用虚拟化','UE-V 用户环境漫游','BranchCache 分支缓存','Application Guard 应用防护','组策略扩展'] }, { label: '独有版本', items: ['可选 LTSC 2021（5 年长期支持）'] }], notIncluded: ['ReFS 弹性文件系统','持久内存 NVDIMM','SMB Direct (RDMA)','4 路 CPU / 6 TB 内存上限'], goodFor: '中大型企业 IT 部署、需要高级安全管控的组织', badFor: '个人用户（功能过剩，授权昂贵）、极限硬件工作站', note: 'Windows 10 企业版于 2025.10.14 停止支持。' },
+        edu: { name: 'Windows 10 Education', cn: '教育版', sub: '学校与教育机构', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权 (M365 Edu)' }, { label: '适合人群', value: '学校 / 教育机构' }, { label: '获取渠道', value: 'M365 Education' }], sections: [{ label: '包含 Enterprise 全部功能', items: ['DirectAccess、AppLocker、Credential Guard','Device Guard、Windows 信息保护 (WIP)','App-V、UE-V、BranchCache','组策略扩展','Application Guard'] }, { label: '教育专属', items: ['Take Test 应用（标准化考试）','教育版默认配置（去 Cortana）','Microsoft Teams 教育版集成','Intune 教育版设备管理'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 路 CPU / 6 TB 内存上限'], goodFor: 'K-12 学校、大学、教育培训机构', badFor: '个人用户、非教育场景（授权限制）', note: '功能等同 Enterprise，通过 Microsoft 365 Education 获取。' },
+        pedu: { name: 'Windows 10 Pro Education', cn: '专业教育版', sub: 'K-12 教育设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权' }, { label: '适合人群', value: 'K-12 学校' }, { label: '获取渠道', value: '教育商店 / OEM' }], sections: [{ label: '基于 Pro + 教育配置', items: ['包含 Pro 全部功能','教育版默认配置（去 Cortana）','Microsoft Store 教育版筛选','Take Test 应用','Intune 教育版支持','简化部署与设备管理'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: 'K-12 学校的课堂设备、图书馆电脑', badFor: '高等教育（建议用 Education）、企业场景', note: '通常随 OEM 教育设备预装。' },
+        ltsc: { name: 'Enterprise LTSC 2021', cn: '企业长期服务版', sub: '工控 / 医疗 / 稳定环境', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '支持周期', value: '5 年质量更新' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部安全功能','5 年长期质量更新（无功能更新）','无 Microsoft Store（默认）','无 Cortana','无 Edge 浏览器（默认）','无功能更新推送','极度精简，系统稳定'] }, { label: '适用场景', items: ['工控机 / 生产线','医疗设备 / ATM','数字标牌 / 信息亭','航空 / 国防系统'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','功能更新（仅安全更新）','Microsoft Store（默认）'], goodFor: '需要长期稳定运行的专用设备、不能频繁更新的场景', badFor: '日常办公、需要最新功能的用户', note: '基于 Windows 10 21H2，支持至 2027 年 1 月。' },
+        iot: { name: 'IoT Enterprise', cn: '物联网企业版', sub: '嵌入式 / IoT 设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: 'OEM / 嵌入式授权' }, { label: '支持周期', value: '10 年（扩展）' }, { label: '获取渠道', value: 'IoT 分发渠道' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部功能','10 年扩展支持周期','Assigned Access（Kiosk 模式）','无声更新 / 自动维护窗口','设备锁定与写筛选 (UWF)','嵌入式启动优化','低功耗运行支持'] }, { label: '适用场景', items: ['数字标牌 / 广告屏','自助终端 / Kiosk','工业控制器','智能零售设备','医疗仪器面板'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store（默认）'], goodFor: 'IoT 设备、嵌入式系统、需要长期运行的专用终端', badFor: '普通桌面电脑、需要频繁更新的场景', note: '支持周期 10 年，LTSC 2021 支持至 2032 年。' }
+      },
+      features: [
+        { cat: '基础功能', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Cortana 语音助手', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'WSL Linux', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Snap Assist', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'Xbox Game Bar', v:[1,1,1,1,1,1,0,0] },
+        { cat: '安全与加密', name: 'BitLocker 加密', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: '信息保护 WIP', v:[0,0,0,1,1,0,1,1] },
+        { cat: '管理与部署', name: '域加入 / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '组策略', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '远程桌面主机', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
+        { cat: '工作站', name: 'ReFS 文件系统', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: '持久内存 NVDIMM', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
+        { cat: '特殊', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: '特殊', name: 'LTSC 长期支持', v:[0,0,0,1,0,0,1,0] }, { cat: '特殊', name: '10 年支持周期', v:[0,0,0,0,0,0,0,1] }
+      ],
+      versions: [
+        { label: '1507', name: 'Windows 10 1507', build: '10240', release: '2015.07.29', statusText: '已停止支持', color: '#94a3b8', features: ['全新开始菜单（磁贴设计）','Cortana 语音助手','Microsoft Edge 浏览器','Task View 虚拟桌面','Xbox Game Bar','Windows Hello 生物识别','Continuum 平板模式','Action Center 通知中心','WSL Linux 子系统（预览）'], note: 'Windows 10 首发版本，回归开始菜单并引入全新 UI 设计语言。' },
+        { label: '1607', name: 'Windows 10 1607', build: '14393', release: '2016.08.02', statusText: '已停止支持', color: '#94a3b8', features: ['Windows Ink 手写笔记','Bash on Ubuntu（WSL 正式版）','Edge 浏览器扩展支持','Windows Defender 改进','生物识别增强','暗色主题模式','开始菜单改进','通知中心改进'], note: '周年更新，WSL 正式上线。LTSB 2016 基于此版本。' },
+        { label: '1809', name: 'Windows 10 1809', build: '17763', release: '2018.11.13', statusText: 'Home/Pro 已停', color: '#f59e0b', features: ['剪贴板历史记录','云剪贴板同步','暗色主题文件管理器','截图工具改进','Your Phone 手机连接','搜索预览面板','Storage Sense 自动清理','Windows Sandbox 沙盒'], note: '十月更新。LTSC 2019 基于此版本，支持至 2029 年。' },
+        { label: '2004', name: 'Windows 10 2004', build: '19041', release: '2020.05.27', statusText: '已停止支持', color: '#94a3b8', features: ['WSL2 架构升级','Cortana 转型为独立应用','GPU 温度监控','改进虚拟桌面命名','OneDrive 按需文件','网络重置功能','蓝牙改进'], note: 'WSL2 引入完整 Linux 内核。' },
+        { label: '22H2', name: 'Windows 10 22H2', build: '19045', release: '2022.10.18', statusText: '最终版本', color: '#10b981', features: ['最终功能更新版本','性能与稳定性优化','安全补丁累积','企业部署工具改进','打印管理增强','Defender 改进','兼容性修复'], note: 'Windows 10 最后一个功能更新版本。所有版本将于 2025.10.14 统一停止支持。' }
+      ]
+    },
+    win11: {
+      title: "Windows 11", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2024', iot:'IoT' },
+      editions: {
+        home: { name: 'Windows 11 Home', cn: '家庭版', sub: '个人与家庭用户', stats: [{ label: 'CPU', value: '1 路' }, { label: '内存', value: '128 GB' }, { label: '核心', value: '64' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '个人 / 家庭' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '核心功能', items: ['Windows Hello（人脸 / 指纹 / PIN）','Windows Defender 安全中心','Xbox Game Pass / Game Bar','WSL2 Linux 子系统','Snap Layouts 窗口布局','Microsoft Store 应用商店','Copilot AI 助手','Focus Sessions 专注模式','Voice Access 语音控制'] }, { label: '安全特性', items: ['Windows Defender 防病毒','安全启动 (Secure Boot)','TPM 2.0 支持','Smart App Control'] }], notIncluded: ['BitLocker 全盘加密','远程桌面（作为主机）','Hyper-V 虚拟机','域加入 / Azure AD','组策略编辑器','Windows Sandbox'], goodFor: '日常办公、网页浏览、游戏娱乐、影音媒体', badFor: '企业域环境、虚拟化需求、高级安全管控', note: 'Windows 11 Home 强制需要网络连接和 Microsoft 账户来完成设备设置。' },
+        pro: { name: 'Windows 11 Pro', cn: '专业版', sub: '高级用户与小型企业', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '零售 / OEM / VL' }, { label: '适合人群', value: '高级用户 / 小企业' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '加密与安全', items: ['BitLocker 全盘加密','BitLocker To Go（U盘加密）','Windows Sandbox 沙盒','Smart App Control 智能应用控制'] }, { label: '虚拟化与远程', items: ['Hyper-V 虚拟机','WSL2 Linux 子系统（增强）','远程桌面（作为主机）','Assigned Access 指定访问'] }, { label: '管理与部署', items: ['域加入 / Azure AD (Entra ID)','组策略编辑器 (gpedit.msc)','Windows Update for Business','Kiosk Mode 展台模式'] }], notIncluded: ['DirectAccess（无 VPN 内网）','AppLocker 应用管控','Credential Guard 凭据保护','Device Guard 内核防护','App-V / UE-V 部署工具','LTSC 长期支持版本'], goodFor: '开发人员、小型企业、需加密和虚拟化的用户', badFor: '中大型企业部署、工控 / 医疗等长期稳定场景', note: '允许使用本地账户设置（相对 Home 而言更容易绕过限制）。' },
+        ws: { name: 'Pro for Workstations', cn: '工作站版', sub: '高性能计算与专业工作站', stats: [{ label: 'CPU', value: '4 路' }, { label: '内存', value: '6 TB' }, { label: '核心', value: '256' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '数据 / 渲染 / 科研' }, { label: '获取渠道', value: 'OEM / 零售' }], sections: [{ label: '包含 Pro 全部 +', items: ['ReFS 弹性文件系统','持久内存 NVDIMM-N','SMB Direct（RDMA 直传）','4 路 CPU 插槽支持','6 TB 最大内存支持','256 核心支持'] }, { label: '适用硬件', items: ['Xeon W / EPYC / Threadripper PRO','ECC 内存支持','企业级 NVMe / SAS 存储阵列'] }], notIncluded: ['DirectAccess','AppLocker 应用管控','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: '数据分析、3D 渲染、科学计算、工程仿真', badFor: '普通消费级电脑（硬件支持无法发挥）', note: '需工作站级硬件才能发挥价值。' },
+        ent: { name: 'Windows 11 Enterprise', cn: '企业版', sub: '中大型组织与 IT 管理员', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '适合人群', value: '中大型企业' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '包含 Pro 全部 +', items: ['DirectAccess（无 VPN 内网接入）','AppLocker（应用白名单管控）','Credential Guard（凭据保护）','Device Guard（内核级防护）','Windows 信息保护 (WIP)','App-V 应用虚拟化','UE-V 用户环境漫游','BranchCache 分支缓存','组策略扩展','Defender for Endpoint Plan 2'] }, { label: '独有版本', items: ['可选 LTSC 2024（5 年长期支持）'] }], notIncluded: ['ReFS 弹性文件系统','持久内存 NVDIMM','SMB Direct (RDMA)','4 路 CPU / 6 TB 内存上限'], goodFor: '中大型企业 IT 部署、需要高级安全管控的组织', badFor: '个人用户（功能过剩，授权昂贵）、极限硬件工作站', note: '通过 VLSC 批量授权获取。' },
+        edu: { name: 'Windows 11 Education', cn: '教育版', sub: '学校与教育机构', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权 (M365 Edu)' }, { label: '适合人群', value: '学校 / 教育机构' }, { label: '获取渠道', value: 'M365 Education' }], sections: [{ label: '包含 Enterprise 全部功能', items: ['DirectAccess、AppLocker、Credential Guard','Device Guard、Windows 信息保护 (WIP)','App-V、UE-V、BranchCache','组策略扩展','Defender for Endpoint'] }, { label: '教育专属', items: ['Take Test 应用（标准化考试）','教育版默认配置（去 Cortana）','Microsoft Teams 教育版集成','Intune 教育版设备管理'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 路 CPU / 6 TB 内存上限'], goodFor: 'K-12 学校、大学、教育培训机构', badFor: '个人用户、非教育场景（授权限制）', note: '功能等同 Enterprise，面向教育机构免费或低价。' },
+        pedu: { name: 'Windows 11 Pro Education', cn: '专业教育版', sub: 'K-12 教育设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权' }, { label: '适合人群', value: 'K-12 学校' }, { label: '获取渠道', value: '教育商店 / OEM' }], sections: [{ label: '基于 Pro + 教育配置', items: ['包含 Pro 全部功能','教育版默认配置（无游戏应用推广）','Microsoft Store 教育版筛选','Take Test 应用','Intune 教育版支持','简化部署与设备管理'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: 'K-12 学校的课堂设备、图书馆电脑', badFor: '高等教育（建议用 Education）、企业场景', note: '通常随 OEM 教育设备预装。' },
+        ltsc: { name: 'Enterprise LTSC 2024', cn: '企业长期服务版', sub: '工控 / 医疗 / 稳定环境', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '支持周期', value: '5 年质量更新' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部安全功能','5 年长期质量更新（无功能更新）','无 Microsoft Store（默认）','无 Edge 浏览器（默认，可手动装）','无 Copilot 和原生 AI 组件','无功能更新推送','极度精简，系统稳定'] }, { label: '适用场景', items: ['工控机 / 生产线','医疗设备 / ATM','数字标牌 / 信息亭','航空 / 国防系统'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','功能更新（仅安全更新）','Microsoft Store（默认）'], goodFor: '需要长期稳定运行的专用设备、不能频繁更新的场景', badFor: '日常办公、需要最新功能的用户', note: '基于 Windows 11 24H2，支持至 2029 年。' },
+        iot: { name: 'IoT Enterprise', cn: '物联网企业版', sub: '嵌入式 / IoT 设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: 'OEM / 嵌入式授权' }, { label: '支持周期', value: '10 年（扩展）' }, { label: '获取渠道', value: 'IoT 分发渠道' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部功能','10 年扩展支持周期','Assigned Access（Kiosk 模式）','无声更新 / 自动维护窗口','设备锁定与写筛选 (UWF)','嵌入式启动优化','低功耗运行支持'] }, { label: '适用场景', items: ['数字标牌 / 广告屏','自助终端 / Kiosk','工业控制器','智能零售设备','医疗仪器面板'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store（默认）'], goodFor: 'IoT 设备、嵌入式系统、需要长期运行的专用终端', badFor: '普通桌面电脑、需要频繁更新的场景', note: '分为 LTSC 2024 和 SAC 两个子版本。' }
+      },
+      features: [
+        { cat: '基础功能', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Xbox Game Pass', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'WSL2 Linux', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Snap Layouts', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'Copilot AI', v:[1,1,1,1,1,1,0,0] },
+        { cat: '安全与加密', name: 'BitLocker 加密', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: '信息保护 WIP', v:[0,0,0,1,1,0,1,1] },
+        { cat: '管理与部署', name: '域加入 / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '组策略', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '远程桌面主机', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
+        { cat: '工作站', name: 'ReFS 文件系统', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: '持久内存 NVDIMM', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
+        { cat: '特殊', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: '特殊', name: 'LTSC 长期支持', v:[0,0,0,1,0,0,1,0] }, { cat: '特殊', name: '10 年支持周期', v:[0,0,0,0,0,0,0,1] }
+      ],
+      versions: [
+        { label: '21H2', name: 'Windows 11 21H2', build: '22000', release: '2021.10.04', statusText: '已停止支持', color: '#94a3b8', features: ['全新开始菜单（居中设计）','圆角窗口 + Mica 材质','Snap Layouts 窗口布局','WSLg GUI Linux 应用','Auto HDR 游戏增强','DirectStorage 游戏加速','Android 应用支持 (WSA)'], note: 'Windows 11 首发版本。' },
+        { label: '22H2', name: 'Windows 11 22H2', build: '22621', release: '2022.09.20', statusText: 'Home/Pro 已停', color: '#f59e0b', features: ['文件资源管理器标签页','任务栏溢出菜单','开始菜单文件夹分组','全新任务管理器设计','Voice Access 语音控制','实时字幕 (Live Captions)'], note: '功能更新，基于 21H2 平台。' },
+        { label: '23H2', name: 'Windows 11 23H2', build: '22631', release: '2023.10.31', statusText: '支持中', color: '#3b82f6', features: ['Copilot AI 助手集成','Windows Backup 备份恢复','设置应用重新分类','RGB 灯效控制','截图工具支持屏幕录制','Notepad 标签页'], note: '启用包更新（22621→22631）。' },
+        { label: '24H2', name: 'Windows 11 24H2', build: '26100', release: '2024.10.01', statusText: '当前版本', color: '#10b981', features: ['Sudo for Windows 命令行','Rust 代码进入内核','Wi-Fi 7 支持','原生压缩格式 (7z/RAR/tar)','Energy Saver 节能模式','蓝牙 LE Audio'], note: '全新构建，内核升级。LTSC 2024 基于此版本。' },
+        { label: '25H2', name: 'Windows 11 25H2', build: '26200', release: '2025.10', statusText: '当前稳定版', color: '#10b981', features: ['Copilot+ PC 深度集成','Recall 时间线回溯','本地 AI 模型运行 (NPU)','Cocreator 本地 AI 绘画','Live Captions 实时翻译'], note: '面向 AI PC 时代的更新，深度整合 NPU。' },
+        { label: '26H2', name: 'Windows 11 26H2', build: '27000+', release: '2026.10', statusText: '最新发布', color: '#d946ef', features: ['系统级 AI Agent 全局接管','混合算力无缝调度 (Cloud + NPU)','全新现代化资源管理器底座','沉浸式跨设备协同体验','下一代能效与性能调度'], note: '2026 年度重大更新，标志着 Windows 正式跨入 AI Agent 智能系统时代。' }
+      ]
+    }
+  },
+  en: {
+    win10: {
+      title: "Windows 10", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2021', iot:'IoT' },
+      editions: {
+        home: { name: 'Windows 10 Home', cn: 'Home Edition', sub: 'For personal and household use', stats: [{ label: 'CPU', value: '1' }, { label: 'RAM', value: '128 GB' }, { label: 'Cores', value: '64' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Consumers / Home' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Core Features', items: ['Windows Hello (Face / Fingerprint / PIN)','Cortana Assistant','Xbox Game Bar / Game Mode','WSL Linux Subsystem','Snap Assist','Microsoft Store','Live Tiles','Task View'] }, { label: 'Security', items: ['Windows Defender Antivirus','Secure Boot','Windows Firewall','SmartScreen'] }], notIncluded: ['BitLocker Drive Encryption','Remote Desktop (Host)','Hyper-V','Domain Join / Azure AD','Group Policy Editor','Windows Sandbox'], goodFor: 'Daily tasks, web browsing, gaming, media consumption.', badFor: 'Corporate environments, advanced virtualization, tight security needs.', note: 'Windows 10 Home does not enforce TPM 2.0.' },
+        pro: { name: 'Windows 10 Pro', cn: 'Professional', sub: 'For power users and small businesses', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Retail / OEM / VL' }, { label: 'Target Audience', value: 'Power Users / SMBs' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Security & Encryption', items: ['BitLocker Drive Encryption','BitLocker To Go','Windows Sandbox','SmartScreen'] }, { label: 'Virtualization & Remote', items: ['Hyper-V','WSL2 (Enhanced)','Remote Desktop (Host)','Assigned Access'] }, { label: 'Management & Deployment', items: ['Domain Join / Azure AD','Group Policy Editor','Windows Update for Business','Kiosk Mode'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard','Device Guard','App-V / UE-V','LTSC Channel'], goodFor: 'Developers, small businesses, users needing encryption.', badFor: 'Large enterprise deployments, critical infrastructure.', note: 'Windows 10 Pro is the most common upgrade target.' },
+        ws: { name: 'Pro for Workstations', cn: 'Workstations', sub: 'For high-performance computing', stats: [{ label: 'CPU', value: '4' }, { label: 'RAM', value: '6 TB' }, { label: 'Cores', value: '256' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Data / Rendering / Science' }, { label: 'Availability', value: 'OEM / Retail' }], sections: [{ label: 'Includes all Pro +', items: ['ReFS (Resilient File System)','NVDIMM-N Support','SMB Direct (RDMA)','4 CPU Sockets Support','6 TB RAM Support','256 Cores Support'] }, { label: 'Target Hardware', items: ['Xeon W / EPYC / Threadripper PRO','ECC Memory Support','Enterprise NVMe / SAS'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'Data analysis, 3D rendering, scientific computing.', badFor: 'Standard consumer PCs (hardware won\'t benefit).', note: 'Requires workstation-grade hardware to realize its value.' },
+        ent: { name: 'Windows 10 Enterprise', cn: 'Enterprise', sub: 'For large organizations and IT pros', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Target Audience', value: 'Large Enterprises' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Includes all Pro +', items: ['DirectAccess','AppLocker','Credential Guard','Device Guard','Windows Information Protection (WIP)','App-V','UE-V','BranchCache','Application Guard','Advanced Group Policy'] }, { label: 'Exclusive Channels', items: ['Optional LTSC 2021 (5-year support)'] }], notIncluded: ['ReFS','NVDIMM','SMB Direct (RDMA)','4 CPUs / 6 TB RAM limit'], goodFor: 'Large enterprise IT deployments, advanced security needs.', badFor: 'Home users (overkill, expensive), extreme hardware workstations.', note: 'Support for Windows 10 Enterprise ends Oct 14, 2025.' },
+        edu: { name: 'Windows 10 Education', cn: 'Education', sub: 'For schools and institutions', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education (M365 Edu)' }, { label: 'Target Audience', value: 'Schools / Universities' }, { label: 'Availability', value: 'M365 Education' }], sections: [{ label: 'Includes all Enterprise', items: ['DirectAccess, AppLocker, Credential Guard','Device Guard, WIP','App-V, UE-V, BranchCache','Advanced Group Policy, Application Guard'] }, { label: 'Education Exclusives', items: ['Take a Test app','Education default settings (no Cortana)','Microsoft Teams for Education integration','Intune for Education support'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 CPUs / 6 TB RAM limit'], goodFor: 'K-12 schools, universities, training institutions.', badFor: 'General consumers, non-education environments.', note: 'Functionally identical to Enterprise, available via Microsoft 365 Education.' },
+        pedu: { name: 'Windows 10 Pro Education', cn: 'Pro Education', sub: 'For K-12 devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education' }, { label: 'Target Audience', value: 'K-12 Schools' }, { label: 'Availability', value: 'Edu Store / OEM' }], sections: [{ label: 'Based on Pro + Edu Config', items: ['Includes all Pro features','Education default settings (no Cortana)','Microsoft Store for Education curation','Take a Test app','Intune for Education support','Simplified deployment'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'K-12 classroom devices, library PCs.', badFor: 'Higher education (use Education edition), corporate networks.', note: 'Typically pre-installed on OEM devices for schools.' },
+        ltsc: { name: 'Enterprise LTSC 2021', cn: 'Long-Term Servicing', sub: 'For mission-critical & stable environments', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Support Lifecycle', value: '5 Years Quality Updates' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise security features','5 years of long-term servicing (no feature updates)','No Microsoft Store (by default)','No Cortana','No Edge browser (by default)','No forced feature upgrades','Extremely clean and stable'] }, { label: 'Use Cases', items: ['Industrial PCs / Manufacturing','Medical equipment / ATMs','Digital signage / Kiosks','Aviation / Defense systems'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Feature Updates','Microsoft Store (default)'], goodFor: 'Devices requiring long-term stability without feature changes.', badFor: 'Daily office use, users wanting the latest features.', note: 'Based on Windows 10 21H2, supported until Jan 2027.' },
+        iot: { name: 'IoT Enterprise', cn: 'Internet of Things', sub: 'For embedded / IoT devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'OEM / Embedded' }, { label: 'Support Lifecycle', value: '10 Years (Extended)' }, { label: 'Availability', value: 'IoT Distributors' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise features','10 years extended support lifecycle','Assigned Access (Kiosk Mode)','Silent updates / Maintenance windows','Device lockdown and Unified Write Filter (UWF)','Embedded boot optimizations','Low power operation support'] }, { label: 'Use Cases', items: ['Digital Signage','Self-service Kiosks','Industrial Controllers','Smart Retail Devices','Medical Instrumentation'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store (default)'], goodFor: 'IoT devices, embedded systems, dedicated terminals.', badFor: 'Standard desktop PCs, scenarios requiring frequent updates.', note: 'Supported for 10 years (LTSC 2021 supported until 2032).' }
+      },
+      features: [
+        { cat: 'Basics', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Cortana Assistant', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'WSL Linux', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Snap Assist', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'Xbox Game Bar', v:[1,1,1,1,1,1,0,0] },
+        { cat: 'Security', name: 'BitLocker Encryption', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'WIP Protection', v:[0,0,0,1,1,0,1,1] },
+        { cat: 'Management', name: 'Domain / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Group Policy', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Remote Desktop (Host)', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
+        { cat: 'Workstation', name: 'ReFS File System', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'NVDIMM Memory', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
+        { cat: 'Special', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: 'Special', name: 'LTSC Support', v:[0,0,0,1,0,0,1,0] }, { cat: 'Special', name: '10-Year Lifecycle', v:[0,0,0,0,0,0,0,1] },
+        { cat: 'Hardware Limits', name: 'CPU Sockets', v:['1','2','4','2','2','2','2','2'] }, { cat: 'Hardware Limits', name: 'Max RAM', v:['128GB','2TB','6TB','2TB','2TB','2TB','2TB','2TB'] }
+      ],
+      versions: [
+        { label: '1507', name: 'Windows 10 1507', build: '10240', release: '2015.07.29', statusText: 'End of Support', color: '#94a3b8', features: ['New Start Menu (Live Tiles)','Cortana Assistant','Microsoft Edge browser','Task View virtual desktops','Xbox Game Bar','Windows Hello biometrics','Continuum tablet mode','Action Center','WSL Linux Subsystem (Preview)'], note: 'The initial release of Windows 10, bringing back the Start menu and introducing a new UI.' },
+        { label: '1607', name: 'Windows 10 1607', build: '14393', release: '2016.08.02', statusText: 'End of Support', color: '#94a3b8', features: ['Windows Ink workspace','Bash on Ubuntu (WSL Stable)','Edge browser extensions','Windows Defender improvements','Biometric enhancements','Dark theme mode','Start menu tweaks','Action Center improvements'], note: 'Anniversary Update. LTSB 2016 is based on this version.' },
+        { label: '1809', name: 'Windows 10 1809', build: '17763', release: '2018.11.13', statusText: 'Home/Pro EOS', color: '#f59e0b', features: ['Clipboard history','Cloud clipboard sync','Dark theme for File Explorer','Snipping tool improvements','Your Phone app integration','Search preview pane','Storage Sense updates','Windows Sandbox'], note: 'October 2018 Update. LTSC 2019 is based on this version (supported until 2029).' },
+        { label: '2004', name: 'Windows 10 2004', build: '19041', release: '2020.05.27', statusText: 'End of Support', color: '#94a3b8', features: ['WSL2 architecture upgrade','Cortana becomes a standalone app','GPU temperature monitoring','Virtual desktop renaming','OneDrive Files On-Demand','Network reset feature','Bluetooth improvements'], note: 'WSL2 introduces a full Linux kernel.' },
+        { label: '22H2', name: 'Windows 10 22H2', build: '19045', release: '2022.10.18', statusText: 'Final Version', color: '#10b981', features: ['Final feature update','Performance & stability optimizations','Cumulative security patches','Enterprise deployment tools updates','Print management enhancements','Defender improvements','Compatibility fixes'], note: 'The final feature update for Windows 10. All editions reach End of Support on Oct 14, 2025.' }
+      ]
+    },
+    win11: {
+      title: "Windows 11", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2024', iot:'IoT' },
+      editions: {
+        home: { name: 'Windows 11 Home', cn: 'Home Edition', sub: 'For personal and household use', stats: [{ label: 'CPU', value: '1' }, { label: 'RAM', value: '128 GB' }, { label: 'Cores', value: '64' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Consumers / Home' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Core Features', items: ['Windows Hello (Face / Fingerprint / PIN)','Windows Defender Security Center','Xbox Game Pass / Game Bar','WSL2 Linux Subsystem','Snap Layouts','Microsoft Store','Copilot AI Assistant','Focus Sessions','Voice Access'] }, { label: 'Security', items: ['Windows Defender Antivirus','Secure Boot','TPM 2.0 Support','Smart App Control'] }], notIncluded: ['BitLocker Drive Encryption','Remote Desktop (Host)','Hyper-V','Domain Join / Azure AD','Group Policy Editor','Windows Sandbox'], goodFor: 'Daily tasks, web browsing, gaming, media consumption.', badFor: 'Corporate environments, advanced virtualization, tight security needs.', note: 'Windows 11 Home requires internet connectivity and a Microsoft Account for initial setup.' },
+        pro: { name: 'Windows 11 Pro', cn: 'Professional', sub: 'For power users and small businesses', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Retail / OEM / VL' }, { label: 'Target Audience', value: 'Power Users / SMBs' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Security & Encryption', items: ['BitLocker Drive Encryption','BitLocker To Go','Windows Sandbox','Smart App Control'] }, { label: 'Virtualization & Remote', items: ['Hyper-V','WSL2 (Enhanced)','Remote Desktop (Host)','Assigned Access'] }, { label: 'Management & Deployment', items: ['Domain Join / Azure AD','Group Policy Editor','Windows Update for Business','Kiosk Mode'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard','Device Guard','App-V / UE-V','LTSC Channel'], goodFor: 'Developers, small businesses, users needing encryption.', badFor: 'Large enterprise deployments, critical infrastructure.', note: 'Allows setting up with a local account (easier to bypass network requirements than Home).' },
+        ws: { name: 'Pro for Workstations', cn: 'Workstations', sub: 'For high-performance computing', stats: [{ label: 'CPU', value: '4' }, { label: 'RAM', value: '6 TB' }, { label: 'Cores', value: '256' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Data / Rendering / Science' }, { label: 'Availability', value: 'OEM / Retail' }], sections: [{ label: 'Includes all Pro +', items: ['ReFS (Resilient File System)','NVDIMM-N Support','SMB Direct (RDMA)','4 CPU Sockets Support','6 TB RAM Support','256 Cores Support'] }, { label: 'Target Hardware', items: ['Xeon W / EPYC / Threadripper PRO','ECC Memory Support','Enterprise NVMe / SAS'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'Data analysis, 3D rendering, scientific computing.', badFor: 'Standard consumer PCs (hardware won\'t benefit).', note: 'Requires workstation-grade hardware to realize its value.' },
+        ent: { name: 'Windows 11 Enterprise', cn: 'Enterprise', sub: 'For large organizations and IT pros', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Target Audience', value: 'Large Enterprises' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Includes all Pro +', items: ['DirectAccess','AppLocker','Credential Guard','Device Guard','Windows Information Protection (WIP)','App-V','UE-V','BranchCache','Advanced Group Policy','Defender for Endpoint Plan 2'] }, { label: 'Exclusive Channels', items: ['Optional LTSC 2024 (5-year support)'] }], notIncluded: ['ReFS','NVDIMM','SMB Direct (RDMA)','4 CPUs / 6 TB RAM limit'], goodFor: 'Large enterprise IT deployments, advanced security needs.', badFor: 'Home users (overkill, expensive), extreme hardware workstations.', note: 'Available via Volume Licensing.' },
+        edu: { name: 'Windows 11 Education', cn: 'Education', sub: 'For schools and institutions', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education (M365 Edu)' }, { label: 'Target Audience', value: 'Schools / Universities' }, { label: 'Availability', value: 'M365 Education' }], sections: [{ label: 'Includes all Enterprise', items: ['DirectAccess, AppLocker, Credential Guard','Device Guard, WIP','App-V, UE-V, BranchCache','Advanced Group Policy','Defender for Endpoint'] }, { label: 'Education Exclusives', items: ['Take a Test app','Education default settings (no Cortana)','Microsoft Teams for Education integration','Intune for Education support'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 CPUs / 6 TB RAM limit'], goodFor: 'K-12 schools, universities, training institutions.', badFor: 'General consumers, non-education environments.', note: 'Functionally identical to Enterprise, available via Microsoft 365 Education.' },
+        pedu: { name: 'Windows 11 Pro Education', cn: 'Pro Education', sub: 'For K-12 devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education' }, { label: 'Target Audience', value: 'K-12 Schools' }, { label: 'Availability', value: 'Edu Store / OEM' }], sections: [{ label: 'Based on Pro + Edu Config', items: ['Includes all Pro features','Education default settings (fewer ad apps)','Microsoft Store for Education curation','Take a Test app','Intune for Education support','Simplified deployment'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'K-12 classroom devices, library PCs.', badFor: 'Higher education (use Education edition), corporate networks.', note: 'Typically pre-installed on OEM devices for schools.' },
+        ltsc: { name: 'Enterprise LTSC 2024', cn: 'Long-Term Servicing', sub: 'For mission-critical & stable environments', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Support Lifecycle', value: '5 Years Quality Updates' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise security features','5 years of long-term servicing (no feature updates)','No Microsoft Store (by default)','No Edge browser (by default)','No Copilot or native AI components','No forced feature upgrades','Extremely clean and stable'] }, { label: 'Use Cases', items: ['Industrial PCs / Manufacturing','Medical equipment / ATMs','Digital signage / Kiosks','Aviation / Defense systems'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Feature Updates','Microsoft Store (default)'], goodFor: 'Devices requiring long-term stability without AI features.', badFor: 'Daily office use, users wanting the latest features.', note: 'Based on Windows 11 24H2, supported until 2029.' },
+        iot: { name: 'IoT Enterprise', cn: 'Internet of Things', sub: 'For embedded / IoT devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'OEM / Embedded' }, { label: 'Support Lifecycle', value: '10 Years (Extended)' }, { label: 'Availability', value: 'IoT Distributors' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise features','10 years extended support lifecycle','Assigned Access (Kiosk Mode)','Silent updates / Maintenance windows','Device lockdown and Unified Write Filter (UWF)','Embedded boot optimizations','Low power operation support'] }, { label: 'Use Cases', items: ['Digital Signage','Self-service Kiosks','Industrial Controllers','Smart Retail Devices','Medical Instrumentation'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store (default)'], goodFor: 'IoT devices, embedded systems, dedicated terminals.', badFor: 'Standard desktop PCs, scenarios requiring frequent updates.', note: 'Available in LTSC 2024 and SAC channels.' }
+      },
+      features: [
+        { cat: 'Basics', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Xbox Game Pass', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'WSL2 Linux', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Snap Layouts', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'Copilot AI', v:[1,1,1,1,1,1,0,0] },
+        { cat: 'Security', name: 'BitLocker Encryption', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'WIP Protection', v:[0,0,0,1,1,0,1,1] },
+        { cat: 'Management', name: 'Domain / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Group Policy', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Remote Desktop (Host)', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
+        { cat: 'Workstation', name: 'ReFS File System', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'NVDIMM Memory', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
+        { cat: 'Special', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: 'Special', name: 'LTSC Support', v:[0,0,0,1,0,0,1,0] }, { cat: 'Special', name: '10-Year Lifecycle', v:[0,0,0,0,0,0,0,1] },
+        { cat: 'Hardware Limits', name: 'CPU Sockets', v:['1','2','4','2','2','2','2','2'] }, { cat: 'Hardware Limits', name: 'Max RAM', v:['128GB','2TB','6TB','2TB','2TB','2TB','2TB','2TB'] }
+      ],
+      versions: [
+        { label: '21H2', name: 'Windows 11 21H2', build: '22000', release: '2021.10.04', statusText: 'End of Support', color: '#94a3b8', features: ['New centered Start menu','Rounded corners & Mica material','Snap Layouts','WSLg (GUI Linux apps)','Auto HDR for gaming','DirectStorage API','Android apps support (WSA)'], note: 'Initial release of Windows 11.' },
+        { label: '22H2', name: 'Windows 11 22H2', build: '22621', release: '2022.09.20', statusText: 'Home/Pro EOS', color: '#f59e0b', features: ['File Explorer tabs','Taskbar overflow menu','Start menu folders','New Task Manager design','Voice Access control','Live Captions'], note: 'Feature update based on 21H2 platform.' },
+        { label: '23H2', name: 'Windows 11 23H2', build: '22631', release: '2023.10.31', statusText: 'Supported', color: '#3b82f6', features: ['Copilot AI integration','Windows Backup app','Settings app reorganization','Dynamic Lighting (RGB)','Snipping Tool screen recording','Notepad tabs'], note: 'Enablement package update (22621→22631).' },
+        { label: '24H2', name: 'Windows 11 24H2', build: '26100', release: '2024.10.01', statusText: 'Current Version', color: '#10b981', features: ['Sudo for Windows','Rust code in kernel','Wi-Fi 7 Support','Native archive support (7z/RAR/tar)','Energy Saver mode','Bluetooth LE Audio'], note: 'Full OS swap with kernel upgrades. LTSC 2024 is based on this.' },
+        { label: '25H2', name: 'Windows 11 25H2', build: '26200', release: '2025.10', statusText: 'Current Stable', color: '#10b981', features: ['Deep Copilot+ PC integration','Recall timeline','Local AI model inference (NPU)','Cocreator local AI generation','Live Captions translation'], note: 'AI PC era update, deep NPU integration.' },
+        { label: '26H2', name: 'Windows 11 26H2', build: '27000+', release: '2026.10', statusText: 'Latest Release', color: '#d946ef', features: ['System-wide AI Agent takeover','Hybrid compute scheduling (Cloud+NPU)','Modernized File Explorer base','Immersive cross-device experience','Next-gen power efficiency'], note: '2026 major update, marking the era of AI Agent operating systems.' }
+      ]
+    }
+  }
+};
+
+const quiz = {
+  zh: [
+    { q: '这台电脑主要用来做什么？', opts: [{ label: '日常办公 / 游戏 / 影音', s: { home: 3, pro: 1 } }, { label: '开发 / 技术 / 测试', s: { pro: 3, ent: 1, ws: 1 } }, { label: '企业办公 / 域网络', s: { ent: 3, pro: 1, edu: 1 } }, { label: '数据分析 / 3D 渲染 / 科研', s: { ws: 3, pro: 1 } }, { label: '学校 / 教育机构', s: { edu: 3, pedu: 2 } }, { label: '工控 / 医疗 / 嵌入式设备', s: { ltsc: 2, iot: 3 } }] },
+    { q: '你需要 BitLocker 全盘加密吗？', opts: [{ label: '需要', s: { pro: 2, ent: 2, ws: 2, edu: 2 } }, { label: '不需要', s: { home: 2, pedu: 1 } }] },
+    { q: '你需要 Hyper-V 虚拟机或 Windows Sandbox 吗？', opts: [{ label: '需要', s: { pro: 2, ent: 1, ws: 1, edu: 1 } }, { label: '不需要', s: { home: 2, pedu: 1 } }] },
+    { q: '这台电脑会加入企业域 (Active Directory) 吗？', opts: [{ label: '会，中大型企业', s: { ent: 3, edu: 1 } }, { label: '会，小型企业', s: { pro: 2 } }, { label: '不会', s: { home: 2 } }] },
+    { q: '你对系统功能更新的态度？', opts: [{ label: '保持最新，喜欢新功能', s: { home: 2, pro: 2 } }, { label: '只要安全更新，不要新功能', s: { ltsc: 3, iot: 1 } }, { label: '无所谓', s: { pro: 1, ent: 1 } }] }
+  ],
+  en: [
+    { q: 'What is the primary use of this PC?', opts: [{ label: 'Daily office / Gaming / Media', s: { home: 3, pro: 1 } }, { label: 'Development / Tech / Testing', s: { pro: 3, ent: 1, ws: 1 } }, { label: 'Corporate Office / Domain', s: { ent: 3, pro: 1, edu: 1 } }, { label: 'Data Analysis / 3D / Science', s: { ws: 3, pro: 1 } }, { label: 'School / Education', s: { edu: 3, pedu: 2 } }, { label: 'Industrial / Medical / Embedded', s: { ltsc: 2, iot: 3 } }] },
+    { q: 'Do you need BitLocker Drive Encryption?', opts: [{ label: 'Yes', s: { pro: 2, ent: 2, ws: 2, edu: 2 } }, { label: 'No', s: { home: 2, pedu: 1 } }] },
+    { q: 'Do you need Hyper-V or Windows Sandbox?', opts: [{ label: 'Yes', s: { pro: 2, ent: 1, ws: 1, edu: 1 } }, { label: 'No', s: { home: 2, pedu: 1 } }] },
+    { q: 'Will this PC join an Active Directory Domain?', opts: [{ label: 'Yes, Large Enterprise', s: { ent: 3, edu: 1 } }, { label: 'Yes, Small Business', s: { pro: 2 } }, { label: 'No', s: { home: 2 } }] },
+    { q: 'What is your preference for Feature Updates?', opts: [{ label: 'Keep updated with new features', s: { home: 2, pro: 2 } }, { label: 'Security only, no new features', s: { ltsc: 3, iot: 1 } }, { label: 'I don\'t mind', s: { pro: 1, ent: 1 } }] }
+  ]
+};
+
+let activeData = null; 
+let currentOs = null;
+let selected = new Set(['home']);
+let detailKey = 'home';
+let currentView = 'detail';
+let wizardStep = 0;
+let wizardScores = {};
+let wizardAnswers = [];
+
+function applyLanguage(newLang) {
+  lang = newLang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if(btn.dataset.lang === lang) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+
+  document.getElementById('t-portal-desc').innerText = dict[lang].portalDesc;
+  document.getElementById('t-win11-desc').innerText = dict[lang].win11Desc;
+  document.getElementById('t-win10-desc').innerText = dict[lang].win10Desc;
+  document.getElementById('t-sidebar-meta').innerText = dict[lang].sidebarMeta;
+
+  document.getElementById('d-btn-detail').innerText = dict[lang].nav.detail;
+  document.getElementById('d-btn-cards').innerText = dict[lang].nav.cards;
+  document.getElementById('d-btn-table').innerText = dict[lang].nav.table;
+  document.getElementById('d-btn-version').innerText = dict[lang].nav.version;
+  document.getElementById('d-btn-wizard').innerText = dict[lang].nav.wizard;
+  
+  document.getElementById('m-btn-detail').innerText = dict[lang].nav.detail;
+  document.getElementById('m-btn-cards').innerText = dict[lang].nav.cards;
+  document.getElementById('m-btn-table').innerText = dict[lang].nav.table;
+  document.getElementById('m-btn-version').innerText = dict[lang].nav.version;
+  document.getElementById('m-btn-wizard').innerText = dict[lang].nav.wizard;
+
+  if (currentOs) {
+    activeData = db[lang][currentOs];
+    renderChips();
+    renderView();
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+});
+
+function applyTheme(theme) {
+  if (theme === 'system') {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  document.querySelectorAll('.ts-btn').forEach(btn => {
+    if(btn.dataset.themeVal === theme) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+  localStorage.setItem('win-os-theme', theme);
+}
+
+document.querySelectorAll('.ts-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyTheme(btn.dataset.themeVal));
+});
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if (localStorage.getItem('win-os-theme') === 'system') applyTheme('system');
+});
+
+const userLang = navigator.language || navigator.userLanguage;
+applyLanguage(userLang.startsWith('zh') ? 'zh' : 'en');
+applyTheme(localStorage.getItem('win-os-theme') || 'system');
+
+window.addEventListener('DOMContentLoaded', () => {
+  history.replaceState({ page: 'portal' }, '', window.location.pathname + window.location.search);
+});
+
+window.addEventListener('popstate', (e) => {
+  const state = e.state;
+  if (!state || state.page === 'portal') {
+    goHome(true); 
+  } else if (state.page === 'app') {
+    if (currentOs !== state.os) { openApp(state.os, true); }
+    switchView(state.view, true); 
+  }
+});
+
+function openApp(osType, isHistoryAction = false) {
+  activeData = db[lang][osType];
+  currentOs = osType;
+  selected = new Set(['home']);
+  detailKey = 'home';
+  currentView = 'detail';
+  
+  document.body.classList.add('in-app');
+  document.getElementById('portal-view').style.display = 'none';
+  document.getElementById('app-view').style.display = 'flex';
+  
+  document.getElementById('d-topbar-title').innerText = activeData.title;
+  
+  renderChips();
+  
+  if (!isHistoryAction) {
+    history.pushState({ page: 'app', os: osType, view: 'detail' }, '', '#' + osType + '-detail');
+  }
+  switchView('detail', true); 
+}
+
+function goHome(isHistoryAction = false) {
+  currentOs = null;
+  document.body.classList.remove('in-app');
+  document.getElementById('app-view').style.display = 'none';
+  document.getElementById('portal-view').style.display = 'flex';
+
+  if (!isHistoryAction) {
+    history.pushState({ page: 'portal' }, '', window.location.pathname + window.location.search);
+  }
+}
+
+function renderChips() {
+  document.getElementById('chip-container').innerHTML = activeData.order.map(k => 
+    `<button class="chip ${k} active glass" onclick="onChip('${k}')"><span class="dot"></span>${activeData.labels[k]}</button>`
+  ).join('');
+}
+
+function onChip(key) {
+  if (currentView === 'version' || currentView === 'wizard') return;
+  if (currentView === 'detail') {
+    detailKey = key;
+    selected = new Set([key]);
+  } else {
+    if (selected.has(key)) { if (selected.size > 1) selected.delete(key); } 
+    else { selected.add(key); }
+  }
+  updateChipsState();
+  renderView();
+}
+
+function updateChipsState() {
+  activeData.order.forEach(k => {
+    const btn = document.querySelector('.chip.' + k);
+    if (!btn) return;
+    if (currentView === 'detail') { btn.className = `chip ${k} glass ${k === detailKey ? 'active' : 'inactive'}`; } 
+    else { btn.className = `chip ${k} glass ${selected.has(k) ? 'active' : 'inactive'}`; }
+  });
+}
+
+function switchView(v, isHistoryAction = false) {
+  if (currentView === 'detail' && v !== 'detail') selected = new Set([detailKey]);
+  if (v === 'detail' && currentView !== 'detail') { detailKey = Array.from(selected)[0]; selected = new Set([detailKey]); }
+  currentView = v;
+  
+  ['detail','cards','table','version','wizard'].forEach(id => {
+    const dBtn = document.getElementById(`d-btn-${id}`);
+    const mBtn = document.getElementById(`m-btn-${id}`);
+    if(dBtn) dBtn.className = `nav-btn ${v === id ? 'active' : ''}`;
+    if(mBtn) mBtn.className = `m-tab-btn ${v === id ? 'active' : ''}`;
+  });
+  
+  document.getElementById('chip-container').style.display = (v === 'version' || v === 'wizard') ? 'none' : 'flex';
+  updateChipsState();
+  renderView();
+  
+  if (!isHistoryAction && currentOs) {
+    history.pushState({ page: 'app', os: currentOs, view: v }, '', '#' + currentOs + '-' + v);
+  }
+}
+
+function navDetail(key) {
+  detailKey = key;
+  selected = new Set([key]);
+  updateChipsState();
+  renderView();
+}
+
+function renderView() {
+  const container = document.getElementById('view-container');
+  container.innerHTML = ''; 
+  const cDict = dict[lang].ui;
+  
+  if (currentView === 'detail') {
+    const d = activeData.editions[detailKey];
+    const k = detailKey;
+    const curIdx = activeData.order.indexOf(k);
+    const prevKey = activeData.order[(curIdx - 1 + activeData.order.length) % activeData.order.length];
+    const nextKey = activeData.order[(curIdx + 1) % activeData.order.length];
+
+    container.innerHTML = `
+      <div class="detail-card glass view-fade">
+        <div class="detail-header-flex">
+          <div>
+            <div class="detail-name" style="color: var(--c-${k});">${d.name}</div>
+            <div class="detail-sub">${d.cn} — ${d.sub}</div>
+          </div>
+          <div class="detail-nav-pill">
+            <button class="d-nav-btn" onclick="navDetail('${prevKey}')">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <span class="d-nav-count">${curIdx + 1} / ${activeData.order.length}</span>
+            <button class="d-nav-btn" onclick="navDetail('${nextKey}')">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+        
+        <div class="specs-row">
+          ${d.stats.map(s => `<div class="spec-item"><div class="spec-v">${s.value}</div><div class="spec-l">${s.label}</div></div>`).join('')}
+        </div>
+        
+        <div style="display: flex; gap: 16px; background: var(--switch-bg); border-radius: 14px; padding: 16px; border: 1px solid var(--glass-border); margin-bottom: 24px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 180px; font-size: 13.5px; line-height: 1.5;"><span style="font-size: 12px; font-weight: 800; display: block; margin-bottom: 4px; color: var(--c-ent);">${cDict.goodFor}</span><span style="color: var(--text-muted); font-weight: 500;">${d.goodFor}</span></div>
+          <div style="flex: 1; min-width: 180px; font-size: 13.5px; line-height: 1.5;"><span style="font-size: 12px; font-weight: 800; display: block; margin-bottom: 4px; color: var(--text-muted);">${cDict.badFor}</span><span style="color: var(--text-muted); font-weight: 500;">${d.badFor}</span></div>
+        </div>
+        
+        <div class="feat-title" style="color: var(--c-${k});">${d.sections[0].label}</div>
+        ${d.sections[0].items.map(i => `<div style="font-size: 13.5px; padding: 3px 0 3px 16px; position: relative; color: var(--text-muted); font-weight: 600;">:: ${i}</div>`).join('')}
+        
+        ${d.sections[1] ? `
+        <div class="feat-title" style="color: var(--c-${k}); margin-top:20px;">${d.sections[1].label}</div>${d.sections[1].items.map(i => `<div style="font-size: 13.5px; padding: 3px 0 3px 16px; position: relative; color: var(--text-muted); font-weight: 600;">:: ${i}</div>`).join('')}` : ''}
+        
+        ${d.notIncluded.length ? `<div style="margin-top: 20px; padding: 14px 16px; background: rgba(239, 68, 68, 0.08); border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.15); font-size: 13px; color: var(--diff-red); line-height: 1.5; font-weight: 600;"><strong style="font-weight: 800; margin-right: 8px;">${cDict.notInc}</strong>${d.notIncluded.join(' · ')}</div>` : ''}
+        
+        <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; font-size: 13.5px; color: var(--text-muted); background: var(--switch-bg); padding: 14px 18px; border-radius: 14px; border: 1px solid var(--glass-border); font-weight: 500;">${d.info.map(i => `<span><strong style="color: var(--text-main); font-weight: 700; margin-right: 6px;">${i.label}</strong>${i.value}</span>`).join('')}</div>
+        
+        <div class="detail-note"><strong style="color: var(--text-main); font-weight: 800; margin-right: 8px;">${cDict.note}</strong>${d.note}</div>
+      </div>`;
+  } 
+  else if (currentView === 'cards') {
+    const sel = activeData.order.filter(k => selected.has(k));
+    let isMulti = sel.length >= 2;
+    let featCounts = {};
+    if (isMulti) {
+      sel.forEach(k => {
+        activeData.editions[k].sections.forEach(sec => {
+          sec.items.forEach(i => { featCounts[i] = (featCounts[i] || 0) + 1; });
+        });
+      });
+    }
+
+    container.innerHTML = `
+      <div class="cards-grid cols-${Math.min(sel.length, 4)} view-fade">
+        ${sel.map(k => {
+          const d = activeData.editions[k];
+          const sectionsHtml = d.sections.map(sec => `
+            <div class="feat-title" style="margin-top: 14px;">
+              ${sec.label}${isMulti && sec.items.some(i => featCounts[i] < sel.length) ? `<span class="diff-badge">${cDict.diffBadge}</span>` : ''}
+            </div>
+            ${sec.items.map(i => {
+              if (isMulti && featCounts[i] < sel.length) {
+                return `<div class="feat-item is-diff"><span class="diff-dot"></span>${i}</div>`;
+              }
+              return `<div class="feat-item">${i}</div>`;
+            }).join('')}
+          `).join('');
+
+          return `
+          <div class="glass gpu-card ed-card">
+            <div class="ed-name" style="color: var(--c-${k});">${d.name}</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px; font-weight: 600;">${d.cn}</div>
+            <div style="display: flex; gap: 8px; background: var(--switch-bg); border-radius: 10px; padding: 10px; border: 1px solid var(--glass-border); margin-bottom: 12px;">
+              ${d.stats.map(s => `<div style="flex: 1; text-align: center;"><div style="font-size: 9px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">${s.label}</div><div style="font-size: 11px; font-weight: 800; color: var(--text-main); margin-top: 2px;">${s.value}</div></div>`).join('')}
+            </div>
+            ${sectionsHtml}${d.notIncluded.length ? `<div style="margin-top: 14px; padding: 10px 12px; background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 10px; font-size: 11.5px; color: var(--diff-red); line-height: 1.4; font-weight: 600;"><strong style="font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px;">${cDict.notInc}</strong>${d.notIncluded.slice(0,4).join(' · ')}${d.notIncluded.length>4?'...':''}</div>` : ''}
+          </div>`;
+        }).join('')}
+      </div>`;
+  }
+  else if (currentView === 'table') {
+    const sel = activeData.order.filter(k => selected.has(k));
+    const selIdx = sel.map(k => activeData.order.indexOf(k));
+    const headers = sel.map(k => `<th style="color: var(--c-${k});">${activeData.labels[k]}</th>`).join('');
+
+    let lastCat = '';
+    const rows = activeData.features.map(f => {
+      let catRow = '';
+      if (f.cat !== lastCat) { lastCat = f.cat; catRow = `<tr class="row-cat"><td colspan="${sel.length+1}">${f.cat}</td></tr>`; }
+      const cells = selIdx.map((idx, i) => {
+        const val = f.v[idx];
+        if (typeof val === 'string') return `<td>${val}</td>`;
+        if (val === 1) return `<td><span class="ic-y">✓</span></td>`;
+        return `<td><span class="ic-n">✗</span></td>`;
+      }).join('');
+      return catRow + `<tr><td>${f.name}</td>${cells}</tr>`;
+    }).join('');
+    
+    const infoRows = `<tr style="border-top: 1px solid rgba(0,0,0,0.04);"><td colspan="${sel.length+1}" class="row-cat" style="border-bottom:none;">${cDict.authInfo}</td></tr>
+      <tr><td>${cDict.authType}</td>${sel.map(k => `<td>${activeData.editions[k].info[0].value}</td>`).join('')}</tr>
+      <tr><td>${cDict.targetAudience}</td>${sel.map(k => `<td>${activeData.editions[k].info[1].value}</td>`).join('')}</tr>
+      <tr><td style="border-bottom-left-radius: 20px;">${cDict.channel}</td>${sel.map((k, i) => `<td style="${i===sel.length-1?'border-bottom-right-radius: 20px;':''}">${activeData.editions[k].info[2].value}</td>`).join('')}</tr>`;
+
+    container.innerHTML = `
+      <div class="glass view-fade table-wrap">
+        <table>
+          <thead><tr><th class="th-first">${cDict.tableHeader}</th>${headers}</tr></thead>
+          <tbody>${rows}${infoRows}</tbody>
+        </table>
+      </div>`;
+  }
+  else if (currentView === 'version') {
+    const rows = activeData.versions.map((v, i) => {
+      const isLast = i === activeData.versions.length - 1;
+      const feats = v.features.map(f => `<div style="font-size: 13.5px; font-weight: 500; color: var(--text-muted); padding: 5px 0 5px 16px; position: relative;"><span style="position: absolute; left: 0; top: 12px; width: 5px; height: 5px; border-radius: 50%; background: var(--text-faint);"></span>${f}</div>`).join('');
+      return `
+        <div class="timeline-item">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot" style="border-color:${v.color};"></div>
+          <div class="timeline-content">
+            <div class="gpu-card glass ver-card" style="padding: 32px; border-radius: 20px; text-align: left;">
+              <div class="ver-tl-inline">
+                <div class="ver-tl-label" style="color: ${v.color};">${v.label}</div>
+                <div class="ver-tl-date">${v.release}</div>
+              </div>
+              <div class="ver-name">${v.name}</div>
+              <span class="ver-badge">${v.statusText}</span>
+              
+              <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: var(--text-main); letter-spacing: 1px;">${cDict.timelineCore}</div>
+              ${feats}
+              
+              <div class="ver-note"><strong style="color: var(--text-main); font-weight: 800; margin-right: 8px;">${cDict.note}</strong>${v.note}</div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    container.innerHTML = `<div class="view-fade timeline-container">${rows}</div>`;
+  }
+  else if (currentView === 'wizard') {
+    const qList = quiz[lang];
+    if (wizardStep >= qList.length) {
+      const sorted = Object.entries(wizardScores).sort((a, b) => b[1] - a[1]);
+      const topKey = sorted[0][0];
+      const d = activeData.editions[topKey];
+      container.innerHTML = `
+        <div class="wizard-view">
+          <div class="glass view-fade wizard-card">
+            <div class="wiz-result-name" style="color: var(--c-${topKey});">${d.name}</div>
+            <div style="font-size: 16px; color: var(--text-muted); font-weight: 600; margin-bottom: 32px;">${d.cn} — ${d.sub}</div>
+            <div style="font-size: 15px; color: var(--text-muted); line-height: 1.8; text-align: left; background: var(--switch-bg); padding: 32px; border-radius: 20px; border: 1px solid var(--glass-border); margin-bottom: 40px;">
+              <strong style="color: var(--text-main); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800;">${cDict.targetAudience}</strong><br>${d.goodFor}<br><br>
+              <strong style="color: var(--text-main); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800;">${cDict.authType}</strong><br>${d.info[0].value}
+            </div>
+            <button class="gpu-card" style="padding: 16px 40px; background: var(--text-main); color: var(--bg-base); border: none; border-radius: 16px; font-size: 16px; font-weight: 800; cursor: pointer; display:inline-block;" onclick="wizardRestart()">${cDict.wizRestart}</button>
+          </div>
+        </div>`;
+      return;
+    }
+    const q = qList[wizardStep];
+    const progress = (wizardStep / qList.length) * 100;
+    const opts = q.opts.map((o, i) => `
+      <button class="gpu-card wiz-opt" onclick="wizardAnswer(${i})">
+        <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-base); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); flex-shrink: 0; font-weight: 800; border: 1px solid var(--glass-border);">${i + 1}</span>${o.label}
+      </button>`).join('');
+    container.innerHTML = `
+      <div class="wizard-view">
+        <div class="view-fade wizard-card" style="background:transparent; border:none; box-shadow:none;">
+          <div class="wiz-progress"><div class="wiz-progress-bar" style="width:${progress}%;"></div></div>
+          <div style="font-size: 13px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">${cDict.wizQHeader} ${wizardStep + 1} / ${qList.length}</div>
+          <div class="wiz-q">${q.q}</div>
+          <div class="wiz-opts">${opts}</div>
+          ${wizardStep > 0 ? `<button class="wiz-back" onclick="wizardBack()">${cDict.wizBack}</button>` : ''}
+        </div>
+      </div>`;
+  }
+}
+
+function wizardAnswer(idx) {
+  const qList = quiz[lang];
+  if (wizardAnswers[wizardStep] !== undefined) {
+    const prev = qList[wizardStep].opts[wizardAnswers[wizardStep]].s;
+    for (let pk in prev) wizardScores[pk] = (wizardScores[pk] || 0) - prev[pk];
+  }
+  const scores = qList[wizardStep].opts[idx].s;
+  for (let sk in scores) wizardScores[sk] = (wizardScores[sk] || 0) + scores[sk];
+  wizardAnswers[wizardStep] = idx;
+  wizardStep++;
+  renderView();
+}
+function wizardBack() { if (wizardStep > 0) { wizardStep--; renderView(); } }
+function wizardRestart() { wizardStep = 0; wizardScores = {}; wizardAnswers = []; renderView(); }
+</script>
 </body>
 </html>
