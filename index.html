@@ -278,6 +278,9 @@
   .timeline-container { max-width: 760px; margin: 0 auto; padding-top: 16px; }
   .timeline-item { display: flex; gap: 20px; position: relative; padding-bottom: 32px; }
   .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item, .ed-card { content-visibility: auto; contain-intrinsic-size: 0 420px; }
+  .timeline-feature { font-size: 13.5px; font-weight: 500; color: var(--text-muted); padding: 5px 0 5px 16px; position: relative; }
+  .timeline-feature > span { position: absolute; left: 0; top: 12px; width: 5px; height: 5px; border-radius: 50%; background: var(--text-faint); }
   .timeline-line { position: absolute; left: 7px; top: 28px; bottom: -8px; width: 2px; background: rgba(150,150,150,0.15); }
   .timeline-dot { width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--accent-blue); background: var(--hover-bg); z-index: 2; position: relative; margin-top: 4px; flex-shrink: 0;}
   .ver-tl-inline { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; border-bottom: 2px solid rgba(150,150,150,0.08); padding-bottom: 10px; }
@@ -302,6 +305,8 @@
     /* 默认在首页：顶部横排 */
     .tools-bar { top: 16px; right: 16px; bottom: auto; flex-direction: row; gap: 6px; z-index: 1000; }
     .tool-group { flex-direction: row; padding: 4px 6px; }
+    .glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .tools-bar, .m-text-tabs { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
     
     /* 核心逻辑：进入详情后：底部竖排 */
     body.in-app .tools-bar { top: auto; bottom: 24px; right: 16px; flex-direction: column; gap: 12px; }
@@ -544,6 +549,12 @@ const sourceMap = {
     }
   }
 };
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[ch]);
+}
 
 function renderSources() {
   if (!currentOs || !sourceMap[lang]?.[currentOs]) return '';
@@ -3818,6 +3829,7 @@ let wizardAnswers = [];
 
 function applyLanguage(newLang) {
   lang = newLang;
+  if (currentOs) { wizardStep = 0; wizardScores = {}; wizardAnswers = []; }
   document.querySelectorAll('.lang-btn').forEach(btn => {
     if(btn.dataset.lang === lang) btn.classList.add('active');
     else btn.classList.remove('active');
@@ -4118,7 +4130,7 @@ function renderView() {
   else if (currentView === 'version') {
     const rows = activeData.versions.map((v, i) => {
       const isLast = i === activeData.versions.length - 1;
-      const feats = v.features.map(f => `<div style="font-size: 13.5px; font-weight: 500; color: var(--text-muted); padding: 5px 0 5px 16px; position: relative;"><span style="position: absolute; left: 0; top: 12px; width: 5px; height: 5px; border-radius: 50%; background: var(--text-faint);"></span>${f}</div>`).join('');
+      const feats = v.features.map(f => `<div class="timeline-feature"><span aria-hidden="true"></span>${escapeHtml(f)}</div>`).join('');
       return `
         <div class="timeline-item">
           <div class="timeline-line"></div>
