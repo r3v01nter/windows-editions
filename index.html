@@ -381,6 +381,266 @@
     .timeline-item { gap: 14px; }
     .wizard-card { padding: 24px; }
   }
+
+  /* ==========================================================================
+     UI REDESIGN PREVIEW
+     Direction: Fluent + modern productivity dashboard
+     Keep the existing data/interaction model; reduce decorative glass.
+     ========================================================================== */
+  :root {
+    --bg-base: #f6f7f9;
+    --text-main: #17181a;
+    --text-muted: #68707a;
+    --text-faint: #9aa1aa;
+    --glass-bg: #ffffff;
+    --glass-border: #e6e8eb;
+    --glass-shadow: 0 1px 2px rgba(20,24,30,.04), 0 8px 28px rgba(20,24,30,.045);
+    --hover-bg: #ffffff;
+    --switch-bg: #f8f9fb;
+    --switch-active: #eef6ff;
+    --accent-blue: #0067c5;
+    --neon-green: #0a9f62;
+  }
+  [data-theme="dark"] {
+    --bg-base: #111315;
+    --text-main: #f2f4f6;
+    --text-muted: #aeb5bd;
+    --text-faint: #747c85;
+    --glass-bg: #191c20;
+    --glass-border: #2b3036;
+    --glass-shadow: 0 1px 2px rgba(0,0,0,.25), 0 10px 28px rgba(0,0,0,.18);
+    --hover-bg: #1d2126;
+    --switch-bg: #171a1e;
+    --switch-active: #202d3b;
+    --accent-blue: #4aa3ff;
+    --neon-green: #35c58a;
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-main);
+    overflow: hidden;
+  }
+  .ambient-orb { opacity: 0 !important; animation: none !important; }
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Top utility controls: compact, quiet, dashboard-like. */
+  .tools-bar { top: 18px; right: 24px; gap: 8px; }
+  .tool-group {
+    background: var(--glass-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 1px 2px rgba(20,24,30,.05);
+    padding: 4px;
+  }
+  .ts-btn, .lang-btn { width: 34px; height: 34px; border-radius: 8px; }
+  .ts-btn.active, .lang-btn.active { background: var(--switch-active); box-shadow: none; }
+  .ts-btn.active svg { transform: none; }
+  .ts-btn::after { display: none; }
+
+  /* App shell */
+  #app-view { max-width: none; background: var(--bg-base); }
+  #app-view > div:last-child {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    flex: 1;
+    width: 100%;
+  }
+  .desktop-sidebar {
+    width: 224px;
+    min-width: 224px;
+    height: 100%;
+    padding: 28px 14px 20px;
+    gap: 28px;
+    border-right: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .sidebar-logo {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .sidebar-logo h2 {
+    font-size: 20px;
+    letter-spacing: -.45px;
+  }
+  .sidebar-logo h2::before {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 8px;
+    vertical-align: 2px;
+    background: var(--accent-blue);
+    border-radius: 2px;
+    box-shadow: 12px 0 0 rgba(0,103,197,.28), 0 12px 0 rgba(0,103,197,.28), 12px 12px 0 rgba(0,103,197,.12);
+  }
+  .sidebar-logo span { font-size: 11px; margin-left: 1px; }
+  .nav-menu { gap: 3px; }
+  .nav-btn {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 650;
+    border: 1px solid transparent;
+  }
+  .nav-btn:hover {
+    background: var(--switch-bg);
+    color: var(--text-main);
+  }
+  .nav-btn.active {
+    background: var(--switch-active);
+    color: var(--accent-blue);
+    box-shadow: none;
+    border-color: rgba(0,103,197,.08);
+  }
+
+  .main-content { background: var(--bg-base); }
+  .top-chips-area {
+    padding: 18px 32px 10px;
+    gap: 6px;
+    border-bottom: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+  }
+  .chip {
+    padding: 8px 12px;
+    border-radius: 7px;
+    border-color: transparent;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .chip:hover { background: var(--switch-bg); }
+  .chip.home.active, .chip.pro.active, .chip.ws.active, .chip.ent.active,
+  .chip.edu.active, .chip.pedu.active, .chip.ltsc.active, .chip.iot.active {
+    border-color: currentColor;
+    background: transparent;
+  }
+  .chip .dot { width: 6px; height: 6px; }
+
+  .view-container { padding: 28px 36px 44px; }
+  .detail-card, .wizard-card {
+    border-radius: 12px;
+    box-shadow: var(--glass-shadow);
+  }
+  .detail-card { max-width: 900px; padding: 32px; }
+  .detail-name { font-size: 25px; letter-spacing: -.7px; }
+  .specs-row {
+    background: var(--switch-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+  }
+  .spec-item { padding: 12px 8px; }
+  .spec-v { font-size: 17px; }
+  .detail-meta-box, .edition-status {
+    background: var(--switch-bg);
+    border-color: var(--glass-border);
+  }
+
+  /* Comparison cards: clean dashboard tiles rather than floating glass. */
+  .cards-grid { gap: 14px; justify-content: stretch; }
+  .ed-card {
+    max-width: none;
+    flex: 1 1 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--glass-shadow);
+  }
+  .gpu-card {
+    border-radius: 10px;
+    transform: none;
+    will-change: auto;
+  }
+  .gpu-card::after { display: none; }
+  .gpu-card:hover {
+    transform: translateY(-1px);
+    border-color: #c9d2dc;
+  }
+  [data-theme="dark"] .gpu-card:hover { border-color: #46505a; }
+  .ed-name { font-size: 17px; }
+  .feat-title { margin-top: 4px; }
+
+  /* Matrix: denser and closer to a professional data tool. */
+  .table-wrap {
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+  }
+  th {
+    background: var(--glass-bg);
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  td { background: var(--glass-bg); padding: 9px 12px; }
+  .td-first { background: var(--glass-bg); }
+
+  /* Timeline: document-like, less card-heavy. */
+  .timeline-container { max-width: 900px; padding-top: 4px; }
+  .timeline-item { gap: 16px; padding-bottom: 24px; }
+  .timeline-item .gpu-card { border-radius: 10px; }
+  .ver-tl-inline { margin-bottom: 10px; padding-bottom: 8px; }
+  .ver-tl-label { font-size: 17px; }
+
+  .source-bar {
+    margin-top: 0;
+    border-radius: 9px;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: 0 1px 2px rgba(20,24,30,.03);
+  }
+
+  /* Portal: quiet product landing page, not a decorative glass wall. */
+  #portal-view {
+    background: var(--bg-base);
+    padding-top: 13vh;
+  }
+  .portal-header h1 { font-size: 3.1rem; letter-spacing: -1.7px; }
+  .portal-header p { font-weight: 500; color: var(--text-muted); }
+  .bento-grid { max-width: 820px; gap: 14px; }
+  .bento-card {
+    border-radius: 12px;
+    padding: 20px;
+    background: var(--glass-bg);
+  }
+  .bento-card:hover { transform: translateY(-2px); }
+  .card-icon {
+    border-radius: 9px;
+    background: var(--switch-bg);
+    border-color: var(--glass-border);
+  }
+
+  @media (max-width: 768px) {
+    .tools-bar { top: 12px; right: 12px; }
+    #portal-view { padding-top: 10vh; }
+    .portal-header h1 { font-size: 2.45rem; }
+    .m-text-tabs {
+      background: var(--glass-bg);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .top-chips-area { padding: 10px 14px 8px; }
+    .view-container { padding: 16px 14px 110px; }
+    .detail-card { padding: 20px; }
+    .ed-card { border-radius: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gpu-card:hover, .bento-card:hover { transform: none; }
+  }
+
 </style>
 </head>
 <body>
