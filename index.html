@@ -101,6 +101,16 @@
   .source-bar a { color: var(--accent-blue); font-weight: 700; text-decoration: none; }
   .source-bar a:hover { text-decoration: underline; }
   .source-bar .source-note { flex-basis: 100%; color: var(--text-faint); }
+  .verified-status-inline {
+    display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:-12px 0 12px;
+    font-size:10.5px; color:var(--text-muted);
+  }
+  .verified-status-inline span {
+    color:var(--neon-green); font-size:9px; font-weight:800;
+    text-transform:uppercase; letter-spacing:.04em;
+  }
+  .detail-meta-box { contain: layout paint; }
+  .cards-grid, .timeline-container, .table-wrap { contain: layout style; }
 
   /* 更新历史页：资料核验栏与第一张时间线卡片保持明确呼吸间距 */
   .timeline-container > .source-bar {
@@ -2127,7 +2137,7 @@ const db = {
         {
           "label": "24H2",
           "name": "Windows 11 24H2",
-          "build": "26100",
+          "build": "26100.9550",
           "release": "2024-10-01",
           "statusText": "Home/Pro 至 2026-10-13；Enterprise/Education 至 2027-10-12",
           "color": "#f59e0b",
@@ -2144,7 +2154,7 @@ const db = {
         {
           "label": "25H2",
           "name": "Windows 11 25H2",
-          "build": "26200",
+          "build": "26200.9550",
           "release": "2025-09-30",
           "statusText": "支持中",
           "color": "#10b981",
@@ -2160,7 +2170,7 @@ const db = {
         {
           "label": "26H1",
           "name": "Windows 11 26H1",
-          "build": "28000",
+          "build": "28000.3086",
           "release": "2026-02-10",
           "statusText": "新设备版本",
           "color": "#8b5cf6",
@@ -2175,7 +2185,7 @@ const db = {
         {
           "label": "26H2",
           "name": "Windows 11 26H2",
-          "build": "26300",
+          "build": "26300.9550",
           "release": "2026-09-29",
           "statusText": "正式发布",
           "color": "#d946ef",
@@ -3735,7 +3745,7 @@ const db = {
         {
           "label": "24H2",
           "name": "Windows 11 24H2",
-          "build": "26100",
+          "build": "26100.9550",
           "release": "2024-10-01",
           "statusText": "Home/Pro to Oct. 13, 2026; Enterprise/Education to Oct. 12, 2027",
           "color": "#f59e0b",
@@ -3752,7 +3762,7 @@ const db = {
         {
           "label": "25H2",
           "name": "Windows 11 25H2",
-          "build": "26200",
+          "build": "26200.9550",
           "release": "2025-09-30",
           "statusText": "Supported",
           "color": "#10b981",
@@ -3768,7 +3778,7 @@ const db = {
         {
           "label": "26H1",
           "name": "Windows 11 26H1",
-          "build": "28000",
+          "build": "28000.3086",
           "release": "2026-02-10",
           "statusText": "New-device release",
           "color": "#8b5cf6",
@@ -3783,7 +3793,7 @@ const db = {
         {
           "label": "26H2",
           "name": "Windows 11 26H2",
-          "build": "26300",
+          "build": "26300.9550",
           "release": "2026-09-29",
           "statusText": "General Availability",
           "color": "#d946ef",
@@ -4084,6 +4094,7 @@ function renderView() {
           return `
           <div class="glass gpu-card ed-card">
             <div class="ed-name" style="color: var(--c-${k});">${d.name}</div>
+            <div class="verified-status-inline"><span>${lang === "zh" ? "官方核验" : "Verified"}</span>${currentOs === "win11" ? (lang === "zh" ? "当前 26H2 生命周期已核验" : "Current 26H2 lifecycle verified") : (lang === "zh" ? "生命周期与版本状态已核验" : "Lifecycle and edition status verified")}</div>
             <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px; font-weight: 600;">${d.cn}</div>
             <div style="display: flex; gap: 8px; background: var(--switch-bg); border-radius: 10px; padding: 10px; border: 1px solid var(--glass-border); margin-bottom: 12px;">
               ${d.stats.map(s => `<div style="flex: 1; text-align: center;"><div style="font-size: 9px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">${s.label}</div><div style="font-size: 11px; font-weight: 800; color: var(--text-main); margin-top: 2px;">${s.value}</div></div>`).join('')}
