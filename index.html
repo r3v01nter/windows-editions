@@ -444,7 +444,7 @@
 const dict = {
   zh: {
     portalDesc: '全版本参考手册，一站式对比各版本核心差异与适用场景。',
-    win11Desc: '8 大正式版与 7 个主要版本节点 (21H2–26H2，含 26H1)。',
+    win11Desc: '8 大版本类别与 7 个主要版本节点 (21H2–26H2，含 26H1)。',
     win10Desc: '1507 至 22H2 的历史演进；22H2 已于 2025-10-14 终止支持，LTSC 按独立生命周期处理。',
     sidebarMeta: '版本指南',
     nav: { detail: '详情概览', cards: '并排卡片', table: '交叉表格', version: '更新历史', wizard: '智能推荐' },
@@ -460,7 +460,7 @@ const dict = {
   },
   en: {
     portalDesc: 'The ultimate reference guide. Compare features, security, and use cases.',
-    win11Desc: '8 editions and 7 version milestones (21H2–26H2, including 26H1).',
+    win11Desc: '8 edition categories and 7 version milestones (21H2–26H2, including 26H1).',
     win10Desc: 'Evolution from 1507 to 22H2. 22H2 ended support on Oct. 14, 2025; LTSC releases follow separate lifecycles.',
     sidebarMeta: 'Edition Guide',
     nav: { detail: 'Overview', cards: 'Compare', table: 'Feature Matrix', version: 'History', wizard: 'Advisor' },
@@ -481,38 +481,56 @@ const sourceMap = {
   zh: {
     win10: {
       title: '资料核验：Windows 10',
-      note: '功能可能随版本、更新、许可和部署方式变化；Windows 10 已于 2025-10-14 结束常规支持，现有 LTSC 版本按各自生命周期处理。',
+      note: '本页已按 Microsoft 官方生命周期、Windows 客户端支持版本、内存限制与 LTSC 文档进行核验。功能可因版本、许可、设备与部署方式变化。数据快照：2026-10-06。',
       links: [
         ['Windows 10 Home / Pro 生命周期', 'https://learn.microsoft.com/zh-cn/lifecycle/products/windows-10-home-and-pro'],
-        ['Windows 生命周期 FAQ', 'https://learn.microsoft.com/zh-cn/lifecycle/faq/windows']
+        ['Windows 生命周期 FAQ', 'https://learn.microsoft.com/zh-cn/lifecycle/faq/windows'],
+        ['Windows 客户端支持版本', 'https://learn.microsoft.com/zh-cn/windows/release-health/supported-versions-windows-client'],
+        ['Windows 内存限制', 'https://learn.microsoft.com/zh-cn/windows/win32/memory/memory-limits-for-windows-releases'],
+        ['Windows 10 Enterprise LTSC 2021', 'https://learn.microsoft.com/zh-cn/lifecycle/products/windows-10-enterprise-ltsc-2021'],
+        ['Windows 10 IoT Enterprise LTSC 2021', 'https://learn.microsoft.com/zh-cn/lifecycle/products/windows-10-iot-enterprise-ltsc-2021']
       ]
     },
     win11: {
       title: '资料核验：Windows 11',
-      note: '以 Microsoft Learn 为主；功能可能随版本、更新、设备、地区与许可而变化。26H2 于 2026-09-29 正式发布并分阶段推出。',
+      note: '本页已按 Microsoft 官方版本发布信息、生命周期、内存限制、教育版本与 LTSC / IoT 文档进行核验。功能可因版本、许可、设备、地区与部署方式变化。数据快照：2026-10-06。',
       links: [
-        ['Windows 11 版本信息', 'https://learn.microsoft.com/zh-cn/windows/release-health/windows11-release-information'],
-        ['Windows 11 26H2 新增内容', 'https://learn.microsoft.com/zh-cn/windows/whats-new/whats-new-windows-11-version-26h2'],
-        ['Windows 11 26H2 发布状态', 'https://learn.microsoft.com/zh-cn/windows/release-health/status-windows-11-26H2']
+        ['Windows 11 版本发布信息', 'https://learn.microsoft.com/zh-cn/windows/release-health/windows11-release-information'],
+        ['Windows 11 支持版本', 'https://learn.microsoft.com/zh-cn/windows/release-health/supported-versions-windows-client'],
+        ['Windows 生命周期 FAQ', 'https://learn.microsoft.com/zh-cn/lifecycle/faq/windows'],
+        ['Windows 内存限制', 'https://learn.microsoft.com/zh-cn/windows/win32/memory/memory-limits-for-windows-releases'],
+        ['Windows 11 Pro for Workstations', 'https://www.microsoft.com/zh-cn/windows/business/windows-11-pro-workstations'],
+        ['Windows 11 Enterprise LTSC 2024', 'https://learn.microsoft.com/zh-cn/lifecycle/products/windows-11-enterprise-ltsc-2024'],
+        ['Windows 11 IoT Enterprise LTSC 2024', 'https://learn.microsoft.com/zh-cn/lifecycle/products/windows-11-iot-enterprise-ltsc-2024'],
+        ['Windows 11 Pro Education / Education', 'https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-windows/windows-products-edu']
       ]
     }
   },
   en: {
     win10: {
       title: 'Verified sources: Windows 10',
-      note: 'Features can vary by version, update, license, and deployment. Windows 10 ended regular support on Oct. 14, 2025; existing LTSC releases follow their own lifecycles.',
+      note: 'Verified against Microsoft lifecycle, supported-version, memory-limit, and LTSC documentation. Availability varies by version, license, device, and deployment. Data snapshot: 2026-10-06.',
       links: [
         ['Windows 10 Home / Pro lifecycle', 'https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro'],
-        ['Windows lifecycle FAQ', 'https://learn.microsoft.com/en-us/lifecycle/faq/windows']
+        ['Windows lifecycle FAQ', 'https://learn.microsoft.com/en-us/lifecycle/faq/windows'],
+        ['Supported Windows client versions', 'https://learn.microsoft.com/en-us/windows/release-health/supported-versions-windows-client'],
+        ['Windows memory limits', 'https://learn.microsoft.com/en-us/windows/win32/memory/memory-limits-for-windows-releases'],
+        ['Windows 10 Enterprise LTSC 2021', 'https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2021'],
+        ['Windows 10 IoT Enterprise LTSC 2021', 'https://learn.microsoft.com/en-us/lifecycle/products/windows-10-iot-enterprise-ltsc-2021']
       ]
     },
     win11: {
       title: 'Verified sources: Windows 11',
-      note: 'Microsoft Learn is the primary reference; availability can vary by version, update, device, region, and license. 26H2 reached general availability on Sep. 29, 2026 and is rolling out in phases.',
+      note: 'Verified against Microsoft release, lifecycle, memory-limit, education, LTSC, and IoT documentation. Availability varies by version, license, device, region, and deployment. Data snapshot: 2026-10-06.',
       links: [
         ['Windows 11 release information', 'https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information'],
-        ['What\'s new in Windows 11 26H2', 'https://learn.microsoft.com/en-us/windows/whats-new/whats-new-windows-11-version-26h2'],
-        ['Windows 11 26H2 release health', 'https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-26H2']
+        ['Supported Windows client versions', 'https://learn.microsoft.com/en-us/windows/release-health/supported-versions-windows-client'],
+        ['Windows lifecycle FAQ', 'https://learn.microsoft.com/en-us/lifecycle/faq/windows'],
+        ['Windows memory limits', 'https://learn.microsoft.com/en-us/windows/win32/memory/memory-limits-for-windows-releases'],
+        ['Windows 11 Pro for Workstations', 'https://www.microsoft.com/en-us/windows/business/windows-11-pro-workstations'],
+        ['Windows 11 Enterprise LTSC 2024', 'https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-ltsc-2024'],
+        ['Windows 11 IoT Enterprise LTSC 2024', 'https://learn.microsoft.com/en-us/lifecycle/products/windows-11-iot-enterprise-ltsc-2024'],
+        ['Windows 11 Pro Education / Education', 'https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-windows/windows-products-edu']
       ]
     }
   }
@@ -532,121 +550,3232 @@ function renderSources() {
    全量数据结构 (Full Data Store) 
    ========================================================================== */
 const db = {
-  zh: {
-    win10: {
-      title: "Windows 10", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2021', iot:'IoT' },
-      editions: {
-        home: { name: 'Windows 10 Home', cn: '家庭版', sub: '个人与家庭用户', stats: [{ label: 'CPU', value: '1 路' }, { label: '内存', value: '128 GB' }, { label: '核心', value: '64' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '个人 / 家庭' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '核心功能', items: ['Windows Hello（人脸 / 指纹 / PIN）','Cortana 语音助手（历史功能）','Xbox Game Bar / Game Mode','WSL Linux 子系统','Snap Assist 窗口辅助','Microsoft Store 应用商店','Live Tiles 动态磁贴','Task View 虚拟桌面'] }, { label: '安全特性', items: ['Windows Defender 防病毒','安全启动 (Secure Boot)','Windows 防火墙','SmartScreen 筛选'] }], notIncluded: ['BitLocker 全盘加密','远程桌面（作为主机）','Hyper-V 虚拟机','域加入 / Azure AD','组策略编辑器','Windows Sandbox'], goodFor: '日常办公、网页浏览、游戏娱乐、影音媒体', badFor: '企业域环境、虚拟化需求、高级安全管控', note: 'Windows 10 Home 不强制 TPM 2.0，安装门槛低于 Windows 11。' },
-        pro: { name: 'Windows 10 Pro', cn: '专业版', sub: '高级用户与小型企业', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '零售 / OEM / VL' }, { label: '适合人群', value: '高级用户 / 小企业' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '加密与安全', items: ['BitLocker 全盘加密','BitLocker To Go（U盘加密）','Windows Sandbox 沙盒','SmartScreen 智能筛选'] }, { label: '虚拟化与远程', items: ['Hyper-V 虚拟机','WSL2 Linux 子系统（增强）','远程桌面（作为主机）','Assigned Access 指定访问'] }, { label: '管理与部署', items: ['域加入 / Azure AD (Entra ID)','组策略编辑器 (gpedit.msc)','Windows Update for Business','Kiosk Mode 展台模式'] }], notIncluded: ['DirectAccess（无 VPN 内网）','AppLocker 应用管控','Credential Guard 凭据保护','Device Guard 内核防护','App-V / UE-V 部署工具','LTSC 长期支持版本'], goodFor: '开发人员、小型企业、需加密和虚拟化的用户', badFor: '中大型企业部署、工控 / 医疗等长期稳定场景', note: 'Windows 10 Pro 是最常用的升级目标版本。' },
-        ws: { name: 'Pro for Workstations', cn: '工作站版', sub: '高性能计算与专业工作站', stats: [{ label: 'CPU', value: '4 路' }, { label: '内存', value: '6 TB' }, { label: '核心', value: '256' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '数据 / 渲染 / 科研' }, { label: '获取渠道', value: 'OEM / 零售' }], sections: [{ label: '包含 Pro 全部 +', items: ['ReFS 弹性文件系统','持久内存 NVDIMM-N','SMB Direct（RDMA 直传）','4 路 CPU 插槽支持','6 TB 最大内存支持','256 核心支持'] }, { label: '适用硬件', items: ['Xeon W / EPYC / Threadripper PRO','ECC 内存支持','企业级 NVMe / SAS 存储阵列'] }], notIncluded: ['DirectAccess','AppLocker 应用管控','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: '数据分析、3D 渲染、科学计算、工程仿真', badFor: '普通消费级电脑（硬件支持无法发挥）', note: '需工作站级硬件才能发挥价值。' },
-        ent: { name: 'Windows 10 Enterprise', cn: '企业版', sub: '中大型组织与 IT 管理员', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '适合人群', value: '中大型企业' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '包含 Pro 全部 +', items: ['DirectAccess（无 VPN 内网接入）','AppLocker（应用白名单管控）','Credential Guard（凭据保护）','Device Guard（内核级防护）','Windows 信息保护 (WIP)','App-V 应用虚拟化','UE-V 用户环境漫游','BranchCache 分支缓存','Application Guard 应用防护','组策略扩展'] }, { label: '独有版本', items: ['可选 LTSC 2021（5 年长期支持）'] }], notIncluded: ['ReFS 弹性文件系统','持久内存 NVDIMM','SMB Direct (RDMA)','4 路 CPU / 6 TB 内存上限'], goodFor: '中大型企业 IT 部署、需要高级安全管控的组织', badFor: '个人用户（功能过剩，授权昂贵）、极限硬件工作站', note: 'Windows 10 企业版于 2025.10.14 停止支持。' },
-        edu: { name: 'Windows 10 Education', cn: '教育版', sub: '学校与教育机构', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权 (M365 Edu)' }, { label: '适合人群', value: '学校 / 教育机构' }, { label: '获取渠道', value: 'M365 Education' }], sections: [{ label: '包含 Enterprise 全部功能', items: ['DirectAccess、AppLocker、Credential Guard','Device Guard、Windows 信息保护 (WIP)','App-V、UE-V、BranchCache','组策略扩展','Application Guard'] }, { label: '教育专属', items: ['Take Test 应用（标准化考试）','教育版默认配置（去 Cortana）','Microsoft Teams 教育版集成','Intune 教育版设备管理'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 路 CPU / 6 TB 内存上限'], goodFor: 'K-12 学校、大学、教育培训机构', badFor: '个人用户、非教育场景（授权限制）', note: '功能等同 Enterprise，通过 Microsoft 365 Education 获取。' },
-        pedu: { name: 'Windows 10 Pro Education', cn: '专业教育版', sub: 'K-12 教育设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权' }, { label: '适合人群', value: 'K-12 学校' }, { label: '获取渠道', value: '教育商店 / OEM' }], sections: [{ label: '基于 Pro + 教育配置', items: ['包含 Pro 全部功能','教育版默认配置（去 Cortana）','教育设备上的应用分发与管理（具体策略取决于组织配置）','Take Test 应用','Intune 教育版支持','简化部署与设备管理'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: 'K-12 学校的课堂设备、图书馆电脑', badFor: '高等教育（建议用 Education）、企业场景', note: '通常随 OEM 教育设备预装。' },
-        ltsc: { name: 'Enterprise LTSC 2021', cn: '企业长期服务版', sub: '工控 / 医疗 / 稳定环境', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '支持周期', value: '5 年质量更新' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部安全功能','5 年长期质量更新（无功能更新）','无 Microsoft Store（默认）','无 Cortana','无 Edge 浏览器（默认）','无功能更新推送','极度精简，系统稳定'] }, { label: '适用场景', items: ['工控机 / 生产线','医疗设备 / ATM','数字标牌 / 信息亭','航空 / 国防系统'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','功能更新（仅安全更新）','Microsoft Store（默认）'], goodFor: '需要长期稳定运行的专用设备、不能频繁更新的场景', badFor: '日常办公、需要最新功能的用户', note: '基于 Windows 10 21H2，支持至 2027 年 1 月。' },
-        iot: { name: 'IoT Enterprise', cn: '物联网企业版', sub: '嵌入式 / IoT 设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: 'OEM / 嵌入式授权' }, { label: '支持周期', value: '10 年（扩展）' }, { label: '获取渠道', value: 'IoT 分发渠道' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部功能','10 年扩展支持周期','Assigned Access（Kiosk 模式）','无声更新 / 自动维护窗口','设备锁定与写筛选 (UWF)','嵌入式启动优化','低功耗运行支持'] }, { label: '适用场景', items: ['数字标牌 / 广告屏','自助终端 / Kiosk','工业控制器','智能零售设备','医疗仪器面板'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store（默认）'], goodFor: 'IoT 设备、嵌入式系统、需要长期运行的专用终端', badFor: '普通桌面电脑、需要频繁更新的场景', note: '支持周期 10 年，LTSC 2021 支持至 2032 年。' }
-      },
-      features: [
-        { cat: '基础功能', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Cortana 语音助手（历史功能）', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'WSL Linux', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Snap Assist', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'Xbox Game Bar', v:[1,1,1,1,1,1,0,0] },
-        { cat: '安全与加密', name: 'BitLocker 加密', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: '信息保护 WIP', v:[0,0,0,1,1,0,1,1] },
-        { cat: '管理与部署', name: '域加入 / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '组策略', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '远程桌面主机', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
-        { cat: '工作站', name: 'ReFS 文件系统', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: '持久内存 NVDIMM', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
-        { cat: '特殊', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: '特殊', name: 'LTSC 长期支持', v:[0,0,0,1,0,0,1,0] }, { cat: '特殊', name: '10 年支持周期', v:[0,0,0,0,0,0,0,1] }
+  "zh": {
+    "win10": {
+      "title": "Windows 10",
+      "order": [
+        "home",
+        "pro",
+        "ws",
+        "ent",
+        "edu",
+        "pedu",
+        "ltsc",
+        "iot"
       ],
-      versions: [
-        { label: '1507', name: 'Windows 10 1507', build: '10240', release: '2015.07.29', statusText: '已停止支持', color: '#94a3b8', features: ['全新开始菜单（磁贴设计）','Cortana 语音助手（历史功能）','Microsoft Edge 浏览器','Task View 虚拟桌面','Xbox Game Bar','Windows Hello 生物识别','Continuum 平板模式','Action Center 通知中心','WSL Linux 子系统（预览）'], note: 'Windows 10 首发版本，回归开始菜单并引入全新 UI 设计语言。' },
-        { label: '1607', name: 'Windows 10 1607', build: '14393', release: '2016.08.02', statusText: '已停止支持', color: '#94a3b8', features: ['Windows Ink 手写笔记','Bash on Ubuntu（WSL 正式版）','Edge 浏览器扩展支持','Windows Defender 改进','生物识别增强','暗色主题模式','开始菜单改进','通知中心改进'], note: '周年更新，WSL 正式上线。LTSB 2016 基于此版本。' },
-        { label: '1809', name: 'Windows 10 1809', build: '17763', release: '2018.11.13', statusText: 'Home/Pro 已停', color: '#f59e0b', features: ['剪贴板历史记录','云剪贴板同步','暗色主题文件管理器','截图工具改进','Your Phone 手机连接','搜索预览面板','Storage Sense 自动清理','Windows Sandbox 沙盒'], note: '十月更新。LTSC 2019 基于此版本，支持至 2029 年。' },
-        { label: '2004', name: 'Windows 10 2004', build: '19041', release: '2020.05.27', statusText: '已停止支持', color: '#94a3b8', features: ['WSL2 架构升级','Cortana 转型为独立应用','GPU 温度监控','改进虚拟桌面命名','OneDrive 按需文件','网络重置功能','蓝牙改进'], note: 'WSL2 引入完整 Linux 内核。' },
-        { label: '22H2', name: 'Windows 10 22H2', build: '19045', release: '2022.10.18', statusText: '已终止支持', color: '#94a3b8', features: ['Windows 10 最终功能更新版本','性能与稳定性优化','安全补丁与累积更新','企业部署与管理改进','兼容性与可靠性修复'], note: 'Windows 10 22H2 是最终功能更新版本；Home、Pro、Pro Education、Pro for Workstations、Education、Enterprise 等常规版本已于 2025-10-14 终止支持，现有 LTSC 按其独立生命周期继续。' }
+      "labels": {
+        "home": "Home",
+        "pro": "Pro",
+        "ws": "Workstations",
+        "ent": "Enterprise",
+        "edu": "Education",
+        "pedu": "Pro Edu",
+        "ltsc": "LTSC 2021",
+        "iot": "IoT"
+      },
+      "editions": {
+        "home": {
+          "name": "Windows 10 Home",
+          "cn": "家庭版",
+          "sub": "个人与家庭用户",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "128 GB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "个人 / 家庭"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "零售 / OEM"
+            },
+            {
+              "label": "适合人群",
+              "value": "个人 / 家庭"
+            },
+            {
+              "label": "获取渠道",
+              "value": "官网 / OEM 预装"
+            }
+          ],
+          "sections": [
+            {
+              "label": "核心功能",
+              "items": [
+                "Windows Hello",
+                "Microsoft Store",
+                "Xbox Game Bar / Game Mode",
+                "WSL（版本相关）",
+                "Task View / 虚拟桌面",
+                "Windows Security"
+              ]
+            },
+            {
+              "label": "安全与设置",
+              "items": [
+                "Secure Boot",
+                "Windows Firewall",
+                "SmartScreen",
+                "设备加密（受硬件支持影响）"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "BitLocker Drive Encryption（完整管理能力）",
+            "远程桌面（作为主机）",
+            "Hyper-V",
+            "域加入 / Microsoft Entra",
+            "组策略编辑器",
+            "Windows Sandbox"
+          ],
+          "goodFor": "日常办公、网页浏览、游戏娱乐、影音媒体",
+          "badFor": "企业域环境、虚拟化需求、高级企业管理",
+          "note": "Windows 10 22H2 是最终版本；普通 Windows 10 版本已于 2025-10-14 结束支持。"
+        },
+        "pro": {
+          "name": "Windows 10 Pro",
+          "cn": "专业版",
+          "sub": "高级用户与小型企业",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "2 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "高级用户 / 小企业"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "零售 / OEM / VL"
+            },
+            {
+              "label": "适合人群",
+              "value": "高级用户 / 小企业"
+            },
+            {
+              "label": "获取渠道",
+              "value": "官网 / OEM 预装"
+            }
+          ],
+          "sections": [
+            {
+              "label": "加密与安全",
+              "items": [
+                "BitLocker Drive Encryption",
+                "Windows Sandbox",
+                "Windows Security",
+                "SmartScreen"
+              ]
+            },
+            {
+              "label": "虚拟化与远程",
+              "items": [
+                "Hyper-V",
+                "WSL2",
+                "远程桌面（作为主机）",
+                "Assigned Access"
+              ]
+            },
+            {
+              "label": "管理与部署",
+              "items": [
+                "域加入 / Microsoft Entra",
+                "组策略",
+                "Windows Update for Business"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Credential Guard（企业 / 教育许可场景）",
+            "部分 Enterprise 专属管理与许可能力",
+            "Enterprise LTSC 服务通道"
+          ],
+          "goodFor": "开发人员、高级用户、小型企业",
+          "badFor": "需要 Enterprise 级安全与集中管理的组织、特殊用途长期稳定设备",
+          "note": "Windows 10 Pro 的现代生命周期已于 2025-10-14 结束；现有设备如需继续获得安全更新，应使用 ESU 或迁移到受支持版本。"
+        },
+        "ws": {
+          "name": "Pro for Workstations",
+          "cn": "工作站版",
+          "sub": "高性能计算与专业工作站",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "6 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "专业工作站"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "零售 / OEM"
+            },
+            {
+              "label": "适合人群",
+              "value": "数据 / 渲染 / 科研"
+            },
+            {
+              "label": "获取渠道",
+              "value": "OEM / 零售"
+            }
+          ],
+          "sections": [
+            {
+              "label": "工作站增强",
+              "items": [
+                "ReFS",
+                "NVDIMM-N / Persistent Memory",
+                "SMB Direct（RDMA）",
+                "4 CPU sockets / 6 TB RAM support"
+              ]
+            },
+            {
+              "label": "基础能力",
+              "items": [
+                "包含 Windows 10 Pro 的核心安全、虚拟化和管理能力"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise / Education 专属许可与管理能力",
+            "Enterprise LTSC 服务通道"
+          ],
+          "goodFor": "数据分析、3D 渲染、科学计算、专业工作站",
+          "badFor": "普通消费级电脑、无法使用工作站级硬件的场景",
+          "note": "Pro for Workstations 在 Windows 10 1709 首次推出；Windows 10 22H2 的普通版本支持已于 2025-10-14 结束。"
+        },
+        "ent": {
+          "name": "Windows 10 Enterprise",
+          "cn": "企业版",
+          "sub": "中大型组织与 IT 管理员",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "6 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "大型组织"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "批量授权 (VLSC)"
+            },
+            {
+              "label": "适合人群",
+              "value": "中大型企业"
+            },
+            {
+              "label": "获取渠道",
+              "value": "VLSC / 评估中心"
+            }
+          ],
+          "sections": [
+            {
+              "label": "企业安全",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "Windows Defender Application Control / App Control for Business",
+                "高级设备管理与部署"
+              ]
+            },
+            {
+              "label": "企业网络与管理",
+              "items": [
+                "Advanced Group Policy",
+                "Microsoft Intune / MDM",
+                "BranchCache（企业场景）"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations 专属 ReFS / NVDIMM-N / SMB Direct 定位",
+            "普通消费者零售定位"
+          ],
+          "goodFor": "大型组织、集中式 IT 管理、高级安全需求",
+          "badFor": "普通家庭用户、只需要基础桌面功能的个人电脑",
+          "note": "Windows 10 Enterprise 22H2 的常规支持于 2025-10-14 结束；LTSC 版本按各自生命周期继续。"
+        },
+        "edu": {
+          "name": "Windows 10 Education",
+          "cn": "教育版",
+          "sub": "学校与教育机构",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "2 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "教育机构"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "教育授权 (M365 Edu)"
+            },
+            {
+              "label": "适合人群",
+              "value": "学校 / 教育机构"
+            },
+            {
+              "label": "获取渠道",
+              "value": "M365 Education"
+            }
+          ],
+          "sections": [
+            {
+              "label": "教育级安全与管理",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "企业级设备管理",
+                "Microsoft Intune / MDM"
+              ]
+            },
+            {
+              "label": "教育场景",
+              "items": [
+                "Take a Test",
+                "Windows Education 管理能力",
+                "Microsoft 365 Education 集成"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations 专属工作站能力",
+            "Enterprise LTSC 服务通道"
+          ],
+          "goodFor": "学校、大学、教育机构",
+          "badFor": "普通消费者、非教育许可场景",
+          "note": "Windows 10 Education 常规支持已于 2025-10-14 结束；具体许可与教育权益以 Microsoft 365 Education / 许可条款为准。"
+        },
+        "pedu": {
+          "name": "Windows 10 Pro Education",
+          "cn": "专业教育版",
+          "sub": "K-12 教育设备",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "2 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "K-12 / 教育"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "教育授权"
+            },
+            {
+              "label": "适合人群",
+              "value": "K-12 学校"
+            },
+            {
+              "label": "获取渠道",
+              "value": "教育商店 / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Pro 基础 + 教育功能",
+              "items": [
+                "包含 Pro 核心功能",
+                "教育主题与默认配置",
+                "多应用 Kiosk / Assigned Access",
+                "Intune for Education",
+                "Take a Test（适用场景）"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise LTSC 服务通道",
+            "部分 Enterprise / Education 专属许可能力"
+          ],
+          "goodFor": "K-12 学校、课堂与受管教育设备",
+          "badFor": "大型企业统一管理、专业工作站需求",
+          "note": "Pro Education 是面向教育客户的 Pro 衍生版本；升级资格、授权和具体功能随教育许可与版本变化。"
+        },
+        "ltsc": {
+          "name": "Enterprise LTSC 2021",
+          "cn": "企业长期服务版",
+          "sub": "工控 / 医疗 / 稳定环境",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "6 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "固定 5 年"
+            },
+            {
+              "label": "主要定位",
+              "value": "特殊用途设备"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "批量授权 (VLSC)"
+            },
+            {
+              "label": "支持周期",
+              "value": "5 年质量更新"
+            },
+            {
+              "label": "获取渠道",
+              "value": "VLSC / 评估中心"
+            }
+          ],
+          "sections": [
+            {
+              "label": "长期服务",
+              "items": [
+                "固定 5 年生命周期",
+                "不提供常规功能更新",
+                "按月提供质量与安全更新",
+                "适合特殊用途设备"
+              ]
+            },
+            {
+              "label": "已验证特性",
+              "items": [
+                "Microsoft Edge 浏览器内置",
+                "WSL 内置",
+                "企业级安全与管理能力"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "常规 GA 渠道的持续功能更新",
+            "部分面向 GA 渠道设计的应用和工具可能支持受限"
+          ],
+          "goodFor": "工业设备、医疗设备、信息亭、关键业务专用终端",
+          "badFor": "希望持续获得最新消费者功能的普通桌面",
+          "note": "Windows 10 Enterprise LTSC 2021 等效于 Windows 10 21H2，生命周期至 2027-01-12；IoT Enterprise LTSC 2021 则至 2032-01-13。"
+        },
+        "iot": {
+          "name": "IoT Enterprise",
+          "cn": "物联网企业版",
+          "sub": "嵌入式 / IoT 设备",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "依 SKU / 设备"
+            },
+            {
+              "label": "服务策略",
+              "value": "Modern / LTSC"
+            },
+            {
+              "label": "主要定位",
+              "value": "固定功能 / IoT"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "OEM / 嵌入式授权"
+            },
+            {
+              "label": "支持周期",
+              "value": "10 年（扩展）"
+            },
+            {
+              "label": "获取渠道",
+              "value": "IoT 分发渠道"
+            }
+          ],
+          "sections": [
+            {
+              "label": "固定功能设备",
+              "items": [
+                "Assigned Access / Kiosk",
+                "Unified Write Filter (UWF)",
+                "应用控制（WDAC / AppLocker）",
+                "面向设备制造商的部署与管理"
+              ]
+            },
+            {
+              "label": "生命周期",
+              "items": [
+                "Modern Lifecycle 的 IoT Enterprise 版本",
+                "LTSC 版本提供 10 年固定生命周期"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "普通消费者桌面许可模式",
+            "将所有 IoT 版本一概视为 10 年支持"
+          ],
+          "goodFor": "工业控制、数字标牌、自助终端、医疗与嵌入式设备",
+          "badFor": "普通家庭桌面电脑",
+          "note": "Windows IoT Enterprise 本身遵循 Modern Lifecycle；只有 IoT Enterprise LTSC 版本提供 10 年生命周期。Windows 10 IoT Enterprise LTSC 2021 至 2032-01-13。"
+        }
+      },
+      "features": [
+        {
+          "cat": "基础功能",
+          "name": "Windows Hello",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "基础功能",
+          "name": "Microsoft Store（默认 / 支持情况）",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "受限",
+            "受限"
+          ]
+        },
+        {
+          "cat": "安全与加密",
+          "name": "设备加密",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "视设备而定",
+            "视设备而定"
+          ]
+        },
+        {
+          "cat": "安全与加密",
+          "name": "BitLocker Drive Encryption",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "安全与加密",
+          "name": "Windows Sandbox",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "视版本而定",
+            0
+          ]
+        },
+        {
+          "cat": "虚拟化与远程",
+          "name": "Hyper-V",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "视版本而定",
+            0
+          ]
+        },
+        {
+          "cat": "虚拟化与远程",
+          "name": "远程桌面（主机）",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "管理与部署",
+          "name": "域加入 / Microsoft Entra",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "管理与部署",
+          "name": "组策略",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "企业安全",
+          "name": "Credential Guard",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "企业安全",
+          "name": "Microsoft Defender Application Guard（MDM）",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "工作站",
+          "name": "ReFS / NVDIMM-N / SMB Direct",
+          "v": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cat": "IoT",
+          "name": "Unified Write Filter (UWF)",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cat": "服务模式",
+          "name": "LTSC 专用服务通道",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "versions": [
+        {
+          "label": "1507",
+          "name": "Windows 10 1507",
+          "build": "10240",
+          "release": "2015.07.29",
+          "statusText": "已停止支持",
+          "color": "#94a3b8",
+          "features": [
+            "全新开始菜单（磁贴设计）",
+            "Cortana 语音助手（历史功能）",
+            "Microsoft Edge 浏览器",
+            "Task View 虚拟桌面",
+            "Xbox Game Bar",
+            "Windows Hello 生物识别",
+            "Continuum 平板模式",
+            "Action Center 通知中心",
+            "WSL Linux 子系统（预览）"
+          ],
+          "note": "Windows 10 首发版本，回归开始菜单并引入全新 UI 设计语言。"
+        },
+        {
+          "label": "1607",
+          "name": "Windows 10 1607",
+          "build": "14393",
+          "release": "2016.08.02",
+          "statusText": "已停止支持",
+          "color": "#94a3b8",
+          "features": [
+            "Windows Ink 手写笔记",
+            "Bash on Ubuntu（WSL 正式版）",
+            "Edge 浏览器扩展支持",
+            "Windows Defender 改进",
+            "生物识别增强",
+            "暗色主题模式",
+            "开始菜单改进",
+            "通知中心改进"
+          ],
+          "note": "周年更新，WSL 正式上线。LTSB 2016 基于此版本。"
+        },
+        {
+          "label": "1809",
+          "name": "Windows 10 1809",
+          "build": "17763",
+          "release": "2018.11.13",
+          "statusText": "Home/Pro 已停",
+          "color": "#f59e0b",
+          "features": [
+            "剪贴板历史记录",
+            "云剪贴板同步",
+            "暗色主题文件管理器",
+            "截图工具改进",
+            "Your Phone 手机连接",
+            "搜索预览面板",
+            "Storage Sense 自动清理",
+            "Windows Sandbox 沙盒"
+          ],
+          "note": "十月更新。LTSC 2019 基于此版本，支持至 2029 年。"
+        },
+        {
+          "label": "2004",
+          "name": "Windows 10 2004",
+          "build": "19041",
+          "release": "2020.05.27",
+          "statusText": "已停止支持",
+          "color": "#94a3b8",
+          "features": [
+            "WSL2 架构升级",
+            "Cortana 转型为独立应用",
+            "GPU 温度监控",
+            "改进虚拟桌面命名",
+            "OneDrive 按需文件",
+            "网络重置功能",
+            "蓝牙改进"
+          ],
+          "note": "WSL2 引入完整 Linux 内核。"
+        },
+        {
+          "label": "22H2",
+          "name": "Windows 10 22H2",
+          "build": "19045",
+          "release": "2022.10.18",
+          "statusText": "已终止支持",
+          "color": "#94a3b8",
+          "features": [
+            "Windows 10 最终功能更新版本",
+            "性能与稳定性优化",
+            "安全补丁与累积更新",
+            "企业部署与管理改进",
+            "兼容性与可靠性修复"
+          ],
+          "note": "Windows 10 22H2 是最终功能更新版本；Home、Pro、Pro Education、Pro for Workstations、Education、Enterprise 等常规版本已于 2025-10-14 终止支持，现有 LTSC 按其独立生命周期继续。"
+        }
       ]
     },
-    win11: {
-      title: "Windows 11", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2024', iot:'IoT' },
-      editions: {
-        home: { name: 'Windows 11 Home', cn: '家庭版', sub: '个人与家庭用户', stats: [{ label: 'CPU', value: '1 路' }, { label: '内存', value: '128 GB' }, { label: '核心', value: '64' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '个人 / 家庭' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '核心功能', items: ['Windows Hello（人脸 / 指纹 / PIN）','Windows Defender 安全中心','Xbox Game Pass / Game Bar','WSL2 Linux 子系统','Snap Layouts 窗口布局','Microsoft Store 应用商店','Copilot AI 助手','Focus Sessions 专注模式','Voice Access 语音控制'] }, { label: '安全特性', items: ['Windows Defender 防病毒','安全启动 (Secure Boot)','TPM 2.0 支持','Smart App Control'] }], notIncluded: ['BitLocker 全盘加密','远程桌面（作为主机）','Hyper-V 虚拟机','域加入 / Azure AD','组策略编辑器','Windows Sandbox'], goodFor: '日常办公、网页浏览、游戏娱乐、影音媒体', badFor: '企业域环境、虚拟化需求、高级安全管控', note: 'Windows 11 Home 在标准初始设置流程中通常需要网络连接和 Microsoft 账户；具体要求可能随版本与部署方式变化。' },
-        pro: { name: 'Windows 11 Pro', cn: '专业版', sub: '高级用户与小型企业', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '零售 / OEM / VL' }, { label: '适合人群', value: '高级用户 / 小企业' }, { label: '获取渠道', value: '官网 / OEM 预装' }], sections: [{ label: '加密与安全', items: ['BitLocker 全盘加密','BitLocker To Go（U盘加密）','Windows Sandbox 沙盒','Smart App Control 智能应用控制'] }, { label: '虚拟化与远程', items: ['Hyper-V 虚拟机','WSL2 Linux 子系统（增强）','远程桌面（作为主机）','Assigned Access 指定访问'] }, { label: '管理与部署', items: ['域加入 / Azure AD (Entra ID)','组策略编辑器 (gpedit.msc)','Windows Update for Business','Kiosk Mode 展台模式'] }], notIncluded: ['DirectAccess（无 VPN 内网）','AppLocker 应用管控','Credential Guard 凭据保护','Device Guard 内核防护','App-V / UE-V 部署工具','LTSC 长期支持版本'], goodFor: '开发人员、小型企业、需加密和虚拟化的用户', badFor: '中大型企业部署、工控 / 医疗等长期稳定场景', note: 'Windows 11 Pro 在组织部署与本地账户场景下提供更灵活的配置；OOBE 行为可能随版本变化。' },
-        ws: { name: 'Pro for Workstations', cn: '工作站版', sub: '高性能计算与专业工作站', stats: [{ label: 'CPU', value: '4 路' }, { label: '内存', value: '6 TB' }, { label: '核心', value: '256' }], info: [{ label: '授权方式', value: '零售 / OEM' }, { label: '适合人群', value: '数据 / 渲染 / 科研' }, { label: '获取渠道', value: 'OEM / 零售' }], sections: [{ label: '包含 Pro 全部 +', items: ['ReFS 弹性文件系统','持久内存 NVDIMM-N','SMB Direct（RDMA 直传）','4 路 CPU 插槽支持','6 TB 最大内存支持','256 核心支持'] }, { label: '适用硬件', items: ['Xeon W / EPYC / Threadripper PRO','ECC 内存支持','企业级 NVMe / SAS 存储阵列'] }], notIncluded: ['DirectAccess','AppLocker 应用管控','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: '数据分析、3D 渲染、科学计算、工程仿真', badFor: '普通消费级电脑（硬件支持无法发挥）', note: '需工作站级硬件才能发挥价值。' },
-        ent: { name: 'Windows 11 Enterprise', cn: '企业版', sub: '中大型组织与 IT 管理员', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '适合人群', value: '中大型企业' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '包含 Pro 全部 +', items: ['DirectAccess（无 VPN 内网接入）','AppLocker（应用白名单管控）','Credential Guard（凭据保护）','Device Guard（内核级防护）','Windows 信息保护 (WIP)','App-V 应用虚拟化','UE-V 用户环境漫游','BranchCache 分支缓存','组策略扩展','Defender for Endpoint Plan 2'] }, { label: '独有版本', items: ['可选 LTSC 2024（5 年长期支持）'] }], notIncluded: ['ReFS 弹性文件系统','持久内存 NVDIMM','SMB Direct (RDMA)','4 路 CPU / 6 TB 内存上限'], goodFor: '中大型企业 IT 部署、需要高级安全管控的组织', badFor: '个人用户（功能过剩，授权昂贵）、极限硬件工作站', note: '通过 VLSC 批量授权获取。' },
-        edu: { name: 'Windows 11 Education', cn: '教育版', sub: '学校与教育机构', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权 (M365 Edu)' }, { label: '适合人群', value: '学校 / 教育机构' }, { label: '获取渠道', value: 'M365 Education' }], sections: [{ label: '包含 Enterprise 全部功能', items: ['DirectAccess、AppLocker、Credential Guard','Device Guard、Windows 信息保护 (WIP)','App-V、UE-V、BranchCache','组策略扩展','Defender for Endpoint'] }, { label: '教育专属', items: ['Take Test 应用（标准化考试）','教育版默认配置（去 Cortana）','Microsoft Teams 教育版集成','Intune 教育版设备管理'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 路 CPU / 6 TB 内存上限'], goodFor: 'K-12 学校、大学、教育培训机构', badFor: '个人用户、非教育场景（授权限制）', note: '功能范围与 Enterprise 高度重叠；教育授权资格与费用以 Microsoft 官方许可政策为准。' },
-        pedu: { name: 'Windows 11 Pro Education', cn: '专业教育版', sub: 'K-12 教育设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '教育授权' }, { label: '适合人群', value: 'K-12 学校' }, { label: '获取渠道', value: '教育商店 / OEM' }], sections: [{ label: '基于 Pro + 教育配置', items: ['包含 Pro 全部功能','教育版默认配置（无游戏应用推广）','教育设备上的应用分发与管理（具体策略取决于组织配置）','Take Test 应用','Intune 教育版支持','简化部署与设备管理'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC 长期支持'], goodFor: 'K-12 学校的课堂设备、图书馆电脑', badFor: '高等教育（建议用 Education）、企业场景', note: '通常随 OEM 教育设备预装。' },
-        ltsc: { name: 'Enterprise LTSC 2024', cn: '企业长期服务版', sub: '工控 / 医疗 / 稳定环境', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: '批量授权 (VLSC)' }, { label: '支持周期', value: '5 年质量更新' }, { label: '获取渠道', value: 'VLSC / 评估中心' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部安全功能','5 年长期质量更新（无功能更新）','无 Microsoft Store（默认）','无 Edge 浏览器（默认，可手动装）','无 Copilot 和原生 AI 组件','无功能更新推送','极度精简，系统稳定'] }, { label: '适用场景', items: ['工控机 / 生产线','医疗设备 / ATM','数字标牌 / 信息亭','航空 / 国防系统'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','功能更新（仅安全更新）','Microsoft Store（默认）'], goodFor: '需要长期稳定运行的专用设备、不能频繁更新的场景', badFor: '日常办公、需要最新功能的用户', note: '基于 Windows 11 24H2，支持至 2029 年。' },
-        iot: { name: 'IoT Enterprise', cn: '物联网企业版', sub: '嵌入式 / IoT 设备', stats: [{ label: 'CPU', value: '2 路' }, { label: '内存', value: '2 TB' }, { label: '核心', value: '128' }], info: [{ label: '授权方式', value: 'OEM / 嵌入式授权' }, { label: '支持周期', value: '10 年（扩展）' }, { label: '获取渠道', value: 'IoT 分发渠道' }], sections: [{ label: '基于 Enterprise', items: ['包含 Enterprise 全部功能','10 年扩展支持周期','Assigned Access（Kiosk 模式）','无声更新 / 自动维护窗口','设备锁定与写筛选 (UWF)','嵌入式启动优化','低功耗运行支持'] }, { label: '适用场景', items: ['数字标牌 / 广告屏','自助终端 / Kiosk','工业控制器','智能零售设备','医疗仪器面板'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store（默认）'], goodFor: 'IoT 设备、嵌入式系统、需要长期运行的专用终端', badFor: '普通桌面电脑、需要频繁更新的场景', note: '分为 LTSC 2024 和 SAC 两个子版本。' }
-      },
-      features: [
-        { cat: '基础功能', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Xbox Game Pass', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'WSL2 Linux', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Snap Layouts', v:[1,1,1,1,1,1,1,1] }, { cat: '基础功能', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: '基础功能', name: 'Copilot AI', v:[1,1,1,1,1,1,0,0] },
-        { cat: '安全与加密', name: 'BitLocker 加密', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: '安全与加密', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: '安全与加密', name: '信息保护 WIP', v:[0,0,0,1,1,0,1,1] },
-        { cat: '管理与部署', name: '域加入 / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '组策略', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: '远程桌面主机', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: '管理与部署', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: '管理与部署', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
-        { cat: '工作站', name: 'ReFS 文件系统', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: '持久内存 NVDIMM', v:[0,0,1,0,0,0,0,0] }, { cat: '工作站', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
-        { cat: '特殊', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: '特殊', name: 'LTSC 长期支持', v:[0,0,0,1,0,0,1,0] }, { cat: '特殊', name: '10 年支持周期', v:[0,0,0,0,0,0,0,1] }
+    "win11": {
+      "title": "Windows 11",
+      "order": [
+        "home",
+        "pro",
+        "ws",
+        "ent",
+        "edu",
+        "pedu",
+        "ltsc",
+        "iot"
       ],
-      versions: [
-        { label: '21H2', name: 'Windows 11 21H2', build: '22000', release: '2021.10.04', statusText: '已停止支持', color: '#94a3b8', features: ['全新开始菜单（居中设计）','圆角窗口 + Mica 材质','Snap Layouts 窗口布局','WSLg GUI Linux 应用','Auto HDR 游戏增强','DirectStorage 游戏加速','Android 应用支持 (WSA)'], note: 'Windows 11 首发版本。' },
-        { label: '22H2', name: 'Windows 11 22H2', build: '22621', release: '2022.09.20', statusText: 'Home/Pro 已停', color: '#f59e0b', features: ['文件资源管理器标签页','任务栏溢出菜单','开始菜单文件夹分组','全新任务管理器设计','Voice Access 语音控制','实时字幕 (Live Captions)'], note: '功能更新，基于 21H2 平台。' },
-        { label: '23H2', name: 'Windows 11 23H2', build: '22631', release: '2023.10.31', statusText: 'Home/Pro 已停；企业/教育至 2026-11-10', color: '#f59e0b', features: ['Copilot 功能集成','Windows Backup 备份恢复','设置应用持续改进','Dynamic Lighting 动态灯效','截图工具屏幕录制','Notepad 标签页'], note: '启用包更新（22621→22631）。Home/Pro 已结束支持；Enterprise/Education 计划支持至 2026-11-10。' },
-        { label: '24H2', name: 'Windows 11 24H2', build: '26100', release: '2024.10.01', statusText: 'Home/Pro 将于 2026-10-13 停止；企业/教育至 2027-10-12', color: '#f59e0b', features: ['Sudo for Windows 命令行','Rust 代码逐步进入 Windows 内核组件','Wi-Fi 7 支持','原生压缩格式支持（含 7z）','Energy Saver 节能模式','Bluetooth LE Audio'], note: '正式功能更新；不同功能会通过功能更新与月度更新持续提供。LTSC 2024 基于 24H2。' },
-        { label: '25H2', name: 'Windows 11 25H2', build: '26200', release: '2025.09.30', statusText: '当前支持版', color: '#10b981', features: ['启用包式年度更新','持续创新通过月度更新交付','部分 Copilot+ PC / AI 功能需特定硬件','安全与管理能力持续更新','与 24H2 共用服务分支'], note: '2025 年度功能更新；不少新体验在月度更新中持续交付，功能可因设备与版本而异。' },
-        { label: '26H1', name: 'Windows 11 26H1', build: '28000', release: '2026.02.10', statusText: '新设备版本', color: '#8b5cf6', features: ['面向 2026 年初新设备','独立服务基线','不作为现有 24H2 / 25H2 设备的原地升级','为新硬件提供早期平台支持'], note: 'Microsoft 将 26H1 限定为 2026 年初新设备版本；现有 24H2 / 25H2 设备不会通过原地功能更新获得 26H1。' },
-        { label: '26H2', name: 'Windows 11 26H2', build: '26300.9550', release: '2026.09.29', statusText: '正式发布', color: '#d946ef', features: ['Windows 设置备份默认启用（符合条件的商用设备）','任务栏应用特定操作默认启用（商用设备）','文件资源管理器增强','与 24H2 / 25H2 共用服务分支','采用服务技术提供更快的安装体验'], note: 'Microsoft 于 2026-09-29 宣布 26H2 达到正式发布（GA）。更新采用分阶段推出；不少新体验已通过月度更新提前交付，26H2 会启用/汇总部分能力。' }
+      "labels": {
+        "home": "Home",
+        "pro": "Pro",
+        "ws": "Workstations",
+        "ent": "Enterprise",
+        "edu": "Education",
+        "pedu": "Pro Edu",
+        "ltsc": "LTSC 2024",
+        "iot": "IoT"
+      },
+      "editions": {
+        "home": {
+          "name": "Windows 11 Home",
+          "cn": "家庭版",
+          "sub": "个人与家庭用户",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "128 GB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "个人 / 家庭"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "零售 / OEM"
+            },
+            {
+              "label": "适合人群",
+              "value": "个人 / 家庭"
+            },
+            {
+              "label": "获取渠道",
+              "value": "官网 / OEM 预装"
+            }
+          ],
+          "sections": [
+            {
+              "label": "核心功能",
+              "items": [
+                "Windows Hello",
+                "Microsoft Store",
+                "Xbox Game Pass / Game Bar",
+                "WSL2",
+                "Snap Layouts",
+                "Windows Security",
+                "Voice Access"
+              ]
+            },
+            {
+              "label": "安全特性",
+              "items": [
+                "Secure Boot",
+                "TPM 2.0",
+                "Smart App Control",
+                "设备加密（受设备支持影响）"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "BitLocker Drive Encryption（完整管理能力）",
+            "远程桌面（作为主机）",
+            "Hyper-V",
+            "域加入 / Microsoft Entra",
+            "组策略编辑器",
+            "Windows Sandbox"
+          ],
+          "goodFor": "日常办公、网页浏览、游戏娱乐、影音媒体",
+          "badFor": "企业域环境、虚拟化需求、高级企业管理",
+          "note": "Windows 11 Home 的标准初始设置流程通常需要网络连接和 Microsoft 帐户；具体行为可能随版本与部署方式变化。"
+        },
+        "pro": {
+          "name": "Windows 11 Pro",
+          "cn": "专业版",
+          "sub": "高级用户与小型企业",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "2 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "高级用户 / 小企业"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "零售 / OEM / VL"
+            },
+            {
+              "label": "适合人群",
+              "value": "高级用户 / 小企业"
+            },
+            {
+              "label": "获取渠道",
+              "value": "官网 / OEM 预装"
+            }
+          ],
+          "sections": [
+            {
+              "label": "加密与安全",
+              "items": [
+                "BitLocker Drive Encryption",
+                "BitLocker To Go",
+                "Windows Sandbox",
+                "SmartScreen / Windows Security"
+              ]
+            },
+            {
+              "label": "虚拟化与远程",
+              "items": [
+                "Hyper-V",
+                "WSL2",
+                "远程桌面（作为主机）",
+                "Assigned Access"
+              ]
+            },
+            {
+              "label": "管理与部署",
+              "items": [
+                "域加入 / Microsoft Entra",
+                "组策略",
+                "Windows Update for Business"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Credential Guard（企业 / 教育许可场景）",
+            "部分 Enterprise 专属管理与许可能力",
+            "Enterprise LTSC 服务通道"
+          ],
+          "goodFor": "开发人员、高级用户、小型企业",
+          "badFor": "需要 Enterprise 级安全与集中管理的组织、特殊用途长期稳定设备",
+          "note": "Windows 11 Pro 按版本遵循现代生命周期；26H2 的 Home / Pro 支持到 2028-10-10。"
+        },
+        "ws": {
+          "name": "Pro for Workstations",
+          "cn": "工作站版",
+          "sub": "高性能计算与专业工作站",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "6 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "专业工作站"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "零售 / OEM"
+            },
+            {
+              "label": "适合人群",
+              "value": "数据 / 渲染 / 科研"
+            },
+            {
+              "label": "获取渠道",
+              "value": "OEM / 零售"
+            }
+          ],
+          "sections": [
+            {
+              "label": "工作站增强",
+              "items": [
+                "ReFS",
+                "NVDIMM-N",
+                "SMB Direct（RDMA）",
+                "最高 4 个 CPU、6 TB RAM"
+              ]
+            },
+            {
+              "label": "基础能力",
+              "items": [
+                "包含 Windows 11 Pro 的核心安全、虚拟化和管理能力"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise / Education 专属许可与管理能力",
+            "Enterprise LTSC 服务通道"
+          ],
+          "goodFor": "CAD、动画、数据科学、媒体制作、科学计算",
+          "badFor": "普通消费级电脑、无需工作站级硬件的场景",
+          "note": "Microsoft 将 Pro for Workstations 定位于高性能工作负载；官方规格页列出最高 4 CPU、6 TB RAM、ReFS、NVDIMM-N 和 SMB Direct。"
+        },
+        "ent": {
+          "name": "Windows 11 Enterprise",
+          "cn": "企业版",
+          "sub": "中大型组织与 IT 管理员",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "6 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "大型组织"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "批量授权 (VLSC)"
+            },
+            {
+              "label": "适合人群",
+              "value": "中大型企业"
+            },
+            {
+              "label": "获取渠道",
+              "value": "VLSC / 评估中心"
+            }
+          ],
+          "sections": [
+            {
+              "label": "企业安全",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "Windows Defender Application Control / App Control for Business",
+                "高级设备管理与部署"
+              ]
+            },
+            {
+              "label": "企业管理",
+              "items": [
+                "Microsoft Intune / MDM",
+                "Advanced Group Policy",
+                "组织级更新与管理控制"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations 专属工作站硬件增强",
+            "普通消费者零售定位"
+          ],
+          "goodFor": "大型组织、集中式 IT 管理、高级安全需求",
+          "badFor": "普通家庭用户、只需要基础桌面功能的个人电脑",
+          "note": "Windows 11 Enterprise 的每个常规版本按 36 个月服务；当前版本 26H2 的企业版支持至 2029-10-09。"
+        },
+        "edu": {
+          "name": "Windows 11 Education",
+          "cn": "教育版",
+          "sub": "学校与教育机构",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "2 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "教育机构"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "教育授权 (M365 Edu)"
+            },
+            {
+              "label": "适合人群",
+              "value": "学校 / 教育机构"
+            },
+            {
+              "label": "获取渠道",
+              "value": "M365 Education"
+            }
+          ],
+          "sections": [
+            {
+              "label": "教育级安全与管理",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "企业级设备管理",
+                "Microsoft Intune / MDM"
+              ]
+            },
+            {
+              "label": "教育功能",
+              "items": [
+                "Take a Test",
+                "教育主题",
+                "Microsoft 365 Education 集成",
+                "Intune for Education"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations 专属工作站能力",
+            "Enterprise LTSC 服务通道"
+          ],
+          "goodFor": "学校、大学、教育机构",
+          "badFor": "普通消费者、非教育许可场景",
+          "note": "Windows 11 Education 的功能范围与 Enterprise 高度重叠；具体许可与教育权益以 Microsoft 365 Education 方案为准。"
+        },
+        "pedu": {
+          "name": "Windows 11 Pro Education",
+          "cn": "专业教育版",
+          "sub": "K-12 教育设备",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "2 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "现代生命周期"
+            },
+            {
+              "label": "主要定位",
+              "value": "K-12 / 教育"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "教育授权"
+            },
+            {
+              "label": "适合人群",
+              "value": "K-12 学校"
+            },
+            {
+              "label": "获取渠道",
+              "value": "教育商店 / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Pro 基础 + 教育功能",
+              "items": [
+                "包含 Pro 核心功能",
+                "教育主题",
+                "多应用 Kiosk / Assigned Access",
+                "Intune for Education",
+                "Take a Test"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise LTSC 服务通道",
+            "部分 Enterprise / Education 专属许可能力"
+          ],
+          "goodFor": "K-12 学校、课堂与受管教育设备",
+          "badFor": "大型企业统一管理、专业工作站需求",
+          "note": "Microsoft 的教育文档明确将 Pro Education 定位为教育机构专用版本，并提供教育主题、多应用 Kiosk、订阅激活等能力。"
+        },
+        "ltsc": {
+          "name": "Enterprise LTSC 2024",
+          "cn": "企业长期服务版",
+          "sub": "工控 / 医疗 / 稳定环境",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "6 TB"
+            },
+            {
+              "label": "服务策略",
+              "value": "固定 5 年"
+            },
+            {
+              "label": "主要定位",
+              "value": "特殊用途设备"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "批量授权 (VLSC)"
+            },
+            {
+              "label": "支持周期",
+              "value": "5 年质量更新"
+            },
+            {
+              "label": "获取渠道",
+              "value": "VLSC / 评估中心"
+            }
+          ],
+          "sections": [
+            {
+              "label": "长期服务",
+              "items": [
+                "固定 5 年生命周期",
+                "不提供常规功能更新",
+                "按月质量与安全更新",
+                "面向特殊用途设备"
+              ]
+            },
+            {
+              "label": "已验证特性",
+              "items": [
+                "Microsoft Edge 浏览器内置",
+                "File Explorer 标签页",
+                "Dev Drive",
+                "企业级安全与管理能力"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "常规 GA 渠道的持续功能更新",
+            "部分为 GA 渠道设计的应用和工具可能支持受限"
+          ],
+          "goodFor": "工业设备、医疗设备、信息亭、关键业务专用终端",
+          "badFor": "希望持续获得最新消费者功能的普通桌面",
+          "note": "Windows 11 Enterprise LTSC 2024 对应 Windows 11 24H2，生命周期 5 年，到 2029-10-09；只有 IoT Enterprise LTSC 2024 延伸到 2034-10-10。"
+        },
+        "iot": {
+          "name": "IoT Enterprise",
+          "cn": "物联网企业版",
+          "sub": "嵌入式 / IoT 设备",
+          "stats": [
+            {
+              "label": "内存上限",
+              "value": "依 SKU / 设备"
+            },
+            {
+              "label": "服务策略",
+              "value": "Modern / LTSC"
+            },
+            {
+              "label": "主要定位",
+              "value": "固定功能 / IoT"
+            }
+          ],
+          "info": [
+            {
+              "label": "授权方式",
+              "value": "OEM / 嵌入式授权"
+            },
+            {
+              "label": "支持周期",
+              "value": "10 年（扩展）"
+            },
+            {
+              "label": "获取渠道",
+              "value": "IoT 分发渠道"
+            }
+          ],
+          "sections": [
+            {
+              "label": "固定功能设备",
+              "items": [
+                "Assigned Access / Kiosk",
+                "Unified Write Filter (UWF)",
+                "应用控制（WDAC / AppLocker）",
+                "面向设备制造商的部署与管理"
+              ]
+            },
+            {
+              "label": "生命周期",
+              "items": [
+                "Modern Lifecycle 的 IoT Enterprise 版本",
+                "IoT Enterprise LTSC 2024：10 年生命周期"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "普通消费者桌面许可模式",
+            "把普通 IoT Enterprise 与 LTSC 的生命周期混为一谈",
+            "Windows 11 26H1（IoT Enterprise 不支持）"
+          ],
+          "goodFor": "工业控制、数字标牌、自助终端、医疗与嵌入式设备",
+          "badFor": "普通家庭桌面电脑",
+          "note": "Windows 11 IoT Enterprise 遵循 Modern Lifecycle；IoT Enterprise LTSC 2024 到 2034-10-10，并且 IoT Enterprise 不支持 Windows 11 26H1。"
+        }
+      },
+      "features": [
+        {
+          "cat": "基础功能",
+          "name": "Windows Hello",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "基础功能",
+          "name": "Microsoft Store",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "受限",
+            "受限"
+          ]
+        },
+        {
+          "cat": "安全与加密",
+          "name": "设备加密",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "视设备而定",
+            "视设备而定"
+          ]
+        },
+        {
+          "cat": "安全与加密",
+          "name": "BitLocker Drive Encryption",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "安全与加密",
+          "name": "Windows Sandbox",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "视版本而定",
+            0
+          ]
+        },
+        {
+          "cat": "虚拟化与远程",
+          "name": "Hyper-V",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "视版本而定",
+            0
+          ]
+        },
+        {
+          "cat": "虚拟化与远程",
+          "name": "远程桌面（主机）",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "管理与部署",
+          "name": "域加入 / Microsoft Entra",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "管理与部署",
+          "name": "组策略",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "企业安全",
+          "name": "Credential Guard",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "企业安全",
+          "name": "Microsoft Defender Application Guard（MDM）",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "工作站",
+          "name": "ReFS / NVDIMM-N / SMB Direct",
+          "v": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cat": "IoT",
+          "name": "Unified Write Filter (UWF)",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            "不适用",
+            1
+          ]
+        },
+        {
+          "cat": "服务模式",
+          "name": "Enterprise LTSC 2024",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "versions": [
+        {
+          "label": "21H2",
+          "name": "Windows 11 21H2",
+          "build": "22000",
+          "release": "2021-10-04",
+          "statusText": "已停止支持",
+          "color": "#94a3b8",
+          "features": [
+            "全新开始菜单（居中设计）",
+            "圆角窗口 + Mica 材质",
+            "Snap Layouts 窗口布局",
+            "WSLg GUI Linux 应用",
+            "Auto HDR 游戏增强",
+            "Android 应用（通过 WSA，初期可用范围受限）"
+          ],
+          "note": "Windows 11 首发版本；Home / Pro 的服务结束于 2023-10-10。"
+        },
+        {
+          "label": "22H2",
+          "name": "Windows 11 22H2",
+          "build": "22621",
+          "release": "2022-09-20",
+          "statusText": "已停止支持",
+          "color": "#94a3b8",
+          "features": [
+            "文件资源管理器标签页",
+            "任务栏溢出菜单",
+            "开始菜单文件夹分组",
+            "全新任务管理器设计",
+            "Voice Access 语音控制",
+            "实时字幕 (Live Captions)"
+          ],
+          "note": "Home / Pro 服务结束于 2024-10-08；旧版本不再获得常规更新。"
+        },
+        {
+          "label": "23H2",
+          "name": "Windows 11 23H2",
+          "build": "22631",
+          "release": "2023-10-31",
+          "statusText": "Home/Pro 已停止；Enterprise/Education 至 2026-11-10",
+          "color": "#f59e0b",
+          "features": [
+            "Copilot 集成",
+            "Windows Backup",
+            "设置应用改进",
+            "Dynamic Lighting",
+            "截图工具屏幕录制",
+            "Notepad 标签页"
+          ],
+          "note": "启用包更新（22621→22631）。Home / Pro 已结束支持；Enterprise / Education 支持至 2026-11-10。"
+        },
+        {
+          "label": "24H2",
+          "name": "Windows 11 24H2",
+          "build": "26100",
+          "release": "2024-10-01",
+          "statusText": "Home/Pro 至 2026-10-13；Enterprise/Education 至 2027-10-12",
+          "color": "#f59e0b",
+          "features": [
+            "Sudo for Windows",
+            "Windows 组件中逐步采用 Rust",
+            "Wi-Fi 7 支持",
+            "原生 7z / TAR 压缩支持",
+            "Energy Saver 节能模式",
+            "Bluetooth LE Audio"
+          ],
+          "note": "正式功能更新；Enterprise LTSC 2024 基于 24H2。"
+        },
+        {
+          "label": "25H2",
+          "name": "Windows 11 25H2",
+          "build": "26200",
+          "release": "2025-09-30",
+          "statusText": "支持中",
+          "color": "#10b981",
+          "features": [
+            "启用包式年度更新",
+            "持续创新通过月度更新交付",
+            "部分 Copilot+ PC / AI 功能需要特定硬件",
+            "持续安全与管理更新",
+            "与 24H2 共用服务分支"
+          ],
+          "note": "Home / Pro 支持至 2027-10-12；Enterprise / Education / IoT Enterprise 支持至 2028-10-10。"
+        },
+        {
+          "label": "26H1",
+          "name": "Windows 11 26H1",
+          "build": "28000",
+          "release": "2026-02-10",
+          "statusText": "新设备版本",
+          "color": "#8b5cf6",
+          "features": [
+            "面向 2026 年初新设备",
+            "独立服务基线",
+            "不是现有 24H2 / 25H2 设备的原地升级",
+            "面向新硬件的早期平台支持"
+          ],
+          "note": "Home / Pro 支持至 2028-03-14；Enterprise / Education 至 2029-03-13。IoT Enterprise 不支持 26H1。"
+        },
+        {
+          "label": "26H2",
+          "name": "Windows 11 26H2",
+          "build": "26300",
+          "release": "2026-09-29",
+          "statusText": "正式发布",
+          "color": "#d946ef",
+          "features": [
+            "Windows 设置备份在符合条件的商用设备上默认启用",
+            "任务栏应用特定操作在商用设备上默认启用",
+            "文件资源管理器增强",
+            "与 24H2 / 25H2 共用服务基础",
+            "通过服务技术提供更快的安装体验"
+          ],
+          "note": "Microsoft 于 2026-09-29 宣布 26H2 正式发布并分阶段推出。Home / Pro 支持至 2028-10-10；Enterprise / Education / IoT Enterprise 至 2029-10-09。"
+        }
       ]
     }
   },
-  en: {
-    win10: {
-      title: "Windows 10", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2021', iot:'IoT' },
-      editions: {
-        home: { name: 'Windows 10 Home', cn: 'Home Edition', sub: 'For personal and household use', stats: [{ label: 'CPU', value: '1' }, { label: 'RAM', value: '128 GB' }, { label: 'Cores', value: '64' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Consumers / Home' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Core Features', items: ['Windows Hello (Face / Fingerprint / PIN)','Cortana Assistant (historical feature)','Xbox Game Bar / Game Mode','WSL Linux Subsystem','Snap Assist','Microsoft Store','Live Tiles','Task View'] }, { label: 'Security', items: ['Windows Defender Antivirus','Secure Boot','Windows Firewall','SmartScreen'] }], notIncluded: ['BitLocker Drive Encryption','Remote Desktop (Host)','Hyper-V','Domain Join / Azure AD','Group Policy Editor','Windows Sandbox'], goodFor: 'Daily tasks, web browsing, gaming, media consumption.', badFor: 'Corporate environments, advanced virtualization, tight security needs.', note: 'Windows 10 Home does not enforce TPM 2.0.' },
-        pro: { name: 'Windows 10 Pro', cn: 'Professional', sub: 'For power users and small businesses', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Retail / OEM / VL' }, { label: 'Target Audience', value: 'Power Users / SMBs' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Security & Encryption', items: ['BitLocker Drive Encryption','BitLocker To Go','Windows Sandbox','SmartScreen'] }, { label: 'Virtualization & Remote', items: ['Hyper-V','WSL2 (Enhanced)','Remote Desktop (Host)','Assigned Access'] }, { label: 'Management & Deployment', items: ['Domain Join / Azure AD','Group Policy Editor','Windows Update for Business','Kiosk Mode'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard','Device Guard','App-V / UE-V','LTSC Channel'], goodFor: 'Developers, small businesses, users needing encryption.', badFor: 'Large enterprise deployments, critical infrastructure.', note: 'Windows 10 Pro is the most common upgrade target.' },
-        ws: { name: 'Pro for Workstations', cn: 'Workstations', sub: 'For high-performance computing', stats: [{ label: 'CPU', value: '4' }, { label: 'RAM', value: '6 TB' }, { label: 'Cores', value: '256' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Data / Rendering / Science' }, { label: 'Availability', value: 'OEM / Retail' }], sections: [{ label: 'Includes all Pro +', items: ['ReFS (Resilient File System)','NVDIMM-N Support','SMB Direct (RDMA)','4 CPU Sockets Support','6 TB RAM Support','256 Cores Support'] }, { label: 'Target Hardware', items: ['Xeon W / EPYC / Threadripper PRO','ECC Memory Support','Enterprise NVMe / SAS'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'Data analysis, 3D rendering, scientific computing.', badFor: 'Standard consumer PCs (hardware won\'t benefit).', note: 'Requires workstation-grade hardware to realize its value.' },
-        ent: { name: 'Windows 10 Enterprise', cn: 'Enterprise', sub: 'For large organizations and IT pros', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Target Audience', value: 'Large Enterprises' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Includes all Pro +', items: ['DirectAccess','AppLocker','Credential Guard','Device Guard','Windows Information Protection (WIP)','App-V','UE-V','BranchCache','Application Guard','Advanced Group Policy'] }, { label: 'Exclusive Channels', items: ['Optional LTSC 2021 (5-year support)'] }], notIncluded: ['ReFS','NVDIMM','SMB Direct (RDMA)','4 CPUs / 6 TB RAM limit'], goodFor: 'Large enterprise IT deployments, advanced security needs.', badFor: 'Home users (overkill, expensive), extreme hardware workstations.', note: 'Support for Windows 10 Enterprise ends Oct 14, 2025.' },
-        edu: { name: 'Windows 10 Education', cn: 'Education', sub: 'For schools and institutions', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education (M365 Edu)' }, { label: 'Target Audience', value: 'Schools / Universities' }, { label: 'Availability', value: 'M365 Education' }], sections: [{ label: 'Includes all Enterprise', items: ['DirectAccess, AppLocker, Credential Guard','Device Guard, WIP','App-V, UE-V, BranchCache','Advanced Group Policy, Application Guard'] }, { label: 'Education Exclusives', items: ['Take a Test app','Education default settings (no Cortana)','Microsoft Teams for Education integration','Intune for Education support'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 CPUs / 6 TB RAM limit'], goodFor: 'K-12 schools, universities, training institutions.', badFor: 'General consumers, non-education environments.', note: 'Functionally identical to Enterprise, available via Microsoft 365 Education.' },
-        pedu: { name: 'Windows 10 Pro Education', cn: 'Pro Education', sub: 'For K-12 devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education' }, { label: 'Target Audience', value: 'K-12 Schools' }, { label: 'Availability', value: 'Edu Store / OEM' }], sections: [{ label: 'Based on Pro + Edu Config', items: ['Includes all Pro features','Education default settings (no Cortana)','Microsoft Store for Education curation','Take a Test app','Intune for Education support','Simplified deployment'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'K-12 classroom devices, library PCs.', badFor: 'Higher education (use Education edition), corporate networks.', note: 'Typically pre-installed on OEM devices for schools.' },
-        ltsc: { name: 'Enterprise LTSC 2021', cn: 'Long-Term Servicing', sub: 'For mission-critical & stable environments', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Support Lifecycle', value: '5 Years Quality Updates' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise security features','5 years of long-term servicing (no feature updates)','No Microsoft Store (by default)','No Cortana','No Edge browser (by default)','No forced feature upgrades','Extremely clean and stable'] }, { label: 'Use Cases', items: ['Industrial PCs / Manufacturing','Medical equipment / ATMs','Digital signage / Kiosks','Aviation / Defense systems'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Feature Updates','Microsoft Store (default)'], goodFor: 'Devices requiring long-term stability without feature changes.', badFor: 'Daily office use, users wanting the latest features.', note: 'Based on Windows 10 21H2, supported until Jan 2027.' },
-        iot: { name: 'IoT Enterprise', cn: 'Internet of Things', sub: 'For embedded / IoT devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'OEM / Embedded' }, { label: 'Support Lifecycle', value: '10 Years (Extended)' }, { label: 'Availability', value: 'IoT Distributors' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise features','10 years extended support lifecycle','Assigned Access (Kiosk Mode)','Silent updates / Maintenance windows','Device lockdown and Unified Write Filter (UWF)','Embedded boot optimizations','Low power operation support'] }, { label: 'Use Cases', items: ['Digital Signage','Self-service Kiosks','Industrial Controllers','Smart Retail Devices','Medical Instrumentation'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store (default)'], goodFor: 'IoT devices, embedded systems, dedicated terminals.', badFor: 'Standard desktop PCs, scenarios requiring frequent updates.', note: 'Supported for 10 years (LTSC 2021 supported until 2032).' }
-      },
-      features: [
-        { cat: 'Basics', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Cortana Assistant (historical feature)', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'WSL Linux', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Snap Assist', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'Xbox Game Bar', v:[1,1,1,1,1,1,0,0] },
-        { cat: 'Security', name: 'BitLocker Encryption', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'WIP Protection', v:[0,0,0,1,1,0,1,1] },
-        { cat: 'Management', name: 'Domain / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Group Policy', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Remote Desktop (Host)', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
-        { cat: 'Workstation', name: 'ReFS File System', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'NVDIMM Memory', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
-        { cat: 'Special', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: 'Special', name: 'LTSC Support', v:[0,0,0,1,0,0,1,0] }, { cat: 'Special', name: '10-Year Lifecycle', v:[0,0,0,0,0,0,0,1] },
-        { cat: 'Hardware Limits', name: 'CPU Sockets', v:['1','2','4','2','2','2','2','2'] }, { cat: 'Hardware Limits', name: 'Max RAM', v:['128GB','2TB','6TB','2TB','2TB','2TB','2TB','2TB'] }
+  "en": {
+    "win10": {
+      "title": "Windows 10",
+      "order": [
+        "home",
+        "pro",
+        "ws",
+        "ent",
+        "edu",
+        "pedu",
+        "ltsc",
+        "iot"
       ],
-      versions: [
-        { label: '1507', name: 'Windows 10 1507', build: '10240', release: '2015.07.29', statusText: 'End of Support', color: '#94a3b8', features: ['New Start Menu (Live Tiles)','Cortana Assistant (historical feature)','Microsoft Edge browser','Task View virtual desktops','Xbox Game Bar','Windows Hello biometrics','Continuum tablet mode','Action Center','WSL Linux Subsystem (Preview)'], note: 'The initial release of Windows 10, bringing back the Start menu and introducing a new UI.' },
-        { label: '1607', name: 'Windows 10 1607', build: '14393', release: '2016.08.02', statusText: 'End of Support', color: '#94a3b8', features: ['Windows Ink workspace','Bash on Ubuntu (WSL Stable)','Edge browser extensions','Windows Defender improvements','Biometric enhancements','Dark theme mode','Start menu tweaks','Action Center improvements'], note: 'Anniversary Update. LTSB 2016 is based on this version.' },
-        { label: '1809', name: 'Windows 10 1809', build: '17763', release: '2018.11.13', statusText: 'Home/Pro EOS', color: '#f59e0b', features: ['Clipboard history','Cloud clipboard sync','Dark theme for File Explorer','Snipping tool improvements','Your Phone app integration','Search preview pane','Storage Sense updates','Windows Sandbox'], note: 'October 2018 Update. LTSC 2019 is based on this version (supported until 2029).' },
-        { label: '2004', name: 'Windows 10 2004', build: '19041', release: '2020.05.27', statusText: 'End of Support', color: '#94a3b8', features: ['WSL2 architecture upgrade','Cortana becomes a standalone app','GPU temperature monitoring','Virtual desktop renaming','OneDrive Files On-Demand','Network reset feature','Bluetooth improvements'], note: 'WSL2 introduces a full Linux kernel.' },
-        { label: '22H2', name: 'Windows 10 22H2', build: '19045', release: '2022.10.18', statusText: 'Final Version', color: '#10b981', features: ['Final feature update','Performance & stability optimizations','Cumulative security patches','Enterprise deployment tools updates','Print management enhancements','Defender improvements','Compatibility fixes'], note: 'The final feature update for Windows 10. All editions reach End of Support on Oct 14, 2025.' }
+      "labels": {
+        "home": "Home",
+        "pro": "Pro",
+        "ws": "Workstations",
+        "ent": "Enterprise",
+        "edu": "Education",
+        "pedu": "Pro Edu",
+        "ltsc": "LTSC 2021",
+        "iot": "IoT"
+      },
+      "editions": {
+        "home": {
+          "name": "Windows 10 Home",
+          "cn": "Home Edition",
+          "sub": "For personal and household use",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "128 GB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Consumers / Home"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Retail / OEM"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Consumers / Home"
+            },
+            {
+              "label": "Availability",
+              "value": "Online / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Core features",
+              "items": [
+                "Windows Hello",
+                "Microsoft Store",
+                "Xbox Game Bar / Game Mode",
+                "WSL (version-dependent)",
+                "Task View / virtual desktops",
+                "Windows Security"
+              ]
+            },
+            {
+              "label": "Security & setup",
+              "items": [
+                "Secure Boot",
+                "Windows Firewall",
+                "SmartScreen",
+                "Device encryption (hardware-dependent)"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "BitLocker Drive Encryption (full management)",
+            "Remote Desktop (Host)",
+            "Hyper-V",
+            "Domain Join / Microsoft Entra",
+            "Group Policy Editor",
+            "Windows Sandbox"
+          ],
+          "goodFor": "Daily office, browsing, gaming, media",
+          "badFor": "Corporate domain environments, virtualization, advanced enterprise management",
+          "note": "Windows 10 22H2 is the final version; normal Windows 10 editions reached end of support on Oct. 14, 2025."
+        },
+        "pro": {
+          "name": "Windows 10 Pro",
+          "cn": "Professional",
+          "sub": "For power users and small businesses",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "2 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Power users / SMB"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Retail / OEM / VL"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Power Users / SMBs"
+            },
+            {
+              "label": "Availability",
+              "value": "Online / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Security & encryption",
+              "items": [
+                "BitLocker Drive Encryption",
+                "Windows Sandbox",
+                "Windows Security",
+                "SmartScreen"
+              ]
+            },
+            {
+              "label": "Virtualization & remote",
+              "items": [
+                "Hyper-V",
+                "WSL2",
+                "Remote Desktop (Host)",
+                "Assigned Access"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Credential Guard (enterprise / education licensing)",
+            "Some Enterprise-specific management and licensing capabilities",
+            "Enterprise LTSC servicing channel"
+          ],
+          "goodFor": "Developers, power users, small businesses",
+          "badFor": "Organizations needing Enterprise-level security and centralized management, or long-term special-purpose servicing",
+          "note": "Windows 10 Pro's normal lifecycle ended on Oct. 14, 2025; continued updates require ESU or migration to a supported version."
+        },
+        "ws": {
+          "name": "Pro for Workstations",
+          "cn": "Workstations",
+          "sub": "For high-performance computing",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "6 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Workstations"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Retail / OEM"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Data / Rendering / Science"
+            },
+            {
+              "label": "Availability",
+              "value": "OEM / Retail"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Workstation enhancements",
+              "items": [
+                "ReFS",
+                "NVDIMM-N / Persistent Memory",
+                "SMB Direct (RDMA)",
+                "4 CPU sockets / 6 TB RAM support"
+              ]
+            },
+            {
+              "label": "Base capabilities",
+              "items": [
+                "Includes core Windows 10 Pro security, virtualization, and management"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise / Education-specific licensing and management",
+            "Enterprise LTSC servicing channel"
+          ],
+          "goodFor": "Data analysis, 3D rendering, scientific computing, professional workstations",
+          "badFor": "Standard consumer PCs or workloads that do not use workstation hardware",
+          "note": "Pro for Workstations first appeared with Windows 10 1709; normal Windows 10 22H2 support ended Oct. 14, 2025."
+        },
+        "ent": {
+          "name": "Windows 10 Enterprise",
+          "cn": "Enterprise",
+          "sub": "For large organizations and IT pros",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "6 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Large organizations"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Volume License (VLSC)"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Large Enterprises"
+            },
+            {
+              "label": "Availability",
+              "value": "VLSC"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Enterprise security",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "Windows Defender Application Control / App Control for Business",
+                "Advanced device management and deployment"
+              ]
+            },
+            {
+              "label": "Enterprise networking & management",
+              "items": [
+                "Advanced Group Policy",
+                "Microsoft Intune / MDM",
+                "BranchCache (enterprise scenarios)"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations-specific ReFS / NVDIMM-N / SMB Direct positioning",
+            "Consumer retail positioning"
+          ],
+          "goodFor": "Large organizations, centralized IT, advanced security",
+          "badFor": "Home users and personal PCs needing only core desktop features",
+          "note": "Normal Windows 10 Enterprise 22H2 support ended Oct. 14, 2025; LTSC releases follow their own lifecycles."
+        },
+        "edu": {
+          "name": "Windows 10 Education",
+          "cn": "Education",
+          "sub": "For schools and institutions",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "2 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Education"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Education (M365 Edu)"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Schools / Universities"
+            },
+            {
+              "label": "Availability",
+              "value": "M365 Education"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Education security & management",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "Enterprise-grade device management",
+                "Microsoft Intune / MDM"
+              ]
+            },
+            {
+              "label": "Education scenarios",
+              "items": [
+                "Take a Test",
+                "Windows Education management capabilities",
+                "Microsoft 365 Education integration"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations-specific workstation capabilities",
+            "Enterprise LTSC servicing channel"
+          ],
+          "goodFor": "Schools, universities, education institutions",
+          "badFor": "General consumers or scenarios without education licensing",
+          "note": "Normal Windows 10 Education support ended Oct. 14, 2025; licensing and education benefits depend on the Microsoft 365 Education plan."
+        },
+        "pedu": {
+          "name": "Windows 10 Pro Education",
+          "cn": "Pro Education",
+          "sub": "For K-12 devices",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "2 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "K-12 / Education"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Education"
+            },
+            {
+              "label": "Target Audience",
+              "value": "K-12 Schools"
+            },
+            {
+              "label": "Availability",
+              "value": "Edu Store / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Pro base + education features",
+              "items": [
+                "All core Pro features",
+                "Education themes and defaults",
+                "Multi-app Kiosk / Assigned Access",
+                "Intune for Education",
+                "Take a Test (supported scenarios)"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise LTSC servicing channel",
+            "Some Enterprise / Education-specific licensing capabilities"
+          ],
+          "goodFor": "K-12 schools, classrooms, managed education devices",
+          "badFor": "Large enterprise management or professional workstation workloads",
+          "note": "Pro Education is an education-focused derivative of Pro; eligibility, licensing, and exact features vary by edition and education agreement."
+        },
+        "ltsc": {
+          "name": "Enterprise LTSC 2021",
+          "cn": "Long-Term Servicing",
+          "sub": "For mission-critical & stable environments",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "6 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Fixed 5-year"
+            },
+            {
+              "label": "Positioning",
+              "value": "Special-purpose devices"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Volume License (VLSC)"
+            },
+            {
+              "label": "Support Lifecycle",
+              "value": "5 Years Quality Updates"
+            },
+            {
+              "label": "Availability",
+              "value": "VLSC"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Long-term servicing",
+              "items": [
+                "Fixed 5-year lifecycle",
+                "No regular feature updates",
+                "Monthly quality and security updates",
+                "Special-purpose devices"
+              ]
+            },
+            {
+              "label": "Validated characteristics",
+              "items": [
+                "Microsoft Edge included",
+                "WSL included",
+                "Limited support may apply to apps/tools designed for the GA channel"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Ongoing feature updates from the normal GA channel",
+            "Some apps and tools designed for GA may have limited LTSC support"
+          ],
+          "goodFor": "Industrial PCs, medical equipment, kiosks, mission-critical dedicated terminals",
+          "badFor": "General desktops that want the latest consumer features",
+          "note": "Windows 10 Enterprise LTSC 2021 corresponds to Windows 10 21H2 and ends Jan. 12, 2027; IoT Enterprise LTSC 2021 extends to Jan. 13, 2032."
+        },
+        "iot": {
+          "name": "IoT Enterprise",
+          "cn": "Internet of Things",
+          "sub": "For embedded / IoT devices",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "By SKU / device"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern / LTSC"
+            },
+            {
+              "label": "Positioning",
+              "value": "Fixed-function / IoT"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "OEM / Embedded"
+            },
+            {
+              "label": "Support Lifecycle",
+              "value": "10 Years (Extended)"
+            },
+            {
+              "label": "Availability",
+              "value": "IoT Distributors"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Fixed-function devices",
+              "items": [
+                "Assigned Access / Kiosk",
+                "Unified Write Filter (UWF)",
+                "Application control (WDAC / AppLocker)",
+                "Device-maker deployment and management"
+              ]
+            },
+            {
+              "label": "Lifecycle",
+              "items": [
+                "Modern Lifecycle for IoT Enterprise releases",
+                "IoT Enterprise LTSC releases have 10-year fixed lifecycles"
+              ]
+            }
+          ],
+          "notIncluded": [],
+          "goodFor": null,
+          "badFor": [
+            "Consumer desktop licensing model",
+            "Treating every IoT Enterprise release as 10-year supported",
+            "Windows 11 26H1 (IoT Enterprise is not supported)"
+          ],
+          "note": "Industrial control, digital signage, kiosks, medical and embedded devices"
+        }
+      },
+      "features": [
+        {
+          "cat": "Core",
+          "name": "Windows Hello",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Core",
+          "name": "Microsoft Store (default / support)",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Limited",
+            "Limited"
+          ]
+        },
+        {
+          "cat": "Security",
+          "name": "Device encryption",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Device-dependent",
+            "Device-dependent"
+          ]
+        },
+        {
+          "cat": "Security",
+          "name": "BitLocker Drive Encryption",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Security",
+          "name": "Windows Sandbox",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Version-dependent",
+            0
+          ]
+        },
+        {
+          "cat": "Virtualization & remote",
+          "name": "Hyper-V",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Version-dependent",
+            0
+          ]
+        },
+        {
+          "cat": "Virtualization & remote",
+          "name": "Remote Desktop (Host)",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Management",
+          "name": "Domain Join / Microsoft Entra",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Management",
+          "name": "Group Policy",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Enterprise security",
+          "name": "Credential Guard",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Enterprise security",
+          "name": "Microsoft Defender Application Guard (MDM)",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Workstation",
+          "name": "ReFS / NVDIMM-N / SMB Direct",
+          "v": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cat": "IoT",
+          "name": "Unified Write Filter (UWF)",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "cat": "Servicing",
+          "name": "LTSC servicing channel",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "versions": [
+        {
+          "label": "1507",
+          "name": "Windows 10 1507",
+          "build": "10240",
+          "release": "2015.07.29",
+          "statusText": "End of Support",
+          "color": "#94a3b8",
+          "features": [
+            "New Start Menu (Live Tiles)",
+            "Cortana Assistant (historical feature)",
+            "Microsoft Edge browser",
+            "Task View virtual desktops",
+            "Xbox Game Bar",
+            "Windows Hello biometrics",
+            "Continuum tablet mode",
+            "Action Center",
+            "WSL Linux Subsystem (Preview)"
+          ],
+          "note": "The initial release of Windows 10, bringing back the Start menu and introducing a new UI."
+        },
+        {
+          "label": "1607",
+          "name": "Windows 10 1607",
+          "build": "14393",
+          "release": "2016.08.02",
+          "statusText": "End of Support",
+          "color": "#94a3b8",
+          "features": [
+            "Windows Ink workspace",
+            "Bash on Ubuntu (WSL Stable)",
+            "Edge browser extensions",
+            "Windows Defender improvements",
+            "Biometric enhancements",
+            "Dark theme mode",
+            "Start menu tweaks",
+            "Action Center improvements"
+          ],
+          "note": "Anniversary Update. LTSB 2016 is based on this version."
+        },
+        {
+          "label": "1809",
+          "name": "Windows 10 1809",
+          "build": "17763",
+          "release": "2018.11.13",
+          "statusText": "Home/Pro EOS",
+          "color": "#f59e0b",
+          "features": [
+            "Clipboard history",
+            "Cloud clipboard sync",
+            "Dark theme for File Explorer",
+            "Snipping tool improvements",
+            "Your Phone app integration",
+            "Search preview pane",
+            "Storage Sense updates",
+            "Windows Sandbox"
+          ],
+          "note": "October 2018 Update. LTSC 2019 is based on this version (supported until 2029)."
+        },
+        {
+          "label": "2004",
+          "name": "Windows 10 2004",
+          "build": "19041",
+          "release": "2020.05.27",
+          "statusText": "End of Support",
+          "color": "#94a3b8",
+          "features": [
+            "WSL2 architecture upgrade",
+            "Cortana becomes a standalone app",
+            "GPU temperature monitoring",
+            "Virtual desktop renaming",
+            "OneDrive Files On-Demand",
+            "Network reset feature",
+            "Bluetooth improvements"
+          ],
+          "note": "WSL2 introduces a full Linux kernel."
+        },
+        {
+          "label": "22H2",
+          "name": "Windows 10 22H2",
+          "build": "19045",
+          "release": "2022.10.18",
+          "statusText": "Final Version",
+          "color": "#10b981",
+          "features": [
+            "Final feature update",
+            "Performance & stability optimizations",
+            "Cumulative security patches",
+            "Enterprise deployment tools updates",
+            "Print management enhancements",
+            "Defender improvements",
+            "Compatibility fixes"
+          ],
+          "note": "The final feature update for Windows 10. All editions reach End of Support on Oct 14, 2025."
+        }
       ]
     },
-    win11: {
-      title: "Windows 11", order: ['home','pro','ws','ent','edu','pedu','ltsc','iot'], labels: { home:'Home', pro:'Pro', ws:'Workstations', ent:'Enterprise', edu:'Education', pedu:'Pro Edu', ltsc:'LTSC 2024', iot:'IoT' },
-      editions: {
-        home: { name: 'Windows 11 Home', cn: 'Home Edition', sub: 'For personal and household use', stats: [{ label: 'CPU', value: '1' }, { label: 'RAM', value: '128 GB' }, { label: 'Cores', value: '64' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Consumers / Home' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Core Features', items: ['Windows Hello (Face / Fingerprint / PIN)','Windows Defender Security Center','Xbox Game Pass / Game Bar','WSL2 Linux Subsystem','Snap Layouts','Microsoft Store','Copilot AI Assistant','Focus Sessions','Voice Access'] }, { label: 'Security', items: ['Windows Defender Antivirus','Secure Boot','TPM 2.0 Support','Smart App Control'] }], notIncluded: ['BitLocker Drive Encryption','Remote Desktop (Host)','Hyper-V','Domain Join / Azure AD','Group Policy Editor','Windows Sandbox'], goodFor: 'Daily tasks, web browsing, gaming, media consumption.', badFor: 'Corporate environments, advanced virtualization, tight security needs.', note: 'Windows 11 Home requires internet connectivity and a Microsoft Account for initial setup.' },
-        pro: { name: 'Windows 11 Pro', cn: 'Professional', sub: 'For power users and small businesses', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Retail / OEM / VL' }, { label: 'Target Audience', value: 'Power Users / SMBs' }, { label: 'Availability', value: 'Online / OEM' }], sections: [{ label: 'Security & Encryption', items: ['BitLocker Drive Encryption','BitLocker To Go','Windows Sandbox','Smart App Control'] }, { label: 'Virtualization & Remote', items: ['Hyper-V','WSL2 (Enhanced)','Remote Desktop (Host)','Assigned Access'] }, { label: 'Management & Deployment', items: ['Domain Join / Azure AD','Group Policy Editor','Windows Update for Business','Kiosk Mode'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard','Device Guard','App-V / UE-V','LTSC Channel'], goodFor: 'Developers, small businesses, users needing encryption.', badFor: 'Large enterprise deployments, critical infrastructure.', note: 'Allows setting up with a local account (easier to bypass network requirements than Home).' },
-        ws: { name: 'Pro for Workstations', cn: 'Workstations', sub: 'For high-performance computing', stats: [{ label: 'CPU', value: '4' }, { label: 'RAM', value: '6 TB' }, { label: 'Cores', value: '256' }], info: [{ label: 'License', value: 'Retail / OEM' }, { label: 'Target Audience', value: 'Data / Rendering / Science' }, { label: 'Availability', value: 'OEM / Retail' }], sections: [{ label: 'Includes all Pro +', items: ['ReFS (Resilient File System)','NVDIMM-N Support','SMB Direct (RDMA)','4 CPU Sockets Support','6 TB RAM Support','256 Cores Support'] }, { label: 'Target Hardware', items: ['Xeon W / EPYC / Threadripper PRO','ECC Memory Support','Enterprise NVMe / SAS'] }], notIncluded: ['DirectAccess','AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'Data analysis, 3D rendering, scientific computing.', badFor: 'Standard consumer PCs (hardware won\'t benefit).', note: 'Requires workstation-grade hardware to realize its value.' },
-        ent: { name: 'Windows 11 Enterprise', cn: 'Enterprise', sub: 'For large organizations and IT pros', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Target Audience', value: 'Large Enterprises' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Includes all Pro +', items: ['DirectAccess','AppLocker','Credential Guard','Device Guard','Windows Information Protection (WIP)','App-V','UE-V','BranchCache','Advanced Group Policy','Defender for Endpoint Plan 2'] }, { label: 'Exclusive Channels', items: ['Optional LTSC 2024 (5-year support)'] }], notIncluded: ['ReFS','NVDIMM','SMB Direct (RDMA)','4 CPUs / 6 TB RAM limit'], goodFor: 'Large enterprise IT deployments, advanced security needs.', badFor: 'Home users (overkill, expensive), extreme hardware workstations.', note: 'Available via Volume Licensing.' },
-        edu: { name: 'Windows 11 Education', cn: 'Education', sub: 'For schools and institutions', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education (M365 Edu)' }, { label: 'Target Audience', value: 'Schools / Universities' }, { label: 'Availability', value: 'M365 Education' }], sections: [{ label: 'Includes all Enterprise', items: ['DirectAccess, AppLocker, Credential Guard','Device Guard, WIP','App-V, UE-V, BranchCache','Advanced Group Policy','Defender for Endpoint'] }, { label: 'Education Exclusives', items: ['Take a Test app','Education default settings (no Cortana)','Microsoft Teams for Education integration','Intune for Education support'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','4 CPUs / 6 TB RAM limit'], goodFor: 'K-12 schools, universities, training institutions.', badFor: 'General consumers, non-education environments.', note: 'Functionally identical to Enterprise, available via Microsoft 365 Education.' },
-        pedu: { name: 'Windows 11 Pro Education', cn: 'Pro Education', sub: 'For K-12 devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Education' }, { label: 'Target Audience', value: 'K-12 Schools' }, { label: 'Availability', value: 'Edu Store / OEM' }], sections: [{ label: 'Based on Pro + Edu Config', items: ['Includes all Pro features','Education default settings (fewer ad apps)','Microsoft Store for Education curation','Take a Test app','Intune for Education support','Simplified deployment'] }], notIncluded: ['DirectAccess / AppLocker','Credential Guard / Device Guard','App-V / UE-V / BranchCache','LTSC Channel'], goodFor: 'K-12 classroom devices, library PCs.', badFor: 'Higher education (use Education edition), corporate networks.', note: 'Typically pre-installed on OEM devices for schools.' },
-        ltsc: { name: 'Enterprise LTSC 2024', cn: 'Long-Term Servicing', sub: 'For mission-critical & stable environments', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'Volume License (VLSC)' }, { label: 'Support Lifecycle', value: '5 Years Quality Updates' }, { label: 'Availability', value: 'VLSC' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise security features','5 years of long-term servicing (no feature updates)','No Microsoft Store (by default)','No Edge browser (by default)','No Copilot or native AI components','No forced feature upgrades','Extremely clean and stable'] }, { label: 'Use Cases', items: ['Industrial PCs / Manufacturing','Medical equipment / ATMs','Digital signage / Kiosks','Aviation / Defense systems'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Feature Updates','Microsoft Store (default)'], goodFor: 'Devices requiring long-term stability without AI features.', badFor: 'Daily office use, users wanting the latest features.', note: 'Based on Windows 11 24H2, supported until 2029.' },
-        iot: { name: 'IoT Enterprise', cn: 'Internet of Things', sub: 'For embedded / IoT devices', stats: [{ label: 'CPU', value: '2' }, { label: 'RAM', value: '2 TB' }, { label: 'Cores', value: '128' }], info: [{ label: 'License', value: 'OEM / Embedded' }, { label: 'Support Lifecycle', value: '10 Years (Extended)' }, { label: 'Availability', value: 'IoT Distributors' }], sections: [{ label: 'Based on Enterprise', items: ['Includes all Enterprise features','10 years extended support lifecycle','Assigned Access (Kiosk Mode)','Silent updates / Maintenance windows','Device lockdown and Unified Write Filter (UWF)','Embedded boot optimizations','Low power operation support'] }, { label: 'Use Cases', items: ['Digital Signage','Self-service Kiosks','Industrial Controllers','Smart Retail Devices','Medical Instrumentation'] }], notIncluded: ['ReFS / NVDIMM / SMB Direct','Microsoft Store (default)'], goodFor: 'IoT devices, embedded systems, dedicated terminals.', badFor: 'Standard desktop PCs, scenarios requiring frequent updates.', note: 'Available in LTSC 2024 and SAC channels.' }
-      },
-      features: [
-        { cat: 'Basics', name: 'Windows Hello', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Xbox Game Pass', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'WSL2 Linux', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Snap Layouts', v:[1,1,1,1,1,1,1,1] }, { cat: 'Basics', name: 'Microsoft Store', v:[1,1,1,1,1,1,0,0] }, { cat: 'Basics', name: 'Copilot AI', v:[1,1,1,1,1,1,0,0] },
-        { cat: 'Security', name: 'BitLocker Encryption', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Windows Sandbox', v:[0,1,1,1,1,1,1,1] }, { cat: 'Security', name: 'Credential Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'Device Guard', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'AppLocker', v:[0,0,0,1,1,0,1,1] }, { cat: 'Security', name: 'WIP Protection', v:[0,0,0,1,1,0,1,1] },
-        { cat: 'Management', name: 'Domain / Azure AD', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Group Policy', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Remote Desktop (Host)', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'Hyper-V', v:[0,1,1,1,1,1,1,1] }, { cat: 'Management', name: 'DirectAccess', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'App-V / UE-V', v:[0,0,0,1,1,0,1,1] }, { cat: 'Management', name: 'BranchCache', v:[0,0,0,1,1,0,1,1] },
-        { cat: 'Workstation', name: 'ReFS File System', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'NVDIMM Memory', v:[0,0,1,0,0,0,0,0] }, { cat: 'Workstation', name: 'SMB Direct (RDMA)', v:[0,0,1,0,0,0,0,0] },
-        { cat: 'Special', name: 'Kiosk / Assigned Access', v:[0,1,1,1,1,1,1,1] }, { cat: 'Special', name: 'LTSC Support', v:[0,0,0,1,0,0,1,0] }, { cat: 'Special', name: '10-Year Lifecycle', v:[0,0,0,0,0,0,0,1] },
-        { cat: 'Hardware Limits', name: 'CPU Sockets', v:['1','2','4','2','2','2','2','2'] }, { cat: 'Hardware Limits', name: 'Max RAM', v:['128GB','2TB','6TB','2TB','2TB','2TB','2TB','2TB'] }
+    "win11": {
+      "title": "Windows 11",
+      "order": [
+        "home",
+        "pro",
+        "ws",
+        "ent",
+        "edu",
+        "pedu",
+        "ltsc",
+        "iot"
       ],
-      versions: [
-        { label: '21H2', name: 'Windows 11 21H2', build: '22000', release: '2021.10.04', statusText: 'End of Support', color: '#94a3b8', features: ['New centered Start menu','Rounded corners & Mica material','Snap Layouts','WSLg (GUI Linux apps)','Auto HDR for gaming','DirectStorage API','Android apps support (WSA)'], note: 'Initial release of Windows 11.' },
-        { label: '22H2', name: 'Windows 11 22H2', build: '22621', release: '2022.09.20', statusText: 'Home/Pro EOS', color: '#f59e0b', features: ['File Explorer tabs','Taskbar overflow menu','Start menu folders','New Task Manager design','Voice Access control','Live Captions'], note: 'Feature update based on 21H2 platform.' },
-        { label: '23H2', name: 'Windows 11 23H2', build: '22631', release: '2023.10.31', statusText: 'Home/Pro EOS; Enterprise/Education through Nov. 10, 2026', color: '#f59e0b', features: ['Copilot integration','Windows Backup','Settings improvements','Dynamic Lighting','Snipping Tool screen recording','Notepad tabs'], note: 'Enablement package update (22621→22631). Home/Pro have reached end of support; Enterprise/Education are supported through Nov. 10, 2026.' },
-        { label: '24H2', name: 'Windows 11 24H2', build: '26100', release: '2024.10.01', statusText: 'Home/Pro end Oct. 13, 2026; Enterprise/Education Oct. 12, 2027', color: '#f59e0b', features: ['Sudo for Windows','Rust-based components in Windows','Wi-Fi 7 support','Native archive support including 7z','Energy Saver','Bluetooth LE Audio'], note: 'Annual feature update with ongoing monthly servicing. Windows 11 Enterprise LTSC 2024 is based on the 24H2 codebase.' },
-        { label: '25H2', name: 'Windows 11 25H2', build: '26200', release: '2025.09.30', statusText: 'Supported', color: '#10b981', features: ['Enablement-package annual update','Continuous innovation through monthly updates','Some Copilot+ PC / AI features require specific hardware','Ongoing security and management improvements','Shared servicing branch with 24H2'], note: '2025 annual feature update. New experiences continue to arrive through monthly servicing and may depend on device and edition.' },
-        { label: '26H1', name: 'Windows 11 26H1', build: '28000', release: '2026.02.10', statusText: 'New-device release', color: '#8b5cf6', features: ['Targeted at new devices shipping in early 2026','Separate servicing baseline','Not offered as an in-place upgrade from existing 24H2 / 25H2 devices','Early platform support for new hardware'], note: 'Microsoft scoped 26H1 to new devices arriving in early 2026; it is not offered as an in-place update from existing 24H2 or 25H2 devices.' },
-        { label: '26H2', name: 'Windows 11 26H2', build: '26300.9550', release: '2026.09.29', statusText: 'General Availability', color: '#d946ef', features: ['Windows Settings backup enabled by default for eligible commercial devices','App-specific taskbar actions enabled by default for commercial devices','File Explorer enhancements','Shared servicing foundation with 24H2 / 25H2','Servicing-based fast installation'], note: 'Microsoft declared 26H2 generally available on Sep. 29, 2026. Rollout is phased; many new experiences are delivered through monthly updates and then enabled or consolidated in 26H2.' }
+      "labels": {
+        "home": "Home",
+        "pro": "Pro",
+        "ws": "Workstations",
+        "ent": "Enterprise",
+        "edu": "Education",
+        "pedu": "Pro Edu",
+        "ltsc": "LTSC 2024",
+        "iot": "IoT"
+      },
+      "editions": {
+        "home": {
+          "name": "Windows 11 Home",
+          "cn": "Home Edition",
+          "sub": "For personal and household use",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "128 GB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Consumers / Home"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Retail / OEM"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Consumers / Home"
+            },
+            {
+              "label": "Availability",
+              "value": "Online / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Core features",
+              "items": [
+                "Windows Hello",
+                "Microsoft Store",
+                "Xbox Game Pass / Game Bar",
+                "WSL2",
+                "Snap Layouts",
+                "Windows Security",
+                "Voice Access"
+              ]
+            },
+            {
+              "label": "Security",
+              "items": [
+                "Secure Boot",
+                "TPM 2.0",
+                "Smart App Control",
+                "Device encryption (device-dependent)"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "BitLocker Drive Encryption (full management)",
+            "Remote Desktop (Host)",
+            "Hyper-V",
+            "Domain Join / Microsoft Entra",
+            "Group Policy Editor",
+            "Windows Sandbox"
+          ],
+          "goodFor": "Daily office, browsing, gaming, media",
+          "badFor": "Corporate domain environments, virtualization, advanced enterprise management",
+          "note": "Standard Windows 11 Home setup generally requires internet connectivity and a Microsoft Account; exact behavior can vary by version and deployment method."
+        },
+        "pro": {
+          "name": "Windows 11 Pro",
+          "cn": "Professional",
+          "sub": "For power users and small businesses",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "2 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Power users / SMB"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Retail / OEM / VL"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Power Users / SMBs"
+            },
+            {
+              "label": "Availability",
+              "value": "Online / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Security & encryption",
+              "items": [
+                "BitLocker Drive Encryption",
+                "BitLocker To Go",
+                "Windows Sandbox",
+                "SmartScreen / Windows Security"
+              ]
+            },
+            {
+              "label": "Virtualization & remote",
+              "items": [
+                "Hyper-V",
+                "WSL2",
+                "Remote Desktop (Host)",
+                "Assigned Access"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Credential Guard (enterprise / education licensing)",
+            "Some Enterprise-specific management and licensing capabilities",
+            "Enterprise LTSC servicing channel"
+          ],
+          "goodFor": "Developers, power users, small businesses",
+          "badFor": "Organizations needing Enterprise-level security and centralized management, or long-term special-purpose servicing",
+          "note": "Windows 11 Pro follows the Modern Lifecycle; 26H2 Home/Pro support runs to Oct. 10, 2028."
+        },
+        "ws": {
+          "name": "Pro for Workstations",
+          "cn": "Workstations",
+          "sub": "For high-performance computing",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "6 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Workstations"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Retail / OEM"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Data / Rendering / Science"
+            },
+            {
+              "label": "Availability",
+              "value": "OEM / Retail"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Workstation enhancements",
+              "items": [
+                "ReFS",
+                "NVDIMM-N",
+                "SMB Direct (RDMA)",
+                "Up to 4 CPU sockets / 6 TB RAM"
+              ]
+            },
+            {
+              "label": "Base capabilities",
+              "items": [
+                "Includes core Windows 11 Pro security, virtualization, and management"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise / Education-specific licensing and management",
+            "Enterprise LTSC servicing channel"
+          ],
+          "goodFor": "CAD, animation, data science, media production, scientific computing",
+          "badFor": "Standard consumer PCs or workloads that do not use workstation hardware",
+          "note": "Microsoft positions Pro for Workstations for demanding workloads; its official page lists up to 4 CPUs, 6 TB RAM, ReFS, NVDIMM-N, and SMB Direct."
+        },
+        "ent": {
+          "name": "Windows 11 Enterprise",
+          "cn": "Enterprise",
+          "sub": "For large organizations and IT pros",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "6 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Large organizations"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Volume License (VLSC)"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Large Enterprises"
+            },
+            {
+              "label": "Availability",
+              "value": "VLSC"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Enterprise security",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "Windows Defender Application Control / App Control for Business",
+                "Advanced device management and deployment"
+              ]
+            },
+            {
+              "label": "Enterprise management",
+              "items": [
+                "Microsoft Intune / MDM",
+                "Advanced Group Policy",
+                "Organization-level update and management controls"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations-specific workstation hardware enhancements",
+            "Consumer retail positioning"
+          ],
+          "goodFor": "Large organizations, centralized IT, advanced security",
+          "badFor": "Home users and personal PCs needing only core desktop features",
+          "note": "Windows 11 Enterprise releases receive 36 months of servicing; current 26H2 support runs to Oct. 9, 2029."
+        },
+        "edu": {
+          "name": "Windows 11 Education",
+          "cn": "Education",
+          "sub": "For schools and institutions",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "2 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "Education"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Education (M365 Edu)"
+            },
+            {
+              "label": "Target Audience",
+              "value": "Schools / Universities"
+            },
+            {
+              "label": "Availability",
+              "value": "M365 Education"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Education security & management",
+              "items": [
+                "Credential Guard",
+                "AppLocker",
+                "Enterprise-grade device management",
+                "Microsoft Intune / MDM"
+              ]
+            },
+            {
+              "label": "Education features",
+              "items": [
+                "Take a Test",
+                "Education themes",
+                "Microsoft 365 Education integration",
+                "Intune for Education"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Pro for Workstations-specific workstation capabilities",
+            "Enterprise LTSC servicing channel"
+          ],
+          "goodFor": "Schools, universities, education institutions",
+          "badFor": "General consumers or scenarios without education licensing",
+          "note": "Windows 11 Education overlaps strongly with Enterprise; exact licensing and education benefits depend on the Microsoft 365 Education plan."
+        },
+        "pedu": {
+          "name": "Windows 11 Pro Education",
+          "cn": "Pro Education",
+          "sub": "For K-12 devices",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "2 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern Lifecycle"
+            },
+            {
+              "label": "Positioning",
+              "value": "K-12 / Education"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Education"
+            },
+            {
+              "label": "Target Audience",
+              "value": "K-12 Schools"
+            },
+            {
+              "label": "Availability",
+              "value": "Edu Store / OEM"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Pro base + education features",
+              "items": [
+                "All core Pro features",
+                "Education themes",
+                "Multi-app Kiosk / Assigned Access",
+                "Intune for Education",
+                "Take a Test"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Enterprise LTSC servicing channel",
+            "Some Enterprise / Education-specific licensing capabilities"
+          ],
+          "goodFor": "K-12 schools, classrooms, managed education devices",
+          "badFor": "Large enterprise management or professional workstation workloads",
+          "note": "Microsoft's education documentation positions Pro Education for educational institutions and documents education themes, multi-app Kiosk, subscription activation, and related features."
+        },
+        "ltsc": {
+          "name": "Enterprise LTSC 2024",
+          "cn": "Long-Term Servicing",
+          "sub": "For mission-critical & stable environments",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "6 TB"
+            },
+            {
+              "label": "Servicing",
+              "value": "Fixed 5-year"
+            },
+            {
+              "label": "Positioning",
+              "value": "Special-purpose devices"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "Volume License (VLSC)"
+            },
+            {
+              "label": "Support Lifecycle",
+              "value": "5 Years Quality Updates"
+            },
+            {
+              "label": "Availability",
+              "value": "VLSC"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Long-term servicing",
+              "items": [
+                "Fixed 5-year lifecycle",
+                "No regular feature updates",
+                "Monthly quality and security updates",
+                "Special-purpose devices"
+              ]
+            },
+            {
+              "label": "Validated characteristics",
+              "items": [
+                "Microsoft Edge included",
+                "File Explorer tabs",
+                "Dev Drive",
+                "Enterprise security and management capabilities"
+              ]
+            }
+          ],
+          "notIncluded": [
+            "Ongoing feature updates from the normal GA channel",
+            "Some apps and tools designed for GA may have limited LTSC support"
+          ],
+          "goodFor": "Industrial PCs, medical equipment, kiosks, mission-critical dedicated terminals",
+          "badFor": "General desktops that want the latest consumer features",
+          "note": "Windows 11 Enterprise LTSC 2024 corresponds to Windows 11 24H2 and ends Oct. 9, 2029; only IoT Enterprise LTSC 2024 has support through Oct. 10, 2034."
+        },
+        "iot": {
+          "name": "IoT Enterprise",
+          "cn": "Internet of Things",
+          "sub": "For embedded / IoT devices",
+          "stats": [
+            {
+              "label": "RAM limit",
+              "value": "By SKU / device"
+            },
+            {
+              "label": "Servicing",
+              "value": "Modern / LTSC"
+            },
+            {
+              "label": "Positioning",
+              "value": "Fixed-function / IoT"
+            }
+          ],
+          "info": [
+            {
+              "label": "License",
+              "value": "OEM / Embedded"
+            },
+            {
+              "label": "Support Lifecycle",
+              "value": "10 Years (Extended)"
+            },
+            {
+              "label": "Availability",
+              "value": "IoT Distributors"
+            }
+          ],
+          "sections": [
+            {
+              "label": "Fixed-function devices",
+              "items": [
+                "Assigned Access / Kiosk",
+                "Unified Write Filter (UWF)",
+                "Application control (WDAC / AppLocker)",
+                "Device-maker deployment and management"
+              ]
+            },
+            {
+              "label": "Lifecycle",
+              "items": [
+                "Modern Lifecycle for IoT Enterprise releases",
+                "IoT Enterprise LTSC 2024 has a 10-year lifecycle"
+              ]
+            }
+          ],
+          "notIncluded": [],
+          "goodFor": null,
+          "badFor": [
+            "Consumer desktop licensing model",
+            "Conflating normal IoT Enterprise with LTSC lifecycle",
+            "Windows 11 26H1 (IoT Enterprise is not supported)"
+          ],
+          "note": "Industrial control, digital signage, kiosks, medical and embedded devices"
+        }
+      },
+      "features": [
+        {
+          "cat": "Core",
+          "name": "Windows Hello",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Core",
+          "name": "Microsoft Store",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Limited",
+            "Limited"
+          ]
+        },
+        {
+          "cat": "Security",
+          "name": "Device encryption",
+          "v": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Device-dependent",
+            "Device-dependent"
+          ]
+        },
+        {
+          "cat": "Security",
+          "name": "BitLocker Drive Encryption",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Security",
+          "name": "Windows Sandbox",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Version-dependent",
+            0
+          ]
+        },
+        {
+          "cat": "Virtualization & remote",
+          "name": "Hyper-V",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            "Version-dependent",
+            0
+          ]
+        },
+        {
+          "cat": "Virtualization & remote",
+          "name": "Remote Desktop (Host)",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Management",
+          "name": "Domain Join / Microsoft Entra",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Management",
+          "name": "Group Policy",
+          "v": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Enterprise security",
+          "name": "Credential Guard",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Enterprise security",
+          "name": "Microsoft Defender Application Guard (MDM)",
+          "v": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "cat": "Workstation",
+          "name": "ReFS / NVDIMM-N / SMB Direct",
+          "v": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cat": "IoT",
+          "name": "Unified Write Filter (UWF)",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            "Not applicable",
+            1
+          ]
+        },
+        {
+          "cat": "Servicing",
+          "name": "Enterprise LTSC 2024",
+          "v": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "versions": [
+        {
+          "label": "21H2",
+          "name": "Windows 11 21H2",
+          "build": "22000",
+          "release": "2021-10-04",
+          "statusText": "End of support",
+          "color": "#94a3b8",
+          "features": [
+            "New centered Start menu",
+            "Rounded corners + Mica",
+            "Snap Layouts",
+            "WSLg GUI Linux apps",
+            "Auto HDR",
+            "Android apps via WSA (initial availability was limited)"
+          ],
+          "note": "Initial Windows 11 release; Home / Pro servicing ended Oct. 10, 2023."
+        },
+        {
+          "label": "22H2",
+          "name": "Windows 11 22H2",
+          "build": "22621",
+          "release": "2022-09-20",
+          "statusText": "End of support",
+          "color": "#94a3b8",
+          "features": [
+            "File Explorer tabs",
+            "Taskbar overflow menu",
+            "Start menu folders",
+            "New Task Manager design",
+            "Voice Access",
+            "Live Captions"
+          ],
+          "note": "Home / Pro servicing ended Oct. 8, 2024; older releases no longer receive normal updates."
+        },
+        {
+          "label": "23H2",
+          "name": "Windows 11 23H2",
+          "build": "22631",
+          "release": "2023-10-31",
+          "statusText": "Home/Pro EOS; Enterprise/Education through Nov. 10, 2026",
+          "color": "#f59e0b",
+          "features": [
+            "Copilot integration",
+            "Windows Backup",
+            "Settings improvements",
+            "Dynamic Lighting",
+            "Snipping Tool screen recording",
+            "Notepad tabs"
+          ],
+          "note": "Enablement package update (22621→22631). Home / Pro have ended servicing; Enterprise / Education continue through Nov. 10, 2026."
+        },
+        {
+          "label": "24H2",
+          "name": "Windows 11 24H2",
+          "build": "26100",
+          "release": "2024-10-01",
+          "statusText": "Home/Pro to Oct. 13, 2026; Enterprise/Education to Oct. 12, 2027",
+          "color": "#f59e0b",
+          "features": [
+            "Sudo for Windows",
+            "Rust-based components in Windows",
+            "Wi-Fi 7",
+            "Native 7z / TAR archive support",
+            "Energy Saver",
+            "Bluetooth LE Audio"
+          ],
+          "note": "Annual feature update; Windows 11 Enterprise LTSC 2024 is based on 24H2."
+        },
+        {
+          "label": "25H2",
+          "name": "Windows 11 25H2",
+          "build": "26200",
+          "release": "2025-09-30",
+          "statusText": "Supported",
+          "color": "#10b981",
+          "features": [
+            "Enablement-package annual update",
+            "Continuous innovation through monthly servicing",
+            "Some Copilot+ PC / AI features require specific hardware",
+            "Ongoing security and management updates",
+            "Shared servicing foundation with 24H2"
+          ],
+          "note": "Home / Pro are supported through Oct. 12, 2027; Enterprise / Education / IoT Enterprise through Oct. 10, 2028."
+        },
+        {
+          "label": "26H1",
+          "name": "Windows 11 26H1",
+          "build": "28000",
+          "release": "2026-02-10",
+          "statusText": "New-device release",
+          "color": "#8b5cf6",
+          "features": [
+            "Targeted at new devices arriving in early 2026",
+            "Separate servicing baseline",
+            "Not offered as an in-place update from existing 24H2 / 25H2 devices",
+            "Early platform support for new hardware"
+          ],
+          "note": "Home / Pro are supported through Mar. 14, 2028; Enterprise / Education through Mar. 13, 2029. IoT Enterprise is not supported on 26H1."
+        },
+        {
+          "label": "26H2",
+          "name": "Windows 11 26H2",
+          "build": "26300",
+          "release": "2026-09-29",
+          "statusText": "General Availability",
+          "color": "#d946ef",
+          "features": [
+            "Windows Settings backup enabled by default for eligible commercial devices",
+            "App-specific taskbar actions enabled by default for commercial devices",
+            "File Explorer enhancements",
+            "Shared servicing foundation with 24H2 / 25H2",
+            "Servicing-based fast installation"
+          ],
+          "note": "Microsoft declared 26H2 generally available on Sep. 29, 2026 with a phased rollout. Home / Pro are supported through Oct. 10, 2028; Enterprise / Education / IoT Enterprise through Oct. 9, 2029."
+        }
       ]
     }
   }
@@ -967,11 +4096,14 @@ function renderView() {
       <tr><td style="border-bottom-left-radius: 20px;">${cDict.channel}</td>${sel.map((k, i) => `<td style="${i===sel.length-1?'border-bottom-right-radius: 20px;':''}">${activeData.editions[k].info[2].value}</td>`).join('')}</tr>`;
 
     container.innerHTML = `
-      <div class="glass view-fade table-wrap">
-        <table>
-          <thead><tr><th class="th-first">${cDict.tableHeader}</th>${headers}</tr></thead>
-          <tbody>${rows}${infoRows}</tbody>
-        </table>
+      <div class="view-fade">
+        <div class="glass table-wrap">
+          <table>
+            <thead><tr><th class="th-first">${cDict.tableHeader}</th>${headers}</tr></thead>
+            <tbody>${rows}${infoRows}</tbody>
+          </table>
+        </div>
+        ${renderSources()}
       </div>`;
   }
   else if (currentView === 'version') {
