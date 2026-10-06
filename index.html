@@ -102,12 +102,15 @@
   .source-bar a:hover { text-decoration: underline; }
   .source-bar .source-note { flex-basis: 100%; color: var(--text-faint); }
   .verified-status-inline {
-    display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:-12px 0 12px;
-    font-size:10.5px; color:var(--text-muted);
+    display:flex; flex-wrap:wrap; align-items:center; gap:7px;
+    margin:8px 0 18px; padding:6px 9px; width:fit-content; max-width:100%;
+    border:1px solid color-mix(in srgb, var(--neon-green) 18%, var(--glass-border));
+    border-radius:8px; background:color-mix(in srgb, var(--neon-green) 5%, var(--switch-bg));
+    font-size:10.5px; line-height:1.35; color:var(--text-muted);
   }
   .verified-status-inline span {
     color:var(--neon-green); font-size:9px; font-weight:800;
-    text-transform:uppercase; letter-spacing:.04em;
+    text-transform:uppercase; letter-spacing:.04em; white-space:nowrap;
   }
   .detail-meta-box { contain: layout paint; }
   .cards-grid, .timeline-container, .table-wrap { contain: layout style; }
