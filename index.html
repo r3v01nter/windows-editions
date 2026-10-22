@@ -191,6 +191,29 @@
   .portal-header h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 10px; }
   .portal-header p { color: var(--text-muted); font-size: 1.1rem; font-weight: 600; max-width: 500px; line-height: 1.6; margin: 0 auto; padding: 0 12px;}
 
+
+  .project-overview {
+    width: 100%; max-width: 1040px; margin: 0 auto 30px;
+    display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+    align-items: center; gap: 26px; padding: 28px;
+    border-radius: 24px; text-align: left;
+  }
+  .project-copy { min-width: 0; }
+  .project-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;
+    padding: 6px 10px; border-radius: 999px; border: 1px solid var(--glass-border);
+    background: var(--switch-bg); color: var(--accent-blue); font-size: 10px;
+    font-weight: 800; letter-spacing: .12em;
+  }
+  .project-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--neon-green); }
+  .project-copy h2 { font-size: clamp(1.45rem, 2.4vw, 2.15rem); line-height: 1.2; letter-spacing: -.7px; font-weight: 850; margin-bottom: 12px; }
+  .project-copy p { color: var(--text-muted); font-size: 14px; line-height: 1.8; max-width: 560px; }
+  .project-points { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .project-point { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid var(--glass-border); border-radius: 10px; background: var(--switch-bg); color: var(--text-muted); font-size: 11px; font-weight: 700; }
+  .project-point::before { content: '✓'; color: var(--neon-green); font-weight: 900; }
+  .project-art { min-width: 0; }
+  .project-art img { display: block; width: 100%; height: auto; border-radius: 18px; }
+
   .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 380px)); justify-content: center; gap: 20px; width: 100%; max-width: 800px; }
   .bento-card { display: flex; flex-direction: row; align-items: center; gap: 20px; padding: 24px; cursor: pointer; text-align: left; }
   .bento-card-info h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.5px;}
@@ -333,6 +356,10 @@
     .portal-header h1 { font-size: 2.6rem; letter-spacing: -1px; }
     .ambient-orb { animation-duration: 30s; opacity: 0.75; }
     .portal-header p { font-size: 0.95rem; margin-bottom: 12px;}
+    .project-overview { grid-template-columns: 1fr; gap: 20px; padding: 20px; margin-bottom: 22px; border-radius: 18px; }
+    .project-copy h2 { font-size: 1.55rem; }
+    .project-copy p { font-size: 13px; }
+    .project-art img { max-height: 260px; object-fit: contain; }
     .bento-grid { grid-template-columns: 1fr; gap: 16px; padding: 0 16px; }
     .bento-card { min-height: auto; padding: 20px 16px; border-radius: 16px;}
     .bento-card svg { width: 32px; height: 32px; margin-bottom: 0; }
@@ -410,6 +437,22 @@
     <h1>Windows <span style="color: var(--accent-blue);">OS</span></h1>
     <p id="t-portal-desc">全版本参考手册，一站式对比各版本核心差异与适用场景。</p>
   </div>
+  <section class="project-overview glass" aria-labelledby="t-project-title">
+    <div class="project-copy">
+      <div class="project-eyebrow" id="t-project-eyebrow">EDITION REFERENCE</div>
+      <h2 id="t-project-title">看懂版本差异，选对 Windows。</h2>
+      <p id="t-project-copy">从家庭版、专业版到企业版与 LTSC，按功能、定位和生命周期了解 Windows 10 / 11 的主要差异。用卡片、功能矩阵、版本历史与选型向导，快速找到适合自己需求的版本。</p>
+      <div class="project-points">
+        <span class="project-point" id="t-project-point-1">版本详情</span>
+        <span class="project-point" id="t-project-point-2">功能对比</span>
+        <span class="project-point" id="t-project-point-3">版本历史</span>
+        <span class="project-point" id="t-project-point-4">选型向导</span>
+      </div>
+    </div>
+    <div class="project-art">
+      <img src="assets/windows-editions-hero.svg" alt="Windows 10 and Windows 11 edition guide illustration" width="720" height="520">
+    </div>
+  </section>
   <div class="bento-grid">
     <div class="bento-card glass gpu-card" onclick="openApp('win11')">
       <!-- 官方比例 Win11 Logo -->
@@ -470,7 +513,11 @@
    ========================================================================== */
 const dict = {
   zh: {
-    portalDesc: '全版本参考手册，一站式对比各版本核心差异与适用场景。',
+    portalDesc: 'Windows 10 / 11 版本参考指南：了解主要版本差异、适用场景与支持状态。',
+    projectEyebrow: 'WINDOWS 版本参考指南',
+    projectTitle: '看懂版本差异，选对 Windows。',
+    projectCopy: '从家庭版、专业版到企业版与 LTSC，按功能、定位和生命周期了解 Windows 10 / 11 的主要差异。用卡片、功能矩阵、版本历史与选型向导，快速找到适合自己需求的版本。',
+    projectPoints: ['版本详情', '功能对比', '版本历史', '选型向导'],
     win11Desc: '8 大版本类别与 7 个主要版本节点 (21H2–26H2，含 26H1)。',
     win10Desc: '1507 至 22H2 的历史演进；22H2 已于 2025-10-14 终止支持，LTSC 按独立生命周期处理。',
     sidebarMeta: '版本指南',
@@ -486,7 +533,11 @@ const dict = {
     }
   },
   en: {
-    portalDesc: 'The ultimate reference guide. Compare features, security, and use cases.',
+    portalDesc: 'A practical Windows 10 / 11 edition guide to features, use cases, and support status.',
+    projectEyebrow: 'WINDOWS EDITION REFERENCE',
+    projectTitle: 'Understand the differences. Choose the right Windows edition.',
+    projectCopy: 'Explore Windows 10 and Windows 11 editions—from Home and Pro to Enterprise and LTSC—by features, intended use, and lifecycle. Compare editions side by side, review feature matrices and release history, and use the edition advisor to narrow down your options.',
+    projectPoints: ['Edition details', 'Feature comparison', 'Release history', 'Edition advisor'],
     win11Desc: '8 edition categories and 7 version milestones (21H2–26H2, including 26H1).',
     win10Desc: 'Evolution from 1507 to 22H2. 22H2 ended support on Oct. 14, 2025; LTSC releases follow separate lifecycles.',
     sidebarMeta: 'Edition Guide',
@@ -3849,6 +3900,13 @@ function applyLanguage(newLang) {
   });
 
   document.getElementById('t-portal-desc').innerText = dict[lang].portalDesc;
+  document.getElementById('t-project-eyebrow').innerText = dict[lang].projectEyebrow;
+  document.getElementById('t-project-title').innerText = dict[lang].projectTitle;
+  document.getElementById('t-project-copy').innerText = dict[lang].projectCopy;
+  dict[lang].projectPoints.forEach((label, i) => {
+    const point = document.getElementById('t-project-point-' + (i + 1));
+    if (point) point.innerText = label;
+  });
   document.getElementById('t-win11-desc').innerText = dict[lang].win11Desc;
   document.getElementById('t-win10-desc').innerText = dict[lang].win10Desc;
   document.getElementById('t-sidebar-meta').innerText = dict[lang].sidebarMeta;
