@@ -341,15 +341,14 @@
     /* 核心逻辑：工具栏位移 */
     /* 默认在首页：顶部横排 */
     .tools-bar { top: 12px; right: 12px; left: auto; bottom: auto; transform: none; flex-direction: row; gap: 6px; z-index: 1000; }
-    /* Keep the original top-right position and remove each group's decorative capsule completely. */
-    .tools-bar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: transparent !important; border: 0 !important; box-shadow: none !important; }
-    .tools-bar > .tool-group,
-    .tools-bar .tool-group {
-      flex-direction: row; gap: 2px; padding: 0 !important;
-      background: transparent !important; border: 0 !important;
-      border-radius: 0 !important; box-shadow: none !important;
-      backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+    /* Restore the original glass capsule styling; keep the toolbar in the top-right corner. */
+    .tool-group {
+      flex-direction: row; gap: 2px; padding: 3px;
+      background: var(--switch-bg); border: 1px solid var(--glass-border);
+      border-radius: 99px; box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
+    .tools-bar { background: transparent; border: 0; box-shadow: none; }
     .glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
     .m-text-tabs { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
     
@@ -359,7 +358,7 @@
     
     .ts-btn, .lang-btn { width: 29px; height: 29px; font-size: 11px; }
     .tools-bar { gap: 6px; }
-    .tools-bar .tool-group { border-radius: 0 !important; }
+    .tools-bar .tool-group { border-radius: 99px; }
     .ts-btn svg { width: 14px; height: 14px; }
     .ts-btn::after { bottom: 3px; width: 3px; height: 3px; }
 
